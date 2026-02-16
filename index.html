@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="분류론">
+<meta name="theme-color" content="#f5f2ed">
+<meta name="description" content="KDC·DDC 분류론 핵심 힌트집 — 사서직 시험 대비">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>분류론 핵심 힌트집</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f2ed;
+    --surface: #faf8f4;
+    --surface2: #f0ece5;
+    --border: #ddd8cf;
+    --accent1: #b5861a;
+    --accent2: #2a6fc9;
+    --accent3: #2a8a3e;
+    --accent4: #c94f2a;
+    --accent5: #7a3fbf;
+    --text: #2c2820;
+    --text-muted: #5a5248;
+    --text-dim: #8a8078;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Grid noise texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(42,111,201,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(42,111,201,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* HEADER */
+  header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 48px 32px;
+    background: linear-gradient(135deg, rgba(181,134,26,0.08) 0%, rgba(42,111,201,0.06) 100%);
+    border: 1px solid rgba(181,134,26,0.25);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content: '📚';
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 64px;
+    opacity: 0.12;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(181,134,26,0.10);
+    border: 1px solid rgba(181,134,26,0.35);
+    color: var(--accent1);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  header h1 span { color: var(--accent1); }
+  header p {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  /* PROGRESS NAV */
+  .nav-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    background: var(--surface);
+    padding: 8px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .nav-tab {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .nav-tab:hover { background: var(--surface2); color: var(--text); }
+  .nav-tab.active {
+    background: rgba(181,134,26,0.12);
+    color: var(--accent1);
+    border: 1px solid rgba(181,134,26,0.35);
+  }
+
+  /* SECTION */
+  .section { display: none; }
+  .section.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* CARDS GRID */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-bottom: 32px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .card:hover { border-color: rgba(181,134,26,0.45); transform: translateY(-2px); }
+  .card.blue:hover { border-color: rgba(42,111,201,0.45); }
+  .card.green:hover { border-color: rgba(42,138,62,0.45); }
+  .card.red:hover { border-color: rgba(201,79,42,0.45); }
+  .card.purple:hover { border-color: rgba(122,63,191,0.45); }
+
+  .card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .card.yellow .card-label { color: var(--accent1); }
+  .card.blue .card-label { color: var(--accent2); }
+  .card.green .card-label { color: var(--accent3); }
+  .card.red .card-label { color: var(--accent4); }
+  .card.purple .card-label { color: var(--accent5); }
+
+  .card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .card p, .card li { font-size: 13.5px; color: var(--text-muted); line-height: 1.7; }
+  .card ul { padding-left: 16px; }
+  .card li { margin-bottom: 4px; }
+
+  /* KEYWORD highlight */
+  .kw { color: var(--accent1); font-weight: 600; }
+  .kw.b { color: var(--accent2); }
+  .kw.g { color: var(--accent3); }
+  .kw.r { color: var(--accent4); }
+  .kw.p { color: var(--accent5); }
+
+  /* TABLE */
+  .table-wrap { overflow-x: auto; margin-bottom: 24px; border-radius: 10px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead tr { background: var(--surface2); }
+  th { padding: 12px 14px; text-align: left; color: var(--accent1); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+  td { padding: 11px 14px; color: var(--text-muted); border-bottom: 1px solid rgba(48,54,61,0.5); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  td strong { color: var(--text); }
+
+  /* QUIZ */
+  .quiz-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 14px;
+  }
+  .quiz-q { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 14px; line-height: 1.6; }
+  .quiz-q .num {
+    display: inline-block;
+    background: rgba(232,197,71,0.15);
+    color: var(--accent1);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+  .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .quiz-opt {
+    padding: 10px 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+  }
+  .quiz-opt:hover { border-color: rgba(181,134,26,0.45); color: var(--text); }
+  .quiz-opt.correct { background: rgba(42,138,62,0.10); border-color: var(--accent3); color: var(--accent3); }
+  .quiz-opt.wrong { background: rgba(201,79,42,0.10); border-color: var(--accent4); color: var(--accent4); }
+  .quiz-opt:disabled { cursor: default; }
+  .quiz-explain {
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: rgba(42,111,201,0.06);
+    border-left: 3px solid var(--accent2);
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    display: none;
+    line-height: 1.7;
+  }
+  .quiz-explain.show { display: block; }
+
+  /* MINDMAP-STYLE */
+  .mind-tree { font-size: 13px; }
+  .mind-root {
+    display: inline-block;
+    background: rgba(181,134,26,0.10);
+    border: 1.5px solid rgba(181,134,26,0.4);
+    color: var(--accent1);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .mind-branch {
+    margin-left: 20px;
+    border-left: 2px solid rgba(42,111,201,0.25);
+    padding-left: 16px;
+    margin-bottom: 8px;
+  }
+  .mind-branch-title {
+    color: var(--accent2);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .mind-leaf {
+    color: var(--text-muted);
+    margin-left: 14px;
+    margin-bottom: 3px;
+    position: relative;
+  }
+  .mind-leaf::before {
+    content: '▸';
+    color: var(--accent3);
+    margin-right: 6px;
+    font-size: 10px;
+  }
+
+  /* SCORE */
+  .score-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  .score-count { font-family: 'JetBrains Mono', monospace; font-size: 20px; color: var(--accent1); font-weight: 700; }
+  .score-label { color: var(--text-muted); }
+
+  /* TAG */
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .tag.y { background: rgba(181,134,26,0.10); color: var(--accent1); border: 1px solid rgba(181,134,26,0.3); }
+  .tag.b { background: rgba(42,111,201,0.08); color: var(--accent2); border: 1px solid rgba(42,111,201,0.25); }
+  .tag.g { background: rgba(42,138,62,0.08); color: var(--accent3); border: 1px solid rgba(42,138,62,0.25); }
+
+  /* ACCORDION */
+  .accordion { margin-bottom: 10px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .acc-header {
+    padding: 14px 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    transition: background 0.2s;
+    user-select: none;
+  }
+  .acc-header:hover { background: var(--surface2); }
+  .acc-arrow { color: var(--text-dim); font-size: 11px; transition: transform 0.2s; }
+  .acc-header.open .acc-arrow { transform: rotate(90deg); }
+  .acc-body { display: none; padding: 16px 18px; background: var(--surface2); font-size: 13.5px; color: var(--text-muted); line-height: 1.8; border-top: 1px solid var(--border); }
+  .acc-body.show { display: block; }
+  .acc-body ul { padding-left: 18px; }
+  .acc-body li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="badge">📖 Library Science · 정사서 2급</div>
+    <h1>분류론 <span>핵심 힌트집</span></h1>
+    <p>KDC · DDC · 분류 원리 · 목록·분류 비교 | 사서직 시험 대비</p>
+  </header>
+
+  <!-- NAV -->
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showSection('s1', this)">🧭 분류 원리</button>
+    <button class="nav-tab" onclick="showSection('s2', this)">📘 KDC</button>
+    <button class="nav-tab" onclick="showSection('s3', this)">📗 DDC</button>
+    <button class="nav-tab" onclick="showSection('s4', this)">⚖️ 비교</button>
+    <button class="nav-tab" onclick="showSection('s5', this)">✅ 퀴즈</button>
+  </div>
+
+  <!-- SECTION 1: 분류 원리 -->
+  <div class="section active" id="s1">
+    <div class="section-title"><span class="dot" style="background:var(--accent1)"></span>분류의 기본 원리</div>
+
+    <div class="cards">
+      <div class="card yellow">
+        <div class="card-label">CONCEPT</div>
+        <h3>📌 분류의 정의</h3>
+        <p>공통 특성에 따라 <span class="kw">집합을 구분</span>하고 배열하는 지식 조직 행위.<br>
+        도서관에서 분류란 <span class="kw">자료에 기호(번호)를 부여</span>하여 주제별로 조직하는 것.</p>
+      </div>
+      <div class="card blue">
+        <div class="card-label">3 TYPES</div>
+        <h3>🗂️ 분류의 3유형</h3>
+        <ul>
+          <li><span class="kw b">인위적 분류</span>: 임의 기준 (색깔·크기 등)</li>
+          <li><span class="kw b">자연적 분류</span>: 본질적 성질 기준</li>
+          <li><span class="kw b">인공적 분류</span>: 목적에 따른 설계 (도서관 분류)</li>
+        </ul>
+      </div>
+      <div class="card green">
+        <div class="card-label">PRINCIPLE</div>
+        <h3>⚖️ 분류 원칙 3가지</h3>
+        <ul>
+          <li><span class="kw g">상호배타성</span>: 같은 항목이 두 곳에 포함 안 됨</li>
+          <li><span class="kw g">전체포괄성</span>: 모든 자료를 빠짐없이 수용</li>
+          <li><span class="kw g">논리적 일관성</span>: 동일 원칙 적용</li>
+        </ul>
+      </div>
+      <div class="card red">
+        <div class="card-label">NOTATION</div>
+        <h3>🔢 기호법(Notation)</h3>
+        <ul>
+          <li><span class="kw r">순수기호법</span>: 아라비아 숫자만 (KDC, DDC)</li>
+          <li><span class="kw r">혼합기호법</span>: 숫자+문자 (LC, BC)</li>
+          <li>기호의 조건: 간결성·신축성·순서성·기억성</li>
+        </ul>
+      </div>
+      <div class="card purple">
+        <div class="card-label">ENUMERATION</div>
+        <h3>📋 열거식 vs 분석합성식</h3>
+        <ul>
+          <li><span class="kw p">열거식</span>: 모든 주제를 미리 나열 (DDC)</li>
+          <li><span class="kw p">분석합성식</span>: 패싯 조합으로 번호 생성 (UDC, CC)</li>
+          <li>KDC는 기본 열거 + 보조표 조합 혼합형</li>
+        </ul>
+      </div>
+      <div class="card yellow">
+        <div class="card-label">PURPOSE</div>
+        <h3>🎯 분류의 목적</h3>
+        <ul>
+          <li>주제별 <span class="kw">집중·인접 배열</span></li>
+          <li>유사 주제 자료 <span class="kw">발견 용이</span></li>
+          <li>관련 주제 간 <span class="kw">계층 관계</span> 표시</li>
+          <li>자료 <span class="kw">검색·이용 효율화</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 분류 순서 accordion -->
+    <div class="section-title" style="margin-top:8px"><span class="dot" style="background:var(--accent2)"></span>분류 작업 순서</div>
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">① 주제 분석 (Subject Analysis) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <ul>
+          <li>자료의 <strong>주제(subject)</strong>를 파악: 제목, 목차, 서문, 본문 검토</li>
+          <li><strong>주제 진술문 작성</strong>: "이 책은 [누가][무엇을][어디서][어떻게] 다룬다"</li>
+          <li>주제 외 <strong>형식(form), 지역, 시대</strong> 등 부속 특성 파악</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">② 분류표 적용 (Classification Schedule) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <ul>
+          <li>분류표 본표에서 가장 <strong>구체적인(특수한) 항목</strong>부터 검색</li>
+          <li>해당 항목 없으면 <strong>상위 개념</strong>으로 올라감</li>
+          <li>보조표(지역, 언어, 형식 등) 적용 여부 결정</li>
+          <li>복수 주제의 경우: <strong>더 구체적인 쪽, 더 많은 비중</strong> 우선</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">③ 분류번호 부여 & 도서기호 (Book Number) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <ul>
+          <li>분류번호 확정 후 <strong>도서기호</strong>(저자기호+권차기호 등) 결합</li>
+          <li>청구기호 = <strong>분류번호 + 도서기호</strong></li>
+          <li>도서기호법: 커터표, 커터-샌본표, 가나다순 등</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 분류의 계층 마인드맵 -->
+    <div class="section-title" style="margin-top:32px"><span class="dot" style="background:var(--accent3)"></span>분류 계층 구조</div>
+    <div class="card" style="padding:24px">
+      <div class="mind-tree">
+        <div class="mind-root">🌐 지식 전체</div>
+        <div class="mind-branch">
+          <div class="mind-branch-title">류(Class) — 최상위 10개</div>
+          <div class="mind-leaf">KDC: 0총류~9역사·지리</div>
+          <div class="mind-leaf">DDC: 000일반~900역사</div>
+        </div>
+        <div class="mind-branch">
+          <div class="mind-branch-title">강(Division) — 각 류를 10분</div>
+          <div class="mind-leaf">예) 300사회과학 → 310통계학, 320정치학...</div>
+        </div>
+        <div class="mind-branch">
+          <div class="mind-branch-title">목(Section) — 각 강을 10분</div>
+          <div class="mind-leaf">예) 370교육 → 371교육 원리, 372초등교육...</div>
+        </div>
+        <div class="mind-branch">
+          <div class="mind-branch-title">세목 이하 — 소수점 이하 전개</div>
+          <div class="mind-leaf">소수점(.) 이후 한 자씩 세분</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: KDC -->
+  <div class="section" id="s2">
+    <div class="section-title"><span class="dot" style="background:var(--accent2)"></span>KDC (한국십진분류법)</div>
+
+    <div class="cards">
+      <div class="card blue">
+        <div class="card-label">OVERVIEW</div>
+        <h3>📌 KDC 기본 정보</h3>
+        <ul>
+          <li>현행: <span class="kw b">제6판</span> (2013, 한국도서관협회)</li>
+          <li>DDC를 <span class="kw b">한국 실정에 맞게</span> 수정·확장</li>
+          <li>기호: <span class="kw b">아라비아 숫자</span> (순수기호)</li>
+          <li>10진 위계 구조 (3자리 기본 + 소수점)</li>
+        </ul>
+      </div>
+      <div class="card yellow">
+        <div class="card-label">STRUCTURE</div>
+        <h3>🏗️ KDC 10대 주류</h3>
+        <ul>
+          <li><span class="kw">000</span> 총류</li>
+          <li><span class="kw">100</span> 철학·심리학·윤리학</li>
+          <li><span class="kw">200</span> 종교</li>
+          <li><span class="kw">300</span> 사회과학</li>
+          <li><span class="kw">400</span> 자연과학</li>
+          <li><span class="kw">500</span> 기술과학</li>
+          <li><span class="kw">600</span> 예술</li>
+          <li><span class="kw">700</span> 언어</li>
+          <li><span class="kw">800</span> 문학</li>
+          <li><span class="kw">900</span> 역사·지리·전기</li>
+        </ul>
+      </div>
+      <div class="card green">
+        <div class="card-label">TABLES</div>
+        <h3>📋 KDC 보조표</h3>
+        <ul>
+          <li><span class="kw g">표1</span> 표준구분 (Form divisions)</li>
+          <li><span class="kw g">표2</span> 지역구분</li>
+          <li><span class="kw g">표3</span> 언어공통구분</li>
+          <li><span class="kw g">표4</span> 언어구분</li>
+          <li><span class="kw g">표5</span> 문학형식구분</li>
+          <li><span class="kw g">표6</span> 문학언어구분</li>
+          <li>각 보조표는 <span class="kw g">단독 사용 불가</span>, 본표에 부가</li>
+        </ul>
+      </div>
+      <div class="card red">
+        <div class="card-label">SPECIAL</div>
+        <h3>⭐ KDC 특이사항</h3>
+        <ul>
+          <li><span class="kw r">한국 우선</span>: 700~800에서 한국어·한국문학 우대 (711, 811)</li>
+          <li>종교(200): <span class="kw r">불교 중시</span> (220), 기독교(280)</li>
+          <li>문학(800): 언어별 세분 → 형식별 세분</li>
+          <li>역사(900): 한국사 우선 배치 (911)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:8px"><span class="dot" style="background:var(--accent2)"></span>KDC 표준구분표 (표1)</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>기호</th><th>표준구분 명칭</th><th>예시 적용</th></tr></thead>
+        <tbody>
+          <tr><td><strong>-01</strong></td><td>이론·철학</td><td>경영이론 325.01</td></tr>
+          <tr><td><strong>-02</strong></td><td>편람·편집</td><td>의학편람 510.02</td></tr>
+          <tr><td><strong>-03</strong></td><td>사전·사전류</td><td>법학사전 360.03</td></tr>
+          <tr><td><strong>-04</strong></td><td>에세이·강연</td><td>철학에세이 100.04</td></tr>
+          <tr><td><strong>-05</strong></td><td>연속간행물</td><td>화학저널 430.05</td></tr>
+          <tr><td><strong>-06</strong></td><td>단체·협회</td><td>교육단체 370.06</td></tr>
+          <tr><td><strong>-07</strong></td><td>연구·실험</td><td>생물실험 470.07</td></tr>
+          <tr><td><strong>-08</strong></td><td>총서·전집</td><td>문학전집 800.08</td></tr>
+          <tr><td><strong>-09</strong></td><td>역사·지리</td><td>음악사 670.09</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">📌 KDC 분류번호 부여 원칙 <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <ul>
+          <li><strong>주제 우선 원칙</strong>: 형식보다 주제를 우선 분류</li>
+          <li><strong>구체성 원칙</strong>: 가능한 한 가장 특수한(구체적인) 번호 부여</li>
+          <li><strong>복수 주제 처리</strong>: ① 더 많이 다룬 주제 ② 앞에 배치된 주제 ③ 더 구체적 주제</li>
+          <li><strong>전기(傳記)</strong>: 개인전기 → 인물의 전문분야 OR 990(전기) 선택적</li>
+          <li><strong>소수점 이하 전개</strong>: 최소 3자리 유지, 소수점 이하는 의미 있는 범위만</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: DDC -->
+  <div class="section" id="s3">
+    <div class="section-title"><span class="dot" style="background:var(--accent3)"></span>DDC (듀이십진분류법)</div>
+
+    <div class="cards">
+      <div class="card green">
+        <div class="card-label">OVERVIEW</div>
+        <h3>📌 DDC 기본 정보</h3>
+        <ul>
+          <li>창안자: <span class="kw g">멜빌 듀이(Melvil Dewey)</span>, 1876년</li>
+          <li>현행: <span class="kw g">제23판</span> (2011)</li>
+          <li>전 세계 <span class="kw g">135개국</span> 이상 사용</li>
+          <li>구성: <strong>본표 + 7개 보조표</strong></li>
+          <li>기호: 아라비아 숫자 (3자리 이상 + 소수점)</li>
+        </ul>
+      </div>
+      <div class="card yellow">
+        <div class="card-label">10 CLASSES</div>
+        <h3>🏗️ DDC 10대 주류</h3>
+        <ul>
+          <li><span class="kw">000</span> Computer Science, Info., General</li>
+          <li><span class="kw">100</span> Philosophy & Psychology</li>
+          <li><span class="kw">200</span> Religion</li>
+          <li><span class="kw">300</span> Social Sciences</li>
+          <li><span class="kw">400</span> Language</li>
+          <li><span class="kw">500</span> Natural Sciences & Mathematics</li>
+          <li><span class="kw">600</span> Technology</li>
+          <li><span class="kw">700</span> Arts & Recreation</li>
+          <li><span class="kw">800</span> Literature</li>
+          <li><span class="kw">900</span> History & Geography</li>
+        </ul>
+      </div>
+      <div class="card blue">
+        <div class="card-label">7 TABLES</div>
+        <h3>📋 DDC 7개 보조표</h3>
+        <ul>
+          <li><span class="kw b">Table 1</span> 표준세구분 (Standard Subdivisions)</li>
+          <li><span class="kw b">Table 2</span> 지역·장소</li>
+          <li><span class="kw b">Table 3</span> 문학 하위구분</li>
+          <li><span class="kw b">Table 4</span> 특정언어 하위구분</li>
+          <li><span class="kw b">Table 5</span> 민족·국적 집단</li>
+          <li><span class="kw b">Table 6</span> 언어</li>
+          <li><span class="kw b">Table 7</span> 집단 개인</li>
+        </ul>
+      </div>
+      <div class="card purple">
+        <div class="card-label">FEATURE</div>
+        <h3>⭐ DDC 특징</h3>
+        <ul>
+          <li><span class="kw p">기독교 중심</span>: 200종교에서 기독교(280+) 우대</li>
+          <li><span class="kw p">영어·서구문학</span> 우선 배치</li>
+          <li>Number building: 보조표 조합으로 번호 확장</li>
+          <li>Relative Index로 다양한 관점의 주제 접근</li>
+          <li>Phoenix Schedule: 일부 강(division) 전면 개정</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:8px"><span class="dot" style="background:var(--accent3)"></span>DDC Number Building 예시</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>주제</th><th>본표</th><th>+보조표</th><th>최종번호</th></tr></thead>
+        <tbody>
+          <tr><td><strong>영어 사전</strong></td><td>423 (영어)</td><td>T4 -3 사전</td><td><strong>423</strong></td></tr>
+          <tr><td><strong>한국역사 사전</strong></td><td>951 (한국역사)</td><td>T1 -03 사전</td><td><strong>951.003</strong></td></tr>
+          <tr><td><strong>미국의 도서관</strong></td><td>027 (도서관)</td><td>T2 -73 미국</td><td><strong>027.073</strong></td></tr>
+          <tr><td><strong>셰익스피어 희곡</strong></td><td>822 (영문학·희곡)</td><td>T3 -2 희곡</td><td><strong>822.33</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">📌 DDC vs KDC 주류 번호 비교 <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <ul>
+          <li><strong>자연과학</strong>: DDC 500 / KDC 400 (번호 다름)</li>
+          <li><strong>기술·공학</strong>: DDC 600 / KDC 500</li>
+          <li><strong>예술</strong>: DDC 700 / KDC 600</li>
+          <li><strong>언어</strong>: DDC 400 / KDC 700 (완전히 다른 위치)</li>
+          <li><strong>문학</strong>: DDC 800 / KDC 800 (동일)</li>
+          <li><strong>철학</strong>: DDC 100 / KDC 100 (동일)</li>
+          <li>⚠️ KDC는 DDC의 400언어와 700예술 위치를 <strong>서로 바꾼</strong> 구조!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: 비교 -->
+  <div class="section" id="s4">
+    <div class="section-title"><span class="dot" style="background:var(--accent4)"></span>분류법 비교 & 기타 분류법</div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>KDC</th>
+            <th>DDC</th>
+            <th>LC</th>
+            <th>UDC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>창시/주관</strong></td>
+            <td>한국도서관협회</td>
+            <td>멜빌 듀이 / OCLC</td>
+            <td>미의회도서관</td>
+            <td>국제연합</td>
+          </tr>
+          <tr>
+            <td><strong>기호법</strong></td>
+            <td>순수 숫자</td>
+            <td>순수 숫자</td>
+            <td>혼합 (문자+숫자)</td>
+            <td>혼합 (특수기호)</td>
+          </tr>
+          <tr>
+            <td><strong>유형</strong></td>
+            <td>열거+분석합성</td>
+            <td>열거식</td>
+            <td>열거식</td>
+            <td>분석합성식</td>
+          </tr>
+          <tr>
+            <td><strong>언어 우대</strong></td>
+            <td>한국어</td>
+            <td>영어</td>
+            <td>영어</td>
+            <td>중립적</td>
+          </tr>
+          <tr>
+            <td><strong>현행판</strong></td>
+            <td>제6판(2013)</td>
+            <td>제23판(2011)</td>
+            <td>계속 갱신</td>
+            <td>계속 갱신</td>
+          </tr>
+          <tr>
+            <td><strong>세계 보급</strong></td>
+            <td>국내 주요 도서관</td>
+            <td>전 세계 135+국</td>
+            <td>학술도서관 강세</td>
+            <td>유럽·특수도서관</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-title" style="margin-top:16px"><span class="dot" style="background:var(--accent4)"></span>기타 주요 분류법</div>
+    <div class="cards">
+      <div class="card red">
+        <div class="card-label">LC CLASS</div>
+        <h3>🏛️ LC분류법</h3>
+        <ul>
+          <li>미국의회도서관 자체 사용</li>
+          <li>21개 주류 (A~Z 문자)</li>
+          <li>대학도서관·연구기관 선호</li>
+          <li>혼합기호: 문자+숫자 조합</li>
+          <li>세분화 매우 상세</li>
+        </ul>
+      </div>
+      <div class="card purple">
+        <div class="card-label">CC</div>
+        <h3>🌐 콜론분류법(CC)</h3>
+        <ul>
+          <li>랑가나탄(Ranganathan) 창안</li>
+          <li><span class="kw p">분석합성식</span>의 원조</li>
+          <li>5패싯: <span class="kw p">PMEST</span></li>
+          <li>P=개성, M=질료, E=에너지</li>
+          <li>S=공간, T=시간</li>
+          <li>콜론(:)으로 패싯 연결</li>
+        </ul>
+      </div>
+      <div class="card blue">
+        <div class="card-label">UDC</div>
+        <h3>🔗 UDC (국제십진분류법)</h3>
+        <ul>
+          <li>DDC 기반으로 발전, 분석합성 강화</li>
+          <li>특수기호로 복합 표현 가능</li>
+          <li>기호: 숫자 + 특수부호(+, /, ::, =, (0), 등)</li>
+          <li>과학기술·특수 도서관에 적합</li>
+        </ul>
+      </div>
+      <div class="card yellow">
+        <div class="card-label">RANGANATHAN</div>
+        <h3>🧠 랑가나탄 5법칙</h3>
+        <ul>
+          <li>① 책은 이용하기 위한 것</li>
+          <li>② 모든 독자에게 그의 책을</li>
+          <li>③ 모든 책에 그의 독자를</li>
+          <li>④ 독자의 시간을 절약하라</li>
+          <li>⑤ 도서관은 성장하는 유기체</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:8px"><span class="dot" style="background:var(--accent4)"></span>분류와 목록의 비교</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>분류(Classification)</th><th>목록(Catalogue)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>목적</strong></td><td>자료의 물리적 배열</td><td>자료의 기술적 기록</td></tr>
+          <tr><td><strong>결과물</strong></td><td>청구기호(분류기호)</td><td>목록(카드/MARC/OPAC)</td></tr>
+          <tr><td><strong>접근점</strong></td><td>주제 접근 (1개)</td><td>다중 접근 (저자·서명·주제)</td></tr>
+          <tr><td><strong>주제 표현</strong></td><td>분류기호로 표현</td><td>주제명표목으로 표현</td></tr>
+          <tr><td><strong>특성</strong></td><td>계층적, 선형 배열</td><td>다차원 접근 가능</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 5: 퀴즈 -->
+  <div class="section" id="s5">
+    <div class="section-title"><span class="dot" style="background:var(--accent5)"></span>실전 확인 퀴즈</div>
+
+    <div class="score-bar">
+      <div class="score-count" id="score">0</div>
+      <div class="score-label">/ <span id="total">0</span> 정답</div>
+    </div>
+
+    <div id="quiz-area"></div>
+  </div>
+
+</div>
+
+<script>
+// Tab navigation
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Accordion
+function toggleAcc(header) {
+  const body = header.nextElementSibling;
+  const isOpen = header.classList.contains('open');
+  header.classList.toggle('open');
+  body.classList.toggle('show');
+}
+
+// Quiz data
+const quizzes = [
+  {
+    q: "KDC 제6판에서 '언어'에 해당하는 주류 번호는?",
+    opts: ["400", "500", "600", "700"],
+    ans: 3,
+    explain: "KDC에서 언어는 700번대입니다. DDC는 400번대로 다릅니다. KDC는 DDC의 400(언어)과 700(예술) 위치를 서로 바꾼 구조입니다."
+  },
+  {
+    q: "듀이십진분류법(DDC)을 창안한 인물은?",
+    opts: ["랑가나탄", "멜빌 듀이", "카터", "블리스"],
+    ans: 1,
+    explain: "DDC는 멜빌 듀이(Melvil Dewey)가 1876년에 창안했습니다. 현재는 OCLC에서 관리하며 제23판이 최신입니다."
+  },
+  {
+    q: "분류의 기본 원칙 중 '모든 자료가 빠짐없이 분류될 수 있어야 한다'는 원칙은?",
+    opts: ["상호배타성", "논리적 일관성", "전체포괄성", "계층적 구조성"],
+    ans: 2,
+    explain: "전체포괄성(Exhaustiveness)은 분류 체계가 분류되어야 할 모든 자료를 수용할 수 있어야 한다는 원칙입니다."
+  },
+  {
+    q: "콜론분류법(CC)의 5패싯 PMEST에서 'E'에 해당하는 것은?",
+    opts: ["에너지(Energy)", "환경(Environment)", "영역(Extension)", "사건(Event)"],
+    ans: 0,
+    explain: "PMEST: P=개성(Personality), M=질료(Matter), E=에너지(Energy), S=공간(Space), T=시간(Time). 랑가나탄이 창안한 분석합성식 분류법의 핵심 개념입니다."
+  },
+  {
+    q: "KDC 보조표 중 '표준구분'에 해당하는 것은?",
+    opts: ["표1", "표2", "표3", "표4"],
+    ans: 0,
+    explain: "KDC 표1은 표준구분(Standard Subdivisions)으로, 자료의 형식적 특성을 나타냅니다. -01(이론), -03(사전), -05(연속간행물) 등이 포함됩니다."
+  },
+  {
+    q: "열거식 분류법의 특징으로 가장 적절한 것은?",
+    opts: [
+      "패싯 조합으로 번호를 생성한다",
+      "모든 주제를 분류표에 미리 나열한다",
+      "콜론(:)을 이용해 주제를 결합한다",
+      "특수기호로 복합 주제를 표현한다"
+    ],
+    ans: 1,
+    explain: "열거식 분류법은 분류표에 가능한 모든 주제를 미리 열거합니다. DDC가 대표적입니다. 반면 분석합성식은 CC, UDC처럼 패싯을 조합하여 번호를 생성합니다."
+  },
+  {
+    q: "KDC에서 종교(200번대) 배치 시 가장 많은 번호를 할당받은 종교는?",
+    opts: ["기독교", "이슬람교", "불교", "힌두교"],
+    ans: 2,
+    explain: "KDC는 한국 실정을 반영하여 불교(220)에 많은 번호를 할당합니다. DDC는 기독교를 중심으로 배치한 것과 대비됩니다."
+  },
+  {
+    q: "청구기호의 구성으로 올바른 것은?",
+    opts: [
+      "주제명표목 + 저자기호",
+      "분류기호 + 도서기호",
+      "MARC 필드 + 식별기호",
+      "ISBN + 저자명"
+    ],
+    ans: 1,
+    explain: "청구기호(Call Number) = 분류기호(Classification Number) + 도서기호(Book Number). 도서기호는 커터기호나 저자기호 등이 사용됩니다."
+  },
+  {
+    q: "DDC 현행판(제23판) 기준, 자연과학·수학에 해당하는 주류 번호는?",
+    opts: ["400", "500", "600", "700"],
+    ans: 1,
+    explain: "DDC에서 500번대는 자연과학·수학입니다. KDC에서는 자연과학이 400번대에 위치한다는 점과 혼동하지 않도록 주의하세요."
+  },
+  {
+    q: "분류와 목록의 차이점으로 옳은 것은?",
+    opts: [
+      "분류는 다중 접근점을 제공한다",
+      "목록은 자료의 물리적 배열을 결정한다",
+      "분류는 자료를 주제별로 물리적으로 배열한다",
+      "목록은 분류기호만으로 자료를 검색한다"
+    ],
+    ans: 2,
+    explain: "분류는 자료에 분류기호를 부여하여 주제별 물리적 배열을 결정합니다. 목록은 저자·서명·주제 등 다중 접근점으로 자료를 기술적으로 기록하며, 물리적 배열과 무관합니다."
+  }
+];
+
+let score = 0;
+let answered = 0;
+
+function renderQuiz() {
+  const area = document.getElementById('quiz-area');
+  document.getElementById('total').textContent = quizzes.length;
+  
+  area.innerHTML = quizzes.map((q, i) => `
+    <div class="quiz-card" id="qc-${i}">
+      <div class="quiz-q"><span class="num">Q${i+1}</span>${q.q}</div>
+      <div class="quiz-options">
+        ${q.opts.map((o, j) => `<button class="quiz-opt" onclick="answer(${i},${j})" id="opt-${i}-${j}">① ② ③ ④`.replace(/[①②③④]/g, ['①','②','③','④'][j]) + ` ${o}</button>`).join('')}
+      </div>
+      <div class="quiz-explain" id="exp-${i}">${q.explain}</div>
+    </div>
+  `).join('');
+}
+
+function answer(qi, selected) {
+  const qc = document.getElementById(`qc-${qi}`);
+  if (qc.querySelector('.correct') || qc.querySelector('.wrong')) return; // already answered
+
+  const correct = quizzes[qi].ans;
+  for (let j = 0; j < 4; j++) {
+    const btn = document.getElementById(`opt-${qi}-${j}`);
+    if (btn) btn.disabled = true;
+    if (j === correct) btn && btn.classList.add('correct');
+    else if (j === selected && selected !== correct) btn && btn.classList.add('wrong');
+  }
+
+  if (selected === correct) {
+    score++;
+    document.getElementById('score').textContent = score;
+  }
+  document.getElementById(`exp-${qi}`).classList.add('show');
+  answered++;
+}
+
+renderQuiz();
+
+// Service Worker 등록
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('SW registered'))
+      .catch(err => console.log('SW error', err));
+  });
+}
+</script>
+</body>
+</html>
