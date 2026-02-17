@@ -377,6 +377,8 @@
     <button class="nav-tab" onclick="showSection('s5', this)">✅ 퀴즈</button>
     <button class="nav-tab" onclick="showSection('s6', this)">📖 강목</button>
     <button class="nav-tab" onclick="showSection('s7', this)">📋 조기표</button>
+    <button class="nav-tab" onclick="showSection('s8', this)">📝 도서기호</button>
+    <button class="nav-tab" onclick="showSection('s9', this)">✍️ 서술형</button>
   </div>
 
   <!-- SECTION 1: 분류 원리 -->
@@ -1160,6 +1162,266 @@
 
   </div>
 
+  <!-- SECTION 8: 도서기호법 -->
+  <div class="section" id="s8">
+    <div class="section-title"><span class="dot" style="background:var(--accent1)"></span>도서기호법 5종 완전 정복</div>
+    <div class="card blue" style="margin-bottom:20px;padding:14px 18px">
+      <div style="font-size:12px;color:var(--text-muted);line-height:1.9">
+        💡 단답식 5문제 고정 출제 — 각 기호법에서 1문제씩<br>
+        ⚠️ <strong>소문자·대문자·기본형</strong> 정확히 구별할 것 | 관사(The, A, An) 제외
+      </div>
+    </div>
+
+    <!-- LC 저작용표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">① LC 저작용표 (Library of Congress) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div class="table-wrap"><table>
+          <tr><th>구성</th><th>내용</th><th>예시</th></tr>
+          <tr><td><strong>저자 성 첫 글자</strong></td><td>대문자 1자</td><td>Kim → <strong>K</strong></td></tr>
+          <tr><td><strong>숫자</strong></td><td>LC표에서 배정된 숫자</td><td><strong>495</strong></td></tr>
+          <tr><td><strong>서명 첫 글자</strong></td><td>대문자 1자</td><td>Library → <strong>L</strong></td></tr>
+        </table></div>
+        <div style="margin-top:10px;padding:10px 14px;background:var(--surface2);border-radius:8px;font-size:13px">
+          <strong>결과 예시</strong>: Kim, Chulsoo 저 "Library Science" → <span style="color:var(--accent1);font-weight:700">K495L</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 커터-샌본 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">② 커터-샌본 저작자기호표 (Cutter-Sanborn) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div class="table-wrap"><table>
+          <tr><th>구성</th><th>내용</th><th>주의사항</th></tr>
+          <tr><td><strong>저자 두문자</strong></td><td>성의 첫 1~2글자</td><td>대문자</td></tr>
+          <tr><td><strong>3자리 숫자</strong></td><td>커터-샌본표 배정 숫자</td><td>반드시 3자리</td></tr>
+          <tr><td><strong>서명 첫 글자</strong></td><td>서명 첫 단어 첫 글자</td><td>★ <strong>소문자</strong>, 관사(The/A/An) 제외</td></tr>
+        </table></div>
+        <div style="margin-top:10px;padding:10px 14px;background:var(--surface2);border-radius:8px;font-size:13px">
+          <strong>결과 예시</strong>: Smith 저 "The Library" → <span style="color:var(--accent1);font-weight:700">S642l</span> (관사 The 제외, l은 소문자)
+        </div>
+      </div>
+    </div>
+
+    <!-- 리재철 한글순 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">③ 리재철 한글순 도서기호법 ★ <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div class="table-wrap"><table>
+          <tr><th>구성</th><th>내용</th><th>주의사항</th></tr>
+          <tr><td><strong>문자기호</strong></td><td>저자명 첫 음절의 초성</td><td>한글 자음 기호표 사용</td></tr>
+          <tr><td><strong>숫자기호</strong></td><td>둘째 음절 분석</td><td>★ <strong>기본형</strong> 사용 필수 (받침 무시)</td></tr>
+          <tr><td><strong>서명기호</strong></td><td>서명 첫 글자</td><td>한글 자음 기호</td></tr>
+        </table></div>
+        <div style="margin-top:10px;padding:10px 14px;background:var(--surface2);border-radius:8px;font-size:13px">
+          ⚠️ <strong>기본형 원칙</strong>: 받침이 있어도 기본형(받침 없는 형태)으로 분석<br>
+          예: '김' → 기(기본형) 기준으로 숫자 배정
+        </div>
+      </div>
+    </div>
+
+    <!-- 새연대순 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">④ 새연대순 기호법 ★ <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div class="table-wrap"><table>
+          <tr><th>구성</th><th>내용</th><th>주의사항</th></tr>
+          <tr><td><strong>발행연도</strong></td><td>출판 연도 기준</td><td>★ <strong>1900년대는 끝 2자리만</strong></td></tr>
+          <tr><td><strong>2000년대</strong></td><td>4자리 전체 사용</td><td>2005 → 2005</td></tr>
+          <tr><td><strong>1900년대</strong></td><td>끝 2자리만 사용</td><td>1983 → <strong>83</strong></td></tr>
+        </table></div>
+        <div style="margin-top:10px;padding:10px 14px;background:var(--surface2);border-radius:8px;font-size:13px">
+          <strong>예시</strong>: 1983년 발행 → <span style="color:var(--accent1);font-weight:700">83</span> &nbsp;|&nbsp;
+          2005년 발행 → <span style="color:var(--accent1);font-weight:700">2005</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 브라운 연대순 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">⑤ 브라운 연대순 기호법 ★ <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div class="table-wrap"><table>
+          <tr><th>기준점</th><th>기호</th><th>원리</th></tr>
+          <tr><td><strong>1450년</strong></td><td><strong>aa</strong></td><td>알파벳 소문자 2자 조합</td></tr>
+          <tr><td>1451년</td><td>ab</td><td>aa → ab → ac … → az → ba …</td></tr>
+          <tr><td>순서</td><td>알파벳 순</td><td>뒤로 갈수록 최신</td></tr>
+        </table></div>
+        <div style="margin-top:10px;padding:10px 14px;background:var(--surface2);border-radius:8px;font-size:13px">
+          ⚠️ 반드시 <strong>소문자 2자</strong> 조합 | 1450년 = aa 기준점 암기 필수<br>
+          <strong>예시</strong>: 1450년 → <span style="color:var(--accent1);font-weight:700">aa</span> &nbsp;|&nbsp; 1900년 → 해당 알파벳 2자 계산
+        </div>
+      </div>
+    </div>
+
+    <!-- 조기표 번호 합성 연습 -->
+    <div class="section-title" style="margin-top:32px"><span class="dot" style="background:var(--accent4)"></span>단답식 분류기호 합성 연습</div>
+
+    <div class="card red" style="margin-bottom:12px">
+      <div class="card-label">표준구분표 합성</div>
+      <h3>① 표준구분표 (-0으로 시작, 끝자리 0 삭제)</h3>
+      <div style="font-size:13px;line-height:2.2;color:var(--text-muted)">
+        철학(100) + 사전(-03) = 100 + 03 = <strong style="color:var(--accent1)">103</strong><br>
+        문헌정보학(020) + 연속간행물(-05) = 020 + 05 = <strong style="color:var(--accent1)">020.05</strong><br>
+        교육학(370) + 이론(-01) = 370 + 01 = <strong style="color:var(--accent1)">370.1</strong>
+      </div>
+    </div>
+
+    <div class="card purple" style="margin-bottom:12px">
+      <div class="card-label">지역구분표 합성</div>
+      <h3>② 지역구분표 (지시 없으면 -09 뒤에 부가)</h3>
+      <div style="font-size:13px;line-height:2.2;color:var(--text-muted)">
+        중국의 서예: 640(서예) + -09 + 12(중국) = <strong style="color:var(--accent1)">640.912</strong><br>
+        지시가 있으면: 직접 지역번호 부가
+      </div>
+    </div>
+
+    <div class="card green" style="margin-bottom:12px">
+      <div class="card-label">전주제구분 합성</div>
+      <h3>③ 전주제구분 (016 주제서지 + 주제번호)</h3>
+      <div style="font-size:13px;line-height:2.2;color:var(--text-muted)">
+        정치서지 및 목록: 016 + 340(정치학) = <strong style="color:var(--accent1)">016.34</strong><br>
+        의학서지: 016 + 510(의학) = <strong style="color:var(--accent1)">016.51</strong>
+      </div>
+    </div>
+
+    <div class="card yellow" style="margin-bottom:12px">
+      <div class="card-label">특수주제구분 합성</div>
+      <h3>④ 특수주제구분 (본표 지시에 따라 추출·합성)</h3>
+      <div style="font-size:13px;line-height:2.2;color:var(--text-muted)">
+        종교와 사회문제: 215.82 + [33]4 = <strong style="color:var(--accent1)">215.824</strong><br>
+        ※ [ ] 안의 앞자리 공통부분은 제거하고 뒷부분만 추출하여 합성
+      </div>
+    </div>
+
+    <!-- 핵심 암기 인덱스 -->
+    <div class="card blue">
+      <div class="card-label">★ 최종 암기 인덱스</div>
+      <h3>💡 실수 방지 체크리스트</h3>
+      <ul>
+        <li><strong>끝자리 0 삭제</strong>: 의미 없는 자리채우기 0은 무조건 삭제 (예: 100+03=103, 100.3 아님)</li>
+        <li><strong>피전자 원칙</strong>: 전기·비평서는 저자가 아닌 <strong>피전자(대상 인물)</strong> 기준으로 기호화</li>
+        <li><strong>판·권 표기</strong>: 문제에서 판수·권수 주어지면 기호 끝에 반드시 표기</li>
+        <li><strong>커터-샌본 서명기호</strong>: 반드시 <strong>소문자</strong>, 관사(The·A·An) 제외</li>
+        <li><strong>새연대순 1900년대</strong>: 끝 2자리만 사용 (1983 → 83)</li>
+        <li><strong>브라운 기준점</strong>: 1450년 = aa, 반드시 소문자 2자</li>
+        <li><strong>리재철 기본형</strong>: 받침 있어도 기본형(받침 제거)으로 분석</li>
+        <li><strong>2개 국어 사전</strong>: 표제어(앞 언어) 기준 분류 + 해설어 기호 부가 (영한사전 = 743.1)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- SECTION 9: 서술형 -->
+  <div class="section" id="s9">
+    <div class="section-title"><span class="dot" style="background:var(--accent4)"></span>서술형 완전 정복 (5점)</div>
+    <div class="card red" style="margin-bottom:20px;padding:14px 18px">
+      <div style="font-size:12px;color:var(--text-muted);line-height:1.9">
+        📌 출제 문제: <strong>"저자기호법의 장단점을 수입순, 연대순 기호법과 비교하여 서술하시오."</strong><br>
+        💡 3가지 기호법의 <strong>장점·단점·적합 분야</strong>를 비교 서술하는 것이 핵심
+      </div>
+    </div>
+
+    <!-- 비교표 -->
+    <div class="section-title" style="margin-top:0"><span class="dot" style="background:var(--accent2)"></span>3가지 기호법 비교표</div>
+    <div class="table-wrap" style="margin-bottom:24px"><table>
+      <tr>
+        <th>구분</th>
+        <th>저자기호법</th>
+        <th>수입순기호법</th>
+        <th>연대순기호법</th>
+      </tr>
+      <tr>
+        <td><strong>원리</strong></td>
+        <td>저자명 기준 기호 부여</td>
+        <td>입수(등록) 순서대로 번호 부여</td>
+        <td>발행연도 기준 기호 부여</td>
+      </tr>
+      <tr>
+        <td><strong>장점</strong></td>
+        <td>동일 저자 저작 <strong>군집화</strong> 가능</td>
+        <td>기호 부여가 <strong>가장 단순·간편</strong></td>
+        <td>최신성 유지, <strong>학문 발전 과정</strong> 파악 용이</td>
+      </tr>
+      <tr>
+        <td><strong>단점</strong></td>
+        <td>기호 구성이 <strong>복잡</strong></td>
+        <td>비논리적 배열, <strong>군집화 불가</strong></td>
+        <td>동일 저자 저작이 <strong>분산</strong>됨</td>
+      </tr>
+      <tr>
+        <td><strong>적합 분야</strong></td>
+        <td>일반 도서관</td>
+        <td>소규모·특수 컬렉션</td>
+        <td><strong>과학기술</strong> 분야 특수도서관</td>
+      </tr>
+    </table></div>
+
+    <!-- 모범 답안 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent3)"></span>모범 답안 (그대로 암기)</div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">✍️ 모범 답안 펼치기 (5점 만점 기준) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body" style="line-height:2.0;font-size:14px">
+        <p style="margin-bottom:12px">
+          도서기호법은 동일 분류기호를 가진 자료를 세부 배열하기 위해 사용하며,
+          크게 <strong>저자기호법, 수입순기호법, 연대순기호법</strong>으로 구분된다.
+        </p>
+        <p style="margin-bottom:12px">
+          <strong>저자기호법</strong>은 저자명을 기준으로 기호를 부여하는 방식으로,
+          동일 저자의 저작을 한 곳에 집중(군집화)시킬 수 있어 이용자의 저자별 검색에 유리하다.
+          그러나 기호 구성 방식이 복잡하여 부여에 시간이 소요된다는 단점이 있다.
+        </p>
+        <p style="margin-bottom:12px">
+          <strong>수입순기호법</strong>은 자료의 입수 순서대로 일련번호를 부여하는 방식으로,
+          기호 부여가 가장 단순하고 간편하다는 장점이 있다.
+          그러나 배열이 비논리적이어서 체계적인 군집화가 불가능하며,
+          이용자가 주제별·저자별로 자료를 탐색하기 어렵다는 단점이 있다.
+        </p>
+        <p style="margin-bottom:12px">
+          <strong>연대순기호법</strong>은 자료의 발행연도를 기준으로 기호를 부여하는 방식으로,
+          자료의 최신성을 쉽게 파악할 수 있고 특정 학문 분야의 발전 과정을 시간 순으로
+          확인할 수 있어 과학기술 분야 특수도서관에 적합하다.
+          그러나 동일 저자의 저작이 시기별로 분산되어 저자별 집중 배열이 어렵다는 단점이 있다.
+        </p>
+        <p>
+          결론적으로, 일반 도서관에서는 <strong>저자기호법</strong>이 가장 널리 활용되며,
+          자료의 특성과 이용자 요구에 따라 적절한 기호법을 선택하는 것이 바람직하다.
+        </p>
+      </div>
+    </div>
+
+    <!-- 핵심 키워드 -->
+    <div class="card green" style="margin-top:20px">
+      <div class="card-label">★ 키워드 암기</div>
+      <h3>✅ 답안에 반드시 들어가야 할 키워드</h3>
+      <ul>
+        <li><strong>저자기호법</strong>: 군집화(집중) / 복잡 / 일반 도서관</li>
+        <li><strong>수입순기호법</strong>: 단순·간편 / 비논리적 / 군집화 불가</li>
+        <li><strong>연대순기호법</strong>: 최신성 / 학문 발전 과정 / 과학기술 / 분산</li>
+      </ul>
+    </div>
+
+    <!-- 답안 작성 연습 -->
+    <div class="section-title" style="margin-top:28px"><span class="dot" style="background:var(--accent5)"></span>직접 써보기 연습란</div>
+    <div style="background:var(--surface);border:1.5px dashed var(--border);border-radius:12px;padding:20px;margin-bottom:16px">
+      <div style="font-size:13px;color:var(--text-dim);margin-bottom:12px">
+        📝 [문제] 저자기호법의 장단점을 수입순, 연대순 기호법과 비교하여 서술하시오. (5점)
+      </div>
+      <textarea style="
+        width:100%;min-height:160px;background:var(--bg);
+        border:1px solid var(--border);border-radius:8px;
+        padding:12px;font-family:inherit;font-size:13px;
+        color:var(--text);resize:vertical;line-height:1.8;
+      " placeholder="여기에 직접 답안을 작성해 보세요..."></textarea>
+      <div style="font-size:11px;color:var(--text-dim);margin-top:6px">
+        ↑ 위 모범 답안을 참고하지 않고 먼저 써본 후 비교해보세요
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
 <script>
@@ -1180,107 +1442,143 @@ function toggleAcc(header) {
 }
 
 // Quiz data
-const quizzes = [
-  {
-    q: "KDC 제6판에서 '언어'에 해당하는 주류 번호는?",
-    opts: ["400", "500", "600", "700"],
-    ans: 3,
-    explain: "KDC에서 언어는 700번대입니다. DDC는 400번대로 다릅니다. KDC는 DDC의 400(언어)과 700(예술) 위치를 서로 바꾼 구조입니다."
-  },
-  {
-    q: "듀이십진분류법(DDC)을 창안한 인물은?",
-    opts: ["랑가나탄", "멜빌 듀이", "카터", "블리스"],
-    ans: 1,
-    explain: "DDC는 멜빌 듀이(Melvil Dewey)가 1876년에 창안했습니다. 현재는 OCLC에서 관리하며 제23판이 최신입니다."
-  },
-  {
-    q: "분류의 기본 원칙 중 '모든 자료가 빠짐없이 분류될 수 있어야 한다'는 원칙은?",
-    opts: ["상호배타성", "논리적 일관성", "전체포괄성", "계층적 구조성"],
-    ans: 2,
-    explain: "전체포괄성(Exhaustiveness)은 분류 체계가 분류되어야 할 모든 자료를 수용할 수 있어야 한다는 원칙입니다."
-  },
-  {
-    q: "콜론분류법(CC)의 5패싯 PMEST에서 'E'에 해당하는 것은?",
-    opts: ["에너지(Energy)", "환경(Environment)", "영역(Extension)", "사건(Event)"],
-    ans: 0,
-    explain: "PMEST: P=개성(Personality), M=질료(Matter), E=에너지(Energy), S=공간(Space), T=시간(Time). 랑가나탄이 창안한 분석합성식 분류법의 핵심 개념입니다."
-  },
-  {
-    q: "KDC 보조표 중 '표준구분'에 해당하는 것은?",
-    opts: ["표1", "표2", "표3", "표4"],
-    ans: 0,
-    explain: "KDC 표1은 표준구분(Standard Subdivisions)으로, 자료의 형식적 특성을 나타냅니다. -01(이론), -03(사전), -05(연속간행물) 등이 포함됩니다."
-  },
-  {
-    q: "열거식 분류법의 특징으로 가장 적절한 것은?",
-    opts: [
-      "패싯 조합으로 번호를 생성한다",
-      "모든 주제를 분류표에 미리 나열한다",
-      "콜론(:)을 이용해 주제를 결합한다",
-      "특수기호로 복합 주제를 표현한다"
-    ],
-    ans: 1,
-    explain: "열거식 분류법은 분류표에 가능한 모든 주제를 미리 열거합니다. DDC가 대표적입니다. 반면 분석합성식은 CC, UDC처럼 패싯을 조합하여 번호를 생성합니다."
-  },
-  {
-    q: "KDC에서 종교(200번대) 배치 시 가장 많은 번호를 할당받은 종교는?",
-    opts: ["기독교", "이슬람교", "불교", "힌두교"],
-    ans: 2,
-    explain: "KDC는 한국 실정을 반영하여 불교(220)에 많은 번호를 할당합니다. DDC는 기독교를 중심으로 배치한 것과 대비됩니다."
-  },
-  {
-    q: "청구기호의 구성으로 올바른 것은?",
-    opts: [
-      "주제명표목 + 저자기호",
-      "분류기호 + 도서기호",
-      "MARC 필드 + 식별기호",
-      "ISBN + 저자명"
-    ],
-    ans: 1,
-    explain: "청구기호(Call Number) = 분류기호(Classification Number) + 도서기호(Book Number). 도서기호는 커터기호나 저자기호 등이 사용됩니다."
-  },
-  {
-    q: "DDC 현행판(제23판) 기준, 자연과학·수학에 해당하는 주류 번호는?",
-    opts: ["400", "500", "600", "700"],
-    ans: 1,
-    explain: "DDC에서 500번대는 자연과학·수학입니다. KDC에서는 자연과학이 400번대에 위치한다는 점과 혼동하지 않도록 주의하세요."
-  },
-  {
-    q: "분류와 목록의 차이점으로 옳은 것은?",
-    opts: [
-      "분류는 다중 접근점을 제공한다",
-      "목록은 자료의 물리적 배열을 결정한다",
-      "분류는 자료를 주제별로 물리적으로 배열한다",
-      "목록은 분류기호만으로 자료를 검색한다"
-    ],
-    ans: 2,
-    explain: "분류는 자료에 분류기호를 부여하여 주제별 물리적 배열을 결정합니다. 목록은 저자·서명·주제 등 다중 접근점으로 자료를 기술적으로 기록하며, 물리적 배열과 무관합니다."
-  }
+// ===== 퀴즈 전체 pool (40문제) =====
+const QUIZ_POOL = [
+  // ── KDC 주류·강목 ──
+  { q:"KDC 제6판에서 '언어'에 해당하는 주류 번호는?", opts:["400","500","600","700"], ans:3,
+    explain:"KDC 700=언어. DDC는 400=언어로 서로 위치가 다릅니다. KDC는 DDC 400(언어)↔700(예술) 위치를 교환했습니다." },
+  { q:"KDC에서 '자연과학'은 몇 번대인가?", opts:["300","400","500","600"], ans:1,
+    explain:"KDC 400=자연과학. DDC는 500=자연과학. 시험에서 KDC↔DDC 번호 교환이 자주 출제됩니다." },
+  { q:"KDC 200번대(종교)에서 가장 많은 번호를 할당받은 종교는?", opts:["기독교","이슬람교","불교","유교"], ans:2,
+    explain:"KDC는 한국 실정 반영 → 불교(220)에 많은 번호 부여. DDC는 기독교 중심 배치와 대조됩니다." },
+  { q:"KDC 020번은?", opts:["도서학·서지학","문헌정보학","백과사전","일반학회"], ans:1,
+    explain:"020=문헌정보학(Library & Information Science). 사서직 시험에서 가장 자주 나오는 번호입니다." },
+  { q:"KDC에서 '역사'는 몇 번대인가?", opts:["700","800","900","600"], ans:2,
+    explain:"KDC 900=역사·지리·전기. DDC도 900=역사·지리로 동일합니다." },
+  { q:"KDC 한국어(710)의 세부 목 중 '사전'에 해당하는 것은?", opts:["711","712","713","714"], ans:2,
+    explain:"표3(언어공통구분) -3=사전. 710(한국어)+(-3)=713 한국어사전." },
+  { q:"KDC 810번은 무엇인가?", opts:["중국문학","한국문학","일본문학","영미문학"], ans:1,
+    explain:"800번대=문학, 810=한국문학. 문학형식구분(표4): 811=한국시, 812=한국희곡, 813=한국소설." },
+  { q:"KDC에서 '사회학·사회문제'에 해당하는 강(綱)은?", opts:["340","350","360","370"], ans:2,
+    explain:"360=사회학·사회문제. 350=행정학, 370=교육학과 구별해야 합니다." },
+  { q:"KDC 511번이 의미하는 것은?", opts:["농업","기초의학","임상의학","내과학"], ans:1,
+    explain:"510=의학, 511=기초의학(해부학·생리학 등). 512=임상의학, 513=내과학." },
+  { q:"KDC에서 한국사(韓國史)의 분류기호는?", opts:["900","910","911","912"], ans:2,
+    explain:"900=역사, 910=아시아역사, 911=한국사. 한국 우대 항목 중 하나입니다." },
+
+  // ── DDC ──
+  { q:"DDC를 창안한 인물은?", opts:["랑가나탄","멜빌 듀이","카터","블리스"], ans:1,
+    explain:"Melvil Dewey가 1876년 창안. 현재 OCLC 관리, 제23판이 최신입니다." },
+  { q:"DDC 현행판(제23판)에서 자연과학·수학은 몇 번대인가?", opts:["400","500","600","700"], ans:1,
+    explain:"DDC 500=자연과학·수학. KDC는 400=자연과학으로 위치가 다릅니다." },
+  { q:"DDC에서 '언어'에 해당하는 주류 번호는?", opts:["300","400","500","700"], ans:1,
+    explain:"DDC 400=언어. KDC는 700=언어로 서로 교환된 구조입니다." },
+  { q:"DDC 200번대에서 가장 많은 번호를 가진 종교는?", opts:["불교","이슬람교","유교","기독교(개신교)"], ans:3,
+    explain:"DDC는 서양·기독교 중심 → 200번대의 대부분이 기독교(개신교) 세분. KDC 불교 중심과 대조됩니다." },
+  { q:"DDC 보조표 중 '언어·민족별 구분'은 몇 번 표인가?", opts:["표3","표4","표5","표6"], ans:2,
+    explain:"DDC 표5=언어·민족별구분(Racial, Ethnic, National Groups). DDC는 총 7개 보조표를 사용합니다." },
+  { q:"DDC에서 기술과학(Technology)의 주류 번호는?", opts:["500","600","700","800"], ans:1,
+    explain:"DDC 600=기술과학. KDC도 500=기술과학으로 이 부분은 동일합니다." },
+
+  // ── 분류 원리·이론 ──
+  { q:"'모든 자료가 빠짐없이 분류될 수 있어야 한다'는 원칙은?", opts:["상호배타성","논리적 일관성","전체포괄성","계층성"], ans:2,
+    explain:"전체포괄성(Exhaustiveness): 분류 체계가 모든 자료를 수용할 수 있어야 합니다." },
+  { q:"열거식 분류법의 특징으로 가장 적절한 것은?", opts:["패싯 조합으로 번호 생성","모든 주제를 미리 열거","콜론(:)으로 주제 결합","특수기호로 복합 주제 표현"], ans:1,
+    explain:"열거식(Enumerative): 분류표에 모든 주제를 미리 나열. DDC가 대표적. 분석합성식(CC, UDC)과 대비됩니다." },
+  { q:"콜론분류법(CC)의 5패싯 PMEST에서 'E'는?", opts:["에너지(Energy)","환경(Environment)","영역(Extension)","사건(Event)"], ans:0,
+    explain:"PMEST: P=개성, M=질료, E=에너지, S=공간, T=시간. 랑가나탄의 분석합성식 분류법 핵심 개념." },
+  { q:"랑가나탄의 도서관학 5법칙 중 '제2법칙'은?", opts:["모든 책은 독자를 위해","모든 독자에게 그의 책을","책은 이용하기 위한 것","도서관은 성장하는 유기체"], ans:0,
+    explain:"5법칙: ①책은 이용하기 위한 것 ②모든 독자에게 그의 책을 ③모든 책은 독자를 위해 ④독자의 시간을 절약 ⑤도서관은 성장하는 유기체." },
+  { q:"분류기호(기호법)의 '순수기호법'이란?", opts:["숫자와 문자를 혼합","숫자만 사용","문자만 사용","기호를 혼합 사용"], ans:1,
+    explain:"순수기호법(Pure Notation)=숫자만 또는 문자만 사용(예: DDC·KDC=아라비아 숫자만). 혼합기호법은 LC처럼 문자+숫자 혼합." },
+  { q:"분류와 목록의 차이점으로 옳은 것은?", opts:["분류는 다중 접근점 제공","목록은 물리적 배열 결정","분류는 주제별 물리적 배열 결정","목록은 분류기호만으로 검색"], ans:2,
+    explain:"분류=분류기호 부여 → 물리적 배열 결정. 목록=저자·서명·주제 등 다중 접근점으로 기술 기록." },
+  { q:"청구기호(Call Number)의 구성은?", opts:["주제명표목+저자기호","분류기호+도서기호","MARC필드+식별기호","ISBN+저자명"], ans:1,
+    explain:"청구기호 = 분류기호 + 도서기호(커터기호 등). 자료의 서가 위치를 나타냅니다." },
+  { q:"분류의 기능 중 '동일 주제 자료를 한 곳에 모아 놓는 것'은?", opts:["검색 기능","배열 기능","집중 기능","브라우징 기능"], ans:2,
+    explain:"집중 기능(Collocation): 동일·관련 주제 자료를 같은 장소에 집중시켜 검색 편의 제공." },
+
+  // ── KDC 조기표 ──
+  { q:"KDC 표1(표준구분) '--03'이 의미하는 것은?", opts:["이론","연속간행물","사전·백과사전","교육·교수법"], ans:2,
+    explain:"표1 표준구분: --01=이론, --02=편람·개론, --03=사전, --05=연속간행물, --07=연구법·교육." },
+  { q:"KDC 보조표 중 '표준구분'에 해당하는 것은?", opts:["표1","표2","표3","표4"], ans:0,
+    explain:"표1=표준구분(Standard Subdivisions). 모든 주류에 공통 적용 가능한 형식 구분표입니다." },
+  { q:"KDC 표2(지리구분)에서 한국에 해당하는 기호는?", opts:["--11","--12","--13","--42"], ans:0,
+    explain:"표2 지리구분: --11=한국, --12=중국, --13=일본, --42=미국. 한국 기호 --11 필수 암기!" },
+  { q:"KDC 표4(문학형식구분)에서 '-3'이 의미하는 것은?", opts:["시","희곡","소설","수필"], ans:2,
+    explain:"표4 문학형식: -1=시, -2=희곡, -3=소설, -4=수필. 810(한국문학)+(-3)=813 한국소설." },
+  { q:"'한국시(韓國詩)'의 KDC 분류기호는?", opts:["810","811","812","813"], ans:1,
+    explain:"810(한국문학) + 표4(-1=시) = 811 한국시. 문학형식구분표 활용의 대표 예시." },
+  { q:"KDC 표3(언어공통구분)에서 '-5'가 의미하는 것은?", opts:["어원·어휘","사전","음운론","문법론"], ans:3,
+    explain:"표3 언어공통구분: -1=문자·음성, -2=어원·어휘, -3=사전, -4=음운론, -5=문법론." },
+  { q:"KDC 조기표는 총 몇 개인가?", opts:["4개","5개","6개","7개"], ans:2,
+    explain:"KDC 보조표(조기표)는 표1~표6으로 총 6개. DDC는 7개 보조표를 사용합니다." },
+
+  // ── 분류법 비교 ──
+  { q:"LC분류법(미국의회도서관 분류법)의 기호법은?", opts:["숫자만","문자만","문자+숫자(혼합)","기호+숫자"], ans:2,
+    explain:"LC=알파벳 대문자(21개 클래스) + 숫자 혼합 기호법. DDC·KDC의 순수 숫자 기호법과 구별됩니다." },
+  { q:"UDC(국제십진분류법)의 기반이 된 분류법은?", opts:["KDC","LC분류법","DDC","CC"], ans:2,
+    explain:"UDC(Universal Decimal Classification)는 DDC를 기반으로 발전시킨 분류법. 특수기호로 복합 주제 표현 가능." },
+  { q:"KDC와 DDC에서 번호가 동일한 주류끼리 짝지은 것은?", opts:["KDC 400 = DDC 400","KDC 500 = DDC 500","KDC 900 = DDC 900","KDC 700 = DDC 700"], ans:2,
+    explain:"900(역사·지리)은 KDC↔DDC 모두 동일. 단, 400(KDC=자연/DDC=언어), 700(KDC=언어/DDC=예술)은 교환됩니다." },
+  { q:"현재 KDC의 최신판은?", opts:["제4판","제5판","제6판","제7판"], ans:2,
+    explain:"KDC 제6판(2013년 발행)이 현행 최신판. 국립중앙도서관에서 편찬·관리합니다." },
+  { q:"DDC 제23판에서 '예술(Arts)'은 몇 번대인가?", opts:["600","700","800","900"], ans:1,
+    explain:"DDC 700=예술(Arts). KDC에서는 600=예술로 위치가 다릅니다. KDC↔DDC 교환 위치 중 하나." },
+  { q:"분석합성식 분류법을 대표하는 것은?", opts:["DDC","KDC","LC","CC(콜론분류법)"], ans:3,
+    explain:"CC(Colon Classification)=랑가나탄이 창안한 분석합성식(Analytico-Synthetic) 분류법의 대표. PMEST 패싯 조합 사용." },
 ];
 
+// ===== 랜덤 10문제 추출 =====
+let activeQuizzes = [];
 let score = 0;
 let answered = 0;
 
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startQuiz() {
+  activeQuizzes = shuffle(QUIZ_POOL).slice(0, 10);
+  score = 0;
+  answered = 0;
+  document.getElementById('score').textContent = '0';
+  document.getElementById('total').textContent = '10';
+  renderQuiz();
+}
+
 function renderQuiz() {
   const area = document.getElementById('quiz-area');
-  document.getElementById('total').textContent = quizzes.length;
-  
-  area.innerHTML = quizzes.map((q, i) => `
+  area.innerHTML = activeQuizzes.map((q, i) => `
     <div class="quiz-card" id="qc-${i}">
       <div class="quiz-q"><span class="num">Q${i+1}</span>${q.q}</div>
       <div class="quiz-options">
-        ${q.opts.map((o, j) => `<button class="quiz-opt" onclick="answer(${i},${j})" id="opt-${i}-${j}">① ② ③ ④`.replace(/[①②③④]/g, ['①','②','③','④'][j]) + ` ${o}</button>`).join('')}
+        ${q.opts.map((o, j) => `<button class="quiz-opt" onclick="answer(${i},${j})" id="opt-${i}-${j}">${['①','②','③','④'][j]} ${o}</button>`).join('')}
       </div>
       <div class="quiz-explain" id="exp-${i}">${q.explain}</div>
     </div>
-  `).join('');
+  `).join('') + `
+    <div style="text-align:center;margin-top:24px">
+      <button onclick="startQuiz()" style="
+        background:var(--accent1);color:#fff;border:none;padding:12px 32px;
+        border-radius:8px;font-size:15px;font-family:inherit;cursor:pointer;
+        font-weight:700;letter-spacing:0.03em;
+      ">🔀 새 문제 10개 뽑기</button>
+      <div style="margin-top:10px;font-size:12px;color:var(--text-dim)">전체 ${QUIZ_POOL.length}문제 pool에서 랜덤 출제</div>
+    </div>
+  `;
 }
 
 function answer(qi, selected) {
   const qc = document.getElementById(`qc-${qi}`);
-  if (qc.querySelector('.correct') || qc.querySelector('.wrong')) return; // already answered
+  if (qc.querySelector('.correct') || qc.querySelector('.wrong')) return;
 
-  const correct = quizzes[qi].ans;
+  const correct = activeQuizzes[qi].ans;
   for (let j = 0; j < 4; j++) {
     const btn = document.getElementById(`opt-${qi}-${j}`);
     if (btn) btn.disabled = true;
@@ -1296,7 +1594,7 @@ function answer(qi, selected) {
   answered++;
 }
 
-renderQuiz();
+startQuiz();
 
 // Service Worker 등록
 if ('serviceWorker' in navigator) {

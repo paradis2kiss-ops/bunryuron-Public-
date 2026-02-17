@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bunryuron-v2';
+const CACHE_NAME = 'bunryuron-v4';
 const ASSETS = [
   './',
   './index.html',
