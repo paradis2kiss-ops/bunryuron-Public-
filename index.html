@@ -375,6 +375,8 @@
     <button class="nav-tab" onclick="showSection('s3', this)">📗 DDC</button>
     <button class="nav-tab" onclick="showSection('s4', this)">⚖️ 비교</button>
     <button class="nav-tab" onclick="showSection('s5', this)">✅ 퀴즈</button>
+    <button class="nav-tab" onclick="showSection('s6', this)">📖 강목</button>
+    <button class="nav-tab" onclick="showSection('s7', this)">📋 조기표</button>
   </div>
 
   <!-- SECTION 1: 분류 원리 -->
@@ -806,6 +808,356 @@
     </div>
 
     <div id="quiz-area"></div>
+  </div>
+
+  <!-- SECTION 6: KDC 강목 -->
+  <div class="section" id="s6">
+    <div class="section-title"><span class="dot" style="background:var(--accent2)"></span>KDC 강목(綱目) 전체 암기표</div>
+    <div class="card blue" style="margin-bottom:20px;padding:14px 18px">
+      <div style="font-size:12px;color:var(--text-muted);line-height:1.8">
+        💡 <strong>강(綱)</strong> = 10단위 구분 &nbsp;|&nbsp; <strong>목(目)</strong> = 1단위 세부 &nbsp;|&nbsp; ★ = 시험 자주 출제
+      </div>
+    </div>
+
+    <!-- 0류 총류 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">000 총류 (Generalities) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <strong>010</strong> 도서학, 서지학 | <strong>020</strong> 문헌정보학 | <strong>030</strong> 백과사전 | <strong>040</strong> 강연집, 수필집, 연설문집<br>
+        <strong>050</strong> 일반 연속간행물 | <strong>060</strong> 일반 학회, 단체, 협회, 기관 | <strong>070</strong> 신문, 저널리즘 | <strong>080</strong> 일반 전집, 총서<br>
+        <strong>090</strong> 향토자료
+      </div>
+    </div>
+
+    <!-- 1류 철학 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">100 철학 (Philosophy) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <strong>110</strong> 형이상학 | <strong>120</strong> 인식론, 인과론, 인간학 | <strong>130</strong> 철학의 체계 | <strong>140</strong> 경학<br>
+        <strong>150</strong> 심리학 | <strong>160</strong> 논리학 | <strong>170</strong> 윤리학, 도덕철학 | <strong>180</strong> 고대·중세철학<br>
+        <strong>190</strong> 근대·현대철학
+      </div>
+    </div>
+
+    <!-- 2류 종교 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">200 종교 (Religion) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <strong>210</strong> 비교종교 | <strong>220</strong> 불교 | <strong>230</strong> 도교 | <strong>240</strong> 인도교<br>
+        <strong>250</strong> 유교 | <strong>260</strong> 신도 | <strong>270</strong> 이슬람교 | <strong>280</strong> 기독교(개신교)<br>
+        <strong>290</strong> 기타 제종교
+      </div>
+    </div>
+
+    <!-- 3류 사회과학 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">300 사회과학 (Social Sciences) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <strong>310</strong> 통계학 | <strong>320</strong> 정치학 | <strong>330</strong> 경제학 | <strong>340</strong> 법학<br>
+        <strong>350</strong> 행정학 | <strong>360</strong> 사회학, 사회문제 | <strong>370</strong> 교육학 | <strong>380</strong> 풍속, 민속학<br>
+        <strong>390</strong> 국방, 군사학
+      </div>
+    </div>
+
+    <!-- 4류 자연과학 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">400 자연과학 (Natural Sciences) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <strong>410</strong> 수학 | <strong>420</strong> 물리학 | <strong>430</strong> 화학 | <strong>440</strong> 천문학<br>
+        <strong>450</strong> 지학(지구과학) | <strong>460</strong> 광물학 | <strong>470</strong> 생명과학 | <strong>480</strong> 식물학<br>
+        <strong>490</strong> 동물학
+      </div>
+    </div>
+
+    <!-- 5류 기술과학 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">500 기술과학 (Technology) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <strong>510</strong> 의학 | <strong>520</strong> 농업, 농학 | <strong>530</strong> 공학, 공업일반 | <strong>540</strong> 건축공학<br>
+        <strong>550</strong> 기계공학 | <strong>560</strong> 전기공학, 전자공학 | <strong>570</strong> 화학공학 | <strong>580</strong> 제조업<br>
+        <strong>590</strong> 생활과학 (가정학)
+      </div>
+    </div>
+
+    <!-- 6류 예술 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">600 예술 (Arts) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <strong>610</strong> 건축술 | <strong>620</strong> 조각, 조형미술 | <strong>630</strong> 공예 | <strong>640</strong> 서예<br>
+        <strong>650</strong> 회화, 도화 | <strong>660</strong> 사진술 | <strong>670</strong> 음악 | <strong>680</strong> 연극, 무용, 대중예술<br>
+        <strong>690</strong> 오락, 스포츠
+      </div>
+    </div>
+
+    <!-- 7류 언어 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">700 언어 (Language) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <strong>710</strong> 한국어 | <strong>720</strong> 중국어 | <strong>730</strong> 일본어 | <strong>740</strong> 영어<br>
+        <strong>750</strong> 독일어 | <strong>760</strong> 프랑스어 | <strong>770</strong> 스페인어, 포르투갈어 | <strong>780</strong> 이탈리아어<br>
+        <strong>790</strong> 기타 제언어
+      </div>
+    </div>
+
+    <!-- 8류 문학 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">800 문학 (Literature) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <strong>810</strong> 한국문학 | <strong>820</strong> 중국문학 | <strong>830</strong> 일본문학 | <strong>840</strong> 영미문학<br>
+        <strong>850</strong> 독일문학 | <strong>860</strong> 프랑스문학 | <strong>870</strong> 스페인·포르투갈문학 | <strong>880</strong> 이탈리아문학<br>
+        <strong>890</strong> 기타 제문학
+      </div>
+    </div>
+
+    <!-- 9류 역사 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">900 역사 (History) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <strong>910</strong> 아시아 | <strong>911</strong> 한국 | <strong>912</strong> 중국 | <strong>913</strong> 일본<br>
+        <strong>920</strong> 유럽 | <strong>930</strong> 아프리카 | <strong>940</strong> 북아메리카 | <strong>950</strong> 남아메리카<br>
+        <strong>960</strong> 오세아니아, 양극지방 | <strong>980</strong> 지리 | <strong>990</strong> 전기
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:32px"><span class="dot" style="background:var(--accent3)"></span>주요 목(Section) — 시험 출제 빈도 높은 강 전체 전개</div>
+
+    <!-- 020 문헌정보학 -->
+    <div class="card blue" style="margin-bottom:12px">
+      <div class="card-label">★★★ 최빈출</div>
+      <h3>📚 020 문헌정보학</h3>
+      <div style="font-size:13px; line-height:1.8; color:var(--text-muted)">
+        <strong>021</strong> 도서관 행정 | <strong>022</strong> 도서관 시설·설비 | <strong>023</strong> 도서관 직원·인사<br>
+        <strong>024</strong> 도서관 봉사·서비스 | <strong>025</strong> 정보서비스 | <strong>026</strong> 특수도서관<br>
+        <strong>027</strong> 일반도서관, 공공도서관 | <strong>028</strong> 독서, 독서지도 | <strong>029</strong> 목록, 분류
+      </div>
+    </div>
+
+    <!-- 목 전개 - 370 교육학 -->
+    <div class="card blue" style="margin-bottom:16px">
+      <div class="card-label">370 교육학</div>
+      <h3>📚 370 교육학 세부 전개</h3>
+      <div style="font-size:13px; line-height:1.8; color:var(--text-muted)">
+        <strong>371</strong> 교육철학, 교육사상 | <strong>372</strong> 초등교육 | <strong>373</strong> 중등교육 | <strong>374</strong> 고등교육<br>
+        <strong>375</strong> 교육과정 | <strong>376</strong> 유아교육, 초등교육 | <strong>377</strong> 성인교육, 평생교육 | <strong>378</strong> 장애아교육<br>
+        <strong>379</strong> 교육정책, 교육행정, 교육재정
+      </div>
+    </div>
+
+    <!-- 목 전개 - 510 의학 -->
+    <div class="card green" style="margin-bottom:16px">
+      <div class="card-label">510 의학</div>
+      <h3>🏥 510 의학 세부 전개</h3>
+      <div style="font-size:13px; line-height:1.8; color:var(--text-muted)">
+        <strong>511</strong> 기초의학 | <strong>512</strong> 임상의학 | <strong>513</strong> 내과학 | <strong>514</strong> 외과학<br>
+        <strong>515</strong> 산부인과학 | <strong>516</strong> 소아과학 | <strong>517</strong> 안과학, 이비인후과학 | <strong>518</strong> 치과학<br>
+        <strong>519</strong> 한방의학
+      </div>
+    </div>
+
+    <!-- 목 전개 - 320 정치학 -->
+    <div class="card purple" style="margin-bottom:16px">
+      <div class="card-label">320 정치학</div>
+      <h3>⚖️ 320 정치학 세부 전개</h3>
+      <div style="font-size:13px; line-height:1.8; color:var(--text-muted)">
+        <strong>321</strong> 정치이론, 정치사상 | <strong>322</strong> 정치사 | <strong>323</strong> 정치제도 | <strong>324</strong> 정당론<br>
+        <strong>325</strong> 의회정치 | <strong>326</strong> 행정부 | <strong>327</strong> 국제정치, 외교 | <strong>328</strong> 식민정치<br>
+        <strong>329</strong> 지방자치
+      </div>
+    </div>
+
+    <!-- 목 전개 - 710 한국어 -->
+    <div class="card yellow" style="margin-bottom:16px">
+      <div class="card-label">710 한국어</div>
+      <h3>🇰🇷 710 한국어 세부 전개</h3>
+      <div style="font-size:13px; line-height:1.8; color:var(--text-muted)">
+        <strong>711</strong> 문자론(한글) | <strong>712</strong> 어원, 어휘 | <strong>713</strong> 사전 | <strong>714</strong> 음운론, 음성학<br>
+        <strong>715</strong> 문법론 | <strong>716</strong> 문자론 | <strong>717</strong> 언어정책, 국어정책 | <strong>718</strong> 표준어, 방언<br>
+        <strong>719</strong> 한국어 교육
+      </div>
+    </div>
+
+    <!-- 암기 팁 -->
+    <div class="card red">
+      <div class="card-label">MEMORY TIP</div>
+      <h3>💡 암기 핵심 포인트</h3>
+      <ul>
+        <li><span class="kw r">주류(0~9)</span>는 무조건 암기 필수</li>
+        <li><span class="kw r">강(10단위)</span>는 자주 출제되는 분야 위주로 암기</li>
+        <li><strong>한국 우대 항목</strong>: 711(한국어), 811(한국문학), 911(한국사), 220(불교)</li>
+        <li><strong>KDC vs DDC 차이</strong>: 400(자연)↔400(언어), 700(언어)↔700(예술) 위치 교환</li>
+        <li>시험에 자주 나오는 강: <strong>020(문헌정보학), 070(신문), 150(심리학), 320(정치학), 330(경제학), 370(교육학), 510(의학)</strong></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- SECTION 7: KDC 조기표 -->
+  <div class="section" id="s7">
+    <div class="section-title"><span class="dot" style="background:var(--accent3)"></span>KDC 보조표(補助表) — 6개 조기표 완전 암기</div>
+    <div class="card green" style="margin-bottom:20px;padding:14px 18px">
+      <div style="font-size:12px;color:var(--text-muted);line-height:1.8">
+        💡 조기표(助記表) = 기억을 돕는 보조 번호 체계 &nbsp;|&nbsp; 본표 번호 뒤에 붙여서 사용 &nbsp;|&nbsp; 시험 자주 출제 ★
+      </div>
+    </div>
+
+    <!-- 표1: 표준구분표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">★ 표1 — 표준구분표 (Standard Subdivisions) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 모든 주류에 공통 적용 가능. 앞에 <strong>--0</strong> 붙임</div>
+        <div class="table-wrap"><table>
+          <tr><th>기호</th><th>의미</th><th>예시</th></tr>
+          <tr><td><strong>--01</strong></td><td>이론, 철학</td><td>020.01 문헌정보학 이론</td></tr>
+          <tr><td><strong>--02</strong></td><td>편람, 강요, 개론</td><td>020.02 문헌정보학 개론</td></tr>
+          <tr><td><strong>--03</strong></td><td>사전, 백과사전</td><td>020.03 문헌정보학 사전</td></tr>
+          <tr><td><strong>--04</strong></td><td>강연집, 수필집</td><td>—</td></tr>
+          <tr><td><strong>--05</strong></td><td>연속간행물, 학회지</td><td>020.05 문헌정보학 저널</td></tr>
+          <tr><td><strong>--06</strong></td><td>단체, 협회, 기관</td><td>020.06 도서관협회</td></tr>
+          <tr><td><strong>--07</strong></td><td>연구법, 교육, 교수법</td><td>020.07 문헌정보학 교육</td></tr>
+          <tr><td><strong>--08</strong></td><td>역사, 전기, 특정 집단</td><td>—</td></tr>
+          <tr><td><strong>--09</strong></td><td>역사 및 지리적 처리</td><td>020.09 문헌정보학 역사</td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- 표2: 지리구분표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">★ 표2 — 지리구분표 (Geographic Areas) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 지역·국가를 세분할 때 사용. 본표에서 지시가 있는 경우만 적용</div>
+        <div class="table-wrap"><table>
+          <tr><th>기호</th><th>지역</th></tr>
+          <tr><td><strong>--11</strong></td><td>한국 (Korea) ★</td></tr>
+          <tr><td><strong>--12</strong></td><td>중국 (China)</td></tr>
+          <tr><td><strong>--13</strong></td><td>일본 (Japan)</td></tr>
+          <tr><td><strong>--14</strong></td><td>인도 (India)</td></tr>
+          <tr><td><strong>--16</strong></td><td>이란, 중앙아시아</td></tr>
+          <tr><td><strong>--17</strong></td><td>서남아시아 (중동)</td></tr>
+          <tr><td><strong>--2</strong></td><td>유럽</td></tr>
+          <tr><td><strong>--21</strong></td><td>영국 (Britain) ★</td></tr>
+          <tr><td><strong>--23</strong></td><td>독일 (Germany)</td></tr>
+          <tr><td><strong>--24</strong></td><td>프랑스 (France)</td></tr>
+          <tr><td><strong>--28</strong></td><td>러시아</td></tr>
+          <tr><td><strong>--3</strong></td><td>아프리카</td></tr>
+          <tr><td><strong>--4</strong></td><td>북아메리카</td></tr>
+          <tr><td><strong>--42</strong></td><td>미국 (USA) ★</td></tr>
+          <tr><td><strong>--5</strong></td><td>남아메리카</td></tr>
+          <tr><td><strong>--6</strong></td><td>오세아니아</td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- 표3: 언어공통구분표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">★ 표3 — 언어공통구분표 (Common Subdivisions for Language) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 700번대 언어류에서 각 언어를 세분할 때 적용 (예: 710한국어, 740영어)</div>
+        <div class="table-wrap"><table>
+          <tr><th>기호</th><th>의미</th><th>예시 (한국어 710 기준)</th></tr>
+          <tr><td><strong>-1</strong></td><td>문자, 음성학 ★</td><td>711 한글(문자론)</td></tr>
+          <tr><td><strong>-2</strong></td><td>어원, 어휘 ★</td><td>712 어원론</td></tr>
+          <tr><td><strong>-3</strong></td><td>사전 ★</td><td>713 한국어사전</td></tr>
+          <tr><td><strong>-4</strong></td><td>음운론</td><td>714 한국어 음운론</td></tr>
+          <tr><td><strong>-5</strong></td><td>문법론 ★</td><td>715 한국어 문법</td></tr>
+          <tr><td><strong>-6</strong></td><td>문자론</td><td>716 —</td></tr>
+          <tr><td><strong>-7</strong></td><td>언어정책</td><td>717 국어정책</td></tr>
+          <tr><td><strong>-8</strong></td><td>표준어, 방언</td><td>718 한국어 방언</td></tr>
+          <tr><td><strong>-9</strong></td><td>외국어로서의 한국어 교육</td><td>719 한국어 교육</td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- 표4: 문학형식구분표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">★ 표4 — 문학형식구분표 (Literary Forms) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 800번대 문학류에서 장르를 세분할 때 적용 (예: 810한국문학, 840영미문학)</div>
+        <div class="table-wrap"><table>
+          <tr><th>기호</th><th>문학 형식</th><th>예시 (한국문학 810 기준)</th></tr>
+          <tr><td><strong>-1</strong></td><td>시 (Poetry) ★</td><td>811 한국시</td></tr>
+          <tr><td><strong>-2</strong></td><td>희곡 (Drama) ★</td><td>812 한국희곡</td></tr>
+          <tr><td><strong>-3</strong></td><td>소설 (Fiction) ★</td><td>813 한국소설</td></tr>
+          <tr><td><strong>-4</strong></td><td>수필 (Essays)</td><td>814 한국수필</td></tr>
+          <tr><td><strong>-5</strong></td><td>연설, 웅변</td><td>815 —</td></tr>
+          <tr><td><strong>-6</strong></td><td>편지, 서간문</td><td>816 —</td></tr>
+          <tr><td><strong>-7</strong></td><td>풍자, 해학</td><td>817 —</td></tr>
+          <tr><td><strong>-8</strong></td><td>기타 형식</td><td>818 —</td></tr>
+          <tr><td><strong>-9</strong></td><td>각국 문학사, 비평</td><td>819 한국문학사</td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- 표5: 언어구분표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">표5 — 언어구분표 (Languages) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 다국어 사전 등 언어별 구분이 필요할 때 사용</div>
+        <div class="table-wrap"><table>
+          <tr><th>기호</th><th>언어</th></tr>
+          <tr><td><strong>-11</strong></td><td>한국어 ★</td></tr>
+          <tr><td><strong>-12</strong></td><td>중국어</td></tr>
+          <tr><td><strong>-13</strong></td><td>일본어</td></tr>
+          <tr><td><strong>-14</strong></td><td>영어 ★</td></tr>
+          <tr><td><strong>-15</strong></td><td>독일어</td></tr>
+          <tr><td><strong>-16</strong></td><td>프랑스어</td></tr>
+          <tr><td><strong>-17</strong></td><td>스페인어</td></tr>
+          <tr><td><strong>-18</strong></td><td>이탈리아어</td></tr>
+          <tr><td><strong>-2</strong></td><td>알타이어족</td></tr>
+          <tr><td><strong>-41</strong></td><td>그리스어</td></tr>
+          <tr><td><strong>-5</strong></td><td>셈어족 (아랍어 등)</td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- 표6: 민족·국가구분표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">표6 — 민족·국가구분표 (Racial, Ethnic, National Groups) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 민족, 국민, 종족을 기준으로 세분할 때 사용. 지리구분표(표2)와 혼동 주의!</div>
+        <div class="table-wrap"><table>
+          <tr><th>기호</th><th>민족·국가</th></tr>
+          <tr><td><strong>-11</strong></td><td>한민족(Korean) ★</td></tr>
+          <tr><td><strong>-12</strong></td><td>중국인(Chinese)</td></tr>
+          <tr><td><strong>-13</strong></td><td>일본인(Japanese)</td></tr>
+          <tr><td><strong>-14</strong></td><td>앵글로색슨(Anglo-Saxon)</td></tr>
+          <tr><td><strong>-2</strong></td><td>게르만 민족</td></tr>
+          <tr><td><strong>-3</strong></td><td>슬라브 민족</td></tr>
+          <tr><td><strong>-5</strong></td><td>셈족 (유대인, 아랍인)</td></tr>
+          <tr><td><strong>-6</strong></td><td>아프리카 민족</td></tr>
+          <tr><td><strong>-7</strong></td><td>아메리카 원주민</td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- 조기표 활용 예시 -->
+    <div class="section-title" style="margin-top:32px"><span class="dot" style="background:var(--accent5)"></span>조기표 번호 합성 예시</div>
+    <div class="card purple" style="margin-bottom:16px">
+      <div class="card-label">NUMBER BUILDING</div>
+      <h3>🔢 합성 번호 만들기 실전</h3>
+      <div style="font-size:13px; line-height:2.2; color:var(--text-muted)">
+        <div><span class="kw">한국소설</span> → 810(한국문학) + <span style="color:var(--accent4)">-3</span>(소설, 표4) = <strong style="color:var(--accent1)">813</strong></div>
+        <div><span class="kw">한국어문법</span> → 710(한국어) + <span style="color:var(--accent4)">-5</span>(문법, 표3) = <strong style="color:var(--accent1)">715</strong></div>
+        <div><span class="kw">영미소설</span> → 840(영미문학) + <span style="color:var(--accent4)">-3</span>(소설, 표4) = <strong style="color:var(--accent1)">843</strong></div>
+        <div><span class="kw">문헌정보학사전</span> → 020(문헌정보학) + <span style="color:var(--accent4)">-03</span>(사전, 표1) = <strong style="color:var(--accent1)">020.03</strong></div>
+        <div><span class="kw">한국도서관역사</span> → 020(문헌정보학) + <span style="color:var(--accent4)">-09</span>(역사, 표1) + --11(한국, 표2) = <strong style="color:var(--accent1)">020.0911</strong></div>
+      </div>
+    </div>
+
+    <!-- 시험 암기 핵심 -->
+    <div class="card red">
+      <div class="card-label">★ 시험 암기 포인트</div>
+      <h3>💡 조기표 핵심 요약</h3>
+      <ul>
+        <li><strong>표1(표준구분)</strong>: --01~--09 / 모든 류에 적용 / --03 사전, --05 잡지, --07 교육 ★</li>
+        <li><strong>표2(지리구분)</strong>: 한국 --11, 미국 --42, 영국 --21 ★</li>
+        <li><strong>표3(언어공통)</strong>: 700대 언어류 / -1문자, -3사전, -5문법 ★</li>
+        <li><strong>표4(문학형식)</strong>: 800대 문학류 / -1시, -2희곡, -3소설 ★ 가장 자주 출제!</li>
+        <li><strong>표5(언어)</strong>: 다국어 사전 등 적용 / 한국어 -11, 영어 -14</li>
+        <li><strong>표6(민족·국가)</strong>: 민족지학 등 / 한민족 -11 ★</li>
+        <li><span class="kw r">표2(지리)</span> vs <span class="kw">표6(민족)</span> 혼동 주의! 기호 같아도 의미 다름</li>
+      </ul>
+    </div>
+
   </div>
 
 </div>
