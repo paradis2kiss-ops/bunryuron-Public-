@@ -8,10 +8,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="분류론">
 <meta name="theme-color" content="#f5f2ed">
-<meta name="description" content="KDC·DDC 분류론 핵심 힌트집 — 사서직 시험 대비">
+<meta name="description" content="KDC·DDC 분류론 핵심 이론집 — 사서직 시험 대비">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
-<title>분류론 핵심 힌트집</title>
+<title>분류론 핵심 이론집</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -364,8 +364,13 @@
   <!-- HEADER -->
   <header>
     <div class="badge">📖 Library Science · 정사서 2급</div>
-    <h1>분류론 <span>핵심 힌트집</span></h1>
+    <h1>분류론 <span>핵심 이론집</span></h1>
     <p>KDC · DDC · 분류 원리 · 목록·분류 비교 | 사서직 시험 대비</p>
+    <div style="margin-top:8px;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:0.8px">
+      made by <strong style="color:rgba(255,255,255,0.9)">migi</strong>&nbsp;
+      <span style="color:rgba(255,255,255,0.35)">✦</span>&nbsp;
+      with <strong style="color:rgba(255,255,255,0.9)">Claude</strong>
+    </div>
   </header>
 
   <!-- NAV -->
@@ -379,6 +384,11 @@
     <button class="nav-tab" onclick="showSection('s7', this)">📋 조기표</button>
     <button class="nav-tab" onclick="showSection('s8', this)">📝 도서기호</button>
     <button class="nav-tab" onclick="showSection('s9', this)">✍️ 서술형</button>
+    <button class="nav-tab" onclick="showSection('s10', this)">📋 청구기호</button>
+    <button class="nav-tab" onclick="showSection('s11', this)">📅 연표</button>
+    <button class="nav-tab" onclick="showSection('s12', this)">🔄 오답노트</button>
+    <button class="nav-tab" onclick="showSection('s13', this)">📊 조기표비교</button>
+    <button class="nav-tab" onclick="showSection('s14', this)">🗂️ MARC</button>
   </div>
 
   <!-- SECTION 1: 분류 원리 -->
@@ -535,12 +545,12 @@
         <div class="card-label">TABLES</div>
         <h3>📋 KDC 보조표</h3>
         <ul>
-          <li><span class="kw g">표1</span> 표준구분 (Form divisions)</li>
-          <li><span class="kw g">표2</span> 지역구분</li>
-          <li><span class="kw g">표3</span> 언어공통구분</li>
-          <li><span class="kw g">표4</span> 언어구분</li>
-          <li><span class="kw g">표5</span> 문학형식구분</li>
-          <li><span class="kw g">표6</span> 문학언어구분</li>
+          <li><span class="kw g">표1</span> 표준구분표 (Standard Subdivisions)</li>
+          <li><span class="kw g">표2</span> 지역구분표 (Geographic Areas)</li>
+          <li><span class="kw g">표3</span> 언어공통구분표</li>
+          <li><span class="kw g">표4</span> 전주제구분 (General Subject Subdivisions) ★</li>
+          <li><span class="kw g">표5</span> 특수주제구분 (Specific Subject Subdivisions) ★</li>
+          <li><span class="kw g">표6</span> 문학형식구분표 (Literary Forms) ★</li>
           <li>각 보조표는 <span class="kw g">단독 사용 불가</span>, 본표에 부가</li>
         </ul>
       </div>
@@ -995,174 +1005,278 @@
 
   <!-- SECTION 7: KDC 조기표 -->
   <div class="section" id="s7">
-    <div class="section-title"><span class="dot" style="background:var(--accent3)"></span>KDC 보조표(補助表) — 6개 조기표 완전 암기</div>
-    <div class="card green" style="margin-bottom:20px;padding:14px 18px">
-      <div style="font-size:12px;color:var(--text-muted);line-height:1.8">
-        💡 조기표(助記表) = 기억을 돕는 보조 번호 체계 &nbsp;|&nbsp; 본표 번호 뒤에 붙여서 사용 &nbsp;|&nbsp; 시험 자주 출제 ★
+    <div class="section-title"><span class="dot" style="background:var(--accent3)"></span>KDC 조기표(助記表) — PDF 원본 6종 완전 정복</div>
+
+    <!-- 안내 카드 -->
+    <div class="card blue" style="padding:14px 18px;margin-bottom:20px">
+      <div style="font-size:12px;line-height:2.1;color:var(--text-muted)">
+        💡 조기표 = <strong>기억을 돕는 보조 번호</strong> · 본표 번호 뒤에만 부가 (단독 사용 불가)<br>
+        📌 KDC 6판 6종: <strong>①표준구분 ②지역구분 ③국어구분 ④문학형식 ⑤언어공통 ⑥종교공통</strong><br>
+        ⚠️ 본표에 사용 지시가 있어야 적용 가능 | 합성 후 끝자리 의미 없는 <strong>0은 삭제</strong>
       </div>
     </div>
 
-    <!-- 표1: 표준구분표 -->
+    <!-- ① 표준구분표 -->
     <div class="accordion">
-      <div class="acc-header" onclick="toggleAcc(this)">★ 표1 — 표준구분표 (Standard Subdivisions) <span class="acc-arrow">▶</span></div>
+      <div class="acc-header" onclick="toggleAcc(this)">
+        ★★★ ① 표준구분표 — 형식·체제 구분 (-0으로 시작) <span class="acc-arrow">▶</span>
+      </div>
       <div class="acc-body">
-        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 모든 주류에 공통 적용 가능. 앞에 <strong>--0</strong> 붙임</div>
+        <div style="background:var(--surface2);border-left:3px solid var(--accent1);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:12px;font-size:13px">
+          <strong>원리</strong> · 모든 주류에 적용 가능 · 주제의 형식(사전·잡지·역사 등)을 나타냄<br>
+          <strong>합성 규칙</strong> · 본표 끝 자리채우기 0 삭제 → 기호 붙임
+        </div>
         <div class="table-wrap"><table>
-          <tr><th>기호</th><th>의미</th><th>예시</th></tr>
-          <tr><td><strong>--01</strong></td><td>이론, 철학</td><td>020.01 문헌정보학 이론</td></tr>
-          <tr><td><strong>--02</strong></td><td>편람, 강요, 개론</td><td>020.02 문헌정보학 개론</td></tr>
-          <tr><td><strong>--03</strong></td><td>사전, 백과사전</td><td>020.03 문헌정보학 사전</td></tr>
-          <tr><td><strong>--04</strong></td><td>강연집, 수필집</td><td>—</td></tr>
-          <tr><td><strong>--05</strong></td><td>연속간행물, 학회지</td><td>020.05 문헌정보학 저널</td></tr>
-          <tr><td><strong>--06</strong></td><td>단체, 협회, 기관</td><td>020.06 도서관협회</td></tr>
-          <tr><td><strong>--07</strong></td><td>연구법, 교육, 교수법</td><td>020.07 문헌정보학 교육</td></tr>
-          <tr><td><strong>--08</strong></td><td>역사, 전기, 특정 집단</td><td>—</td></tr>
-          <tr><td><strong>--09</strong></td><td>역사 및 지리적 처리</td><td>020.09 문헌정보학 역사</td></tr>
+          <thead><tr><th>기호</th><th>의미</th><th>합성 예시</th></tr></thead>
+          <tbody>
+            <tr><td><strong>-01</strong></td><td>철학 및 이론</td><td>020(문헌정보학) + 01 = <strong>020.1</strong></td></tr>
+            <tr><td><strong>-02</strong></td><td>잡저</td><td>—</td></tr>
+            <tr><td><strong>-03</strong></td><td>사전, 용어집, 약어집 ★</td><td>100(철학) + 03 = <strong>103</strong></td></tr>
+            <tr><td><strong>-04</strong></td><td>강연집, 수필집, 연설문집</td><td>—</td></tr>
+            <tr><td><strong>-05</strong></td><td>연속간행물 ★</td><td>020 + 05 = <strong>020.5</strong></td></tr>
+            <tr><td><strong>-06</strong></td><td>각종 단체, 조직 및 경영</td><td>—</td></tr>
+            <tr><td><strong>-07</strong></td><td>지도법, 연구법 및 교육·교육자료 ★</td><td>370(교육학) + 07 = <strong>370.7</strong></td></tr>
+            <tr><td><strong>-08</strong></td><td>총서, 전집, 선집</td><td>—</td></tr>
+            <tr><td><strong>-09</strong></td><td>역사 및 지역구분 ★★</td><td>020 + 09 = <strong>020.9</strong> → +11(한국) = <strong>020.911</strong></td></tr>
+          </tbody>
+        </table></div>
+        <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;line-height:1.9">
+          <strong>⚠️ 0 삭제 원칙 암기</strong><br>
+          · 철학(1<u>00</u>) + -03 → 1 + 03 = <strong>103</strong> ✔ &nbsp;&nbsp; (100.03 ✘)<br>
+          · 교육학(3<u>70</u>) + -07 → 37 + 07 = <strong>370.7</strong> ✔ &nbsp;&nbsp; (끝의 0은 유지, 앞자리 0만 삭제 주의)
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 지역구분표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        ★★ ② 지역구분표 — 국가·지역 세분 <span class="acc-arrow">▶</span>
+      </div>
+      <div class="acc-body">
+        <div style="background:var(--surface2);border-left:3px solid var(--accent2);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:12px;font-size:13px">
+          <strong>원리</strong> · 특정 국가·지역을 세분 할 때 사용<br>
+          <strong>합성 규칙</strong> · 지시 있음 → 직접 부가 &nbsp;|&nbsp; 지시 없음 → <strong>-09 뒤에</strong> 지역기호 부가
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>기호</th><th>지역</th><th>주요 하위 기호</th></tr></thead>
+          <tbody>
+            <tr style="background:var(--surface2)">
+              <td><strong>-1</strong></td><td><strong>아시아</strong></td>
+              <td>
+                <strong>-11</strong> 대한민국 ★★★<br>
+                <span style="font-size:11px;color:var(--text-dim)">-111 서울 · -112 경기 · -113 강원 · -114 충북 · -115 충남 · -116 전북 · -117 전남 · -118 경북 · -119 경남 · -11A 제주</span><br>
+                <strong>-12</strong> 중국 ★ &nbsp;·&nbsp; <strong>-13</strong> 일본 ★<br>
+                <strong>-14</strong> 동남아시아 &nbsp;·&nbsp; <strong>-15</strong> 인도·남부아시아<br>
+                <strong>-16</strong> 중앙아시아
+              </td>
+            </tr>
+            <tr>
+              <td><strong>-2</strong></td><td><strong>유럽</strong></td>
+              <td>
+                <strong>-24</strong> 영국·아일랜드 ★<br>
+                <strong>-25</strong> 독일·중앙유럽 ★<br>
+                <strong>-26</strong> 프랑스와 인접국가<br>
+                <strong>-27</strong> 스페인과 인접국가
+              </td>
+            </tr>
+            <tr style="background:var(--surface2)">
+              <td><strong>-3</strong></td><td><strong>아프리카</strong></td>
+              <td>
+                <strong>-31</strong> 북아프리카<br>
+                <span style="font-size:11px;color:var(--text-dim)">-311 이집트</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>-4</strong></td><td><strong>북아메리카</strong></td>
+              <td>
+                <strong>-41</strong> 캐나다 &nbsp;·&nbsp; <strong>-42</strong> 미국 ★★<br>
+                <strong>-43</strong> 멕시코
+              </td>
+            </tr>
+            <tr style="background:var(--surface2)">
+              <td><strong>-5</strong></td><td><strong>남아메리카</strong></td>
+              <td>
+                <strong>-51</strong> 콜롬비아 &nbsp;·&nbsp; <strong>-53</strong> 브라질
+              </td>
+            </tr>
+            <tr>
+              <td><strong>-6</strong></td><td><strong>오세아니아·양극지방</strong></td>
+              <td>
+                <strong>-62</strong> 호주(오스트레일리아) &nbsp;·&nbsp; <strong>-63</strong> 뉴질랜드
+              </td>
+            </tr>
+            <tr style="background:var(--surface2)">
+              <td><strong>-7</strong></td><td><strong>지역구분 일반</strong></td><td>—</td>
+            </tr>
+            <tr>
+              <td><strong>-8</strong></td><td><strong>해양</strong></td>
+              <td>
+                <strong>-81</strong> 태평양 &nbsp;·&nbsp; <strong>-84</strong> 인도양 &nbsp;·&nbsp; <strong>-85</strong> 대서양
+              </td>
+            </tr>
+          </tbody>
+        </table></div>
+        <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;margin-top:6px;font-size:11px;color:var(--text-dim)">
+          ⚠️ 한국 세부 지역 기호(-111~-11A)는 KDC 6판 원본 기준. 시험에서는 -11(대한민국) 수준이 주로 출제됨.
+        </div>
+        <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;line-height:2.0">
+          <strong>합성 예시</strong><br>
+          · 지시 있을 때 — 서예(640) + -12(중국) = <strong>640.12</strong><br>
+          · 지시 없을 때 — 서예(640) + -09(표① 역사지역) + 12 = <strong>640.912</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- ③ 국어구분표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        ★★ ③ 국어구분표 — 사전류 언어 세분 <span class="acc-arrow">▶</span>
+      </div>
+      <div class="acc-body">
+        <div style="background:var(--surface2);border-left:3px solid var(--accent3);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:12px;font-size:13px">
+          <strong>원리</strong> · 사전류 등 언어별 구분 시 사용<br>
+          <strong>핵심 규칙</strong> · 2개 국어 사전 → <strong>표제어(앞 언어)</strong> 기준 분류 후 해설어 기호 부가
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>기호</th><th>언어</th><th>기호</th><th>언어</th></tr></thead>
+          <tbody>
+            <tr><td><strong>-1</strong></td><td>한국어 ★★★</td><td><strong>-6</strong></td><td>프랑스어</td></tr>
+            <tr><td><strong>-2</strong></td><td>중국어</td><td><strong>-7</strong></td><td>스페인어</td></tr>
+            <tr><td><strong>-3</strong></td><td>일본어</td><td><strong>-8</strong></td><td>이탈리아어</td></tr>
+            <tr><td><strong>-4</strong></td><td>영어 ★★</td><td><strong>-9</strong></td><td>기타 제어</td></tr>
+            <tr><td><strong>-5</strong></td><td>독일어</td><td></td><td></td></tr>
+          </tbody>
+        </table></div>
+        <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;line-height:2.0">
+          <strong>합성 예시 ★</strong><br>
+          · 영한사전(표제어=영어): 740(영어) 기준 + -1(한국어) = <strong>743 → 743.1</strong><br>
+          · 한영사전(표제어=한국어): 710(한국어) 기준 + -4(영어) = <strong>714</strong><br>
+          · 한중사전: 710 + -2(중국어) = <strong>712</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- ④ 문학형식구분표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        ★★★ ④ 문학형식구분표 — 800대 장르 세분 (최빈출!) <span class="acc-arrow">▶</span>
+      </div>
+      <div class="acc-body">
+        <div style="background:var(--surface2);border-left:3px solid var(--accent4);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:12px;font-size:13px">
+          <strong>원리</strong> · 800번대 문학류에서 장르(형식) 세분 시 적용<br>
+          <strong>적용 대상</strong> · 810 한국문학 · 820 중국문학 · 840 영미문학 등 모든 문학류
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>기호</th><th>문학 형식</th><th>한국문학(810)</th><th>영미문학(840)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>-1</strong></td><td>시 ★★★</td><td><strong>811</strong> 한국시</td><td><strong>841</strong> 영미시</td></tr>
+            <tr><td><strong>-2</strong></td><td>희곡 ★★</td><td><strong>812</strong> 한국희곡</td><td><strong>842</strong> 영미희곡</td></tr>
+            <tr><td><strong>-3</strong></td><td>소설 ★★★</td><td><strong>813</strong> 한국소설</td><td><strong>843</strong> 영미소설</td></tr>
+            <tr><td><strong>-4</strong></td><td>수필, 소품</td><td><strong>814</strong> 한국수필</td><td><strong>844</strong></td></tr>
+            <tr><td><strong>-5</strong></td><td>연설, 웅변</td><td><strong>815</strong></td><td><strong>845</strong></td></tr>
+            <tr><td><strong>-6</strong></td><td>일기, 서간, 기행</td><td><strong>816</strong></td><td><strong>846</strong></td></tr>
+            <tr><td><strong>-7</strong></td><td>풍자 및 유머</td><td><strong>817</strong></td><td><strong>847</strong></td></tr>
+            <tr><td><strong>-8</strong></td><td>르포르타주 및 기타</td><td><strong>818</strong></td><td><strong>848</strong></td></tr>
+          </tbody>
+        </table></div>
+        <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px">
+          ※ 르포르타주(-8) = 인용구·경구·표어·일화집·회상록·수기·콩트 등 문학적 잡저 포함
+        </div>
+      </div>
+    </div>
+
+    <!-- ⑤ 언어공통구분표 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">
+        ★★ ⑤ 언어공통구분표 — 700대 언어 내용 세분 <span class="acc-arrow">▶</span>
+      </div>
+      <div class="acc-body">
+        <div style="background:var(--surface2);border-left:3px solid var(--accent5);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:12px;font-size:13px">
+          <strong>원리</strong> · 700번대 언어류(710~790)에서 언어학 내용 세분 시 적용<br>
+          <strong>③국어구분표와 구별</strong> · ③은 사전 언어 구분 / ⑤는 언어학 내용(문법·음운 등) 구분
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>기호</th><th>의미</th><th>한국어(710)</th><th>영어(740)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>-1</strong></td><td>음운 및 문자 ★</td><td><strong>711</strong></td><td><strong>741</strong></td></tr>
+            <tr><td><strong>-2</strong></td><td>어원</td><td><strong>712</strong></td><td><strong>742</strong></td></tr>
+            <tr><td><strong>-3</strong></td><td>사전 ★★</td><td><strong>713</strong> 한국어사전</td><td><strong>743</strong> 영어사전</td></tr>
+            <tr><td><strong>-4</strong></td><td>어휘</td><td><strong>714</strong></td><td><strong>744</strong></td></tr>
+            <tr><td><strong>-5</strong></td><td>문법 ★★★</td><td><strong>715</strong> 한국어문법</td><td><strong>745</strong> 영어문법</td></tr>
+            <tr><td><strong>-6</strong></td><td>작문</td><td><strong>716</strong></td><td><strong>746</strong></td></tr>
+            <tr><td><strong>-7</strong></td><td>독본, 해석, 회화</td><td><strong>717</strong></td><td><strong>747</strong></td></tr>
+            <tr><td><strong>-8</strong></td><td>방언(사투리)</td><td><strong>718</strong> 한국어방언</td><td><strong>748</strong></td></tr>
+          </tbody>
         </table></div>
       </div>
     </div>
 
-    <!-- 표2: 지리구분표 -->
+    <!-- ⑥ 종교공통구분표 -->
     <div class="accordion">
-      <div class="acc-header" onclick="toggleAcc(this)">★ 표2 — 지리구분표 (Geographic Areas) <span class="acc-arrow">▶</span></div>
+      <div class="acc-header" onclick="toggleAcc(this)">
+        ★ ⑥ 종교공통구분표 — 200대 종교 내용 세분 <span class="acc-arrow">▶</span>
+      </div>
       <div class="acc-body">
-        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 지역·국가를 세분할 때 사용. 본표에서 지시가 있는 경우만 적용</div>
+        <div style="background:var(--surface2);border-left:3px solid var(--accent1);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:12px;font-size:13px">
+          <strong>원리</strong> · 200번대 종교류(210~290)에서 종교별 내용 세분 시 적용
+        </div>
         <div class="table-wrap"><table>
-          <tr><th>기호</th><th>지역</th></tr>
-          <tr><td><strong>--11</strong></td><td>한국 (Korea) ★</td></tr>
-          <tr><td><strong>--12</strong></td><td>중국 (China)</td></tr>
-          <tr><td><strong>--13</strong></td><td>일본 (Japan)</td></tr>
-          <tr><td><strong>--14</strong></td><td>인도 (India)</td></tr>
-          <tr><td><strong>--16</strong></td><td>이란, 중앙아시아</td></tr>
-          <tr><td><strong>--17</strong></td><td>서남아시아 (중동)</td></tr>
-          <tr><td><strong>--2</strong></td><td>유럽</td></tr>
-          <tr><td><strong>--21</strong></td><td>영국 (Britain) ★</td></tr>
-          <tr><td><strong>--23</strong></td><td>독일 (Germany)</td></tr>
-          <tr><td><strong>--24</strong></td><td>프랑스 (France)</td></tr>
-          <tr><td><strong>--28</strong></td><td>러시아</td></tr>
-          <tr><td><strong>--3</strong></td><td>아프리카</td></tr>
-          <tr><td><strong>--4</strong></td><td>북아메리카</td></tr>
-          <tr><td><strong>--42</strong></td><td>미국 (USA) ★</td></tr>
-          <tr><td><strong>--5</strong></td><td>남아메리카</td></tr>
-          <tr><td><strong>--6</strong></td><td>오세아니아</td></tr>
+          <thead><tr><th>기호</th><th>의미</th><th>불교(220)</th><th>기독교(230)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>-1</strong></td><td>교리, 교의</td><td><strong>221</strong> 불교 교리</td><td><strong>231</strong></td></tr>
+            <tr><td><strong>-2</strong></td><td>종교 창시자(교주) 및 제자</td><td><strong>222</strong> 석가</td><td><strong>232</strong> 예수</td></tr>
+            <tr><td><strong>-3</strong></td><td>경전, 성전 ★★</td><td><strong>223</strong> 불경</td><td><strong>233</strong> 성경</td></tr>
+            <tr><td><strong>-4</strong></td><td>종교신앙, 신앙생활, 수도생활</td><td><strong>224</strong></td><td><strong>234</strong></td></tr>
+            <tr><td><strong>-5</strong></td><td>선교, 포교, 전도, 교화 활동</td><td><strong>225</strong></td><td><strong>235</strong></td></tr>
+            <tr><td><strong>-6</strong></td><td>종단, 교단</td><td><strong>226</strong></td><td><strong>236</strong></td></tr>
+            <tr><td><strong>-7</strong></td><td>예배형식, 의식, 의례</td><td><strong>227</strong></td><td><strong>237</strong></td></tr>
+            <tr><td><strong>-8</strong></td><td>종파, 교파</td><td><strong>228</strong></td><td><strong>238</strong></td></tr>
+          </tbody>
         </table></div>
       </div>
     </div>
 
-    <!-- 표3: 언어공통구분표 -->
-    <div class="accordion">
-      <div class="acc-header" onclick="toggleAcc(this)">★ 표3 — 언어공통구분표 (Common Subdivisions for Language) <span class="acc-arrow">▶</span></div>
-      <div class="acc-body">
-        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 700번대 언어류에서 각 언어를 세분할 때 적용 (예: 710한국어, 740영어)</div>
-        <div class="table-wrap"><table>
-          <tr><th>기호</th><th>의미</th><th>예시 (한국어 710 기준)</th></tr>
-          <tr><td><strong>-1</strong></td><td>문자, 음성학 ★</td><td>711 한글(문자론)</td></tr>
-          <tr><td><strong>-2</strong></td><td>어원, 어휘 ★</td><td>712 어원론</td></tr>
-          <tr><td><strong>-3</strong></td><td>사전 ★</td><td>713 한국어사전</td></tr>
-          <tr><td><strong>-4</strong></td><td>음운론</td><td>714 한국어 음운론</td></tr>
-          <tr><td><strong>-5</strong></td><td>문법론 ★</td><td>715 한국어 문법</td></tr>
-          <tr><td><strong>-6</strong></td><td>문자론</td><td>716 —</td></tr>
-          <tr><td><strong>-7</strong></td><td>언어정책</td><td>717 국어정책</td></tr>
-          <tr><td><strong>-8</strong></td><td>표준어, 방언</td><td>718 한국어 방언</td></tr>
-          <tr><td><strong>-9</strong></td><td>외국어로서의 한국어 교육</td><td>719 한국어 교육</td></tr>
-        </table></div>
+    <!-- 종합 합성 연습 -->
+    <div class="section-title" style="margin-top:32px">
+      <span class="dot" style="background:var(--accent5)"></span>조기표 번호 합성 종합 연습
+    </div>
+    <div class="card purple" style="margin-bottom:14px">
+      <div class="card-label">합성 공식 한눈에 보기</div>
+      <h3>🔢 표별 대표 합성 예시</h3>
+      <div style="font-size:13px;line-height:2.5;color:var(--text-muted)">
+        <div>① <span class="kw">철학사전</span> → 100 + <span style="color:var(--accent4)">03</span>(표①) = <strong style="color:var(--accent1)">103</strong> <span style="font-size:11px">(끝자리 0 삭제)</span></div>
+        <div>① <span class="kw">문헌정보학 연속간행물</span> → 020 + <span style="color:var(--accent4)">05</span>(표①) = <strong style="color:var(--accent1)">020.5</strong></div>
+        <div>①② <span class="kw">한국 문헌정보학사</span> → 020 + <span style="color:var(--accent4)">09</span>(역사지역) + <span style="color:var(--accent4)">11</span>(한국, 표②) = <strong style="color:var(--accent1)">020.911</strong></div>
+        <div>②  <span class="kw">중국 서예</span> → 640 + <span style="color:var(--accent4)">09</span> + <span style="color:var(--accent4)">12</span>(중국) = <strong style="color:var(--accent1)">640.912</strong></div>
+        <div>③  <span class="kw">영한사전</span> → 740(영어) + <span style="color:var(--accent4)">-1</span>(한국어, 표③) = <strong style="color:var(--accent1)">743.1</strong> <span style="font-size:11px">(표제어=영어)</span></div>
+        <div>④  <span class="kw">한국소설</span> → 810 + <span style="color:var(--accent4)">3</span>(소설, 표④) = <strong style="color:var(--accent1)">813</strong></div>
+        <div>④  <span class="kw">영미희곡</span> → 840 + <span style="color:var(--accent4)">2</span>(희곡, 표④) = <strong style="color:var(--accent1)">842</strong></div>
+        <div>⑤  <span class="kw">한국어문법</span> → 710 + <span style="color:var(--accent4)">5</span>(문법, 표⑤) = <strong style="color:var(--accent1)">715</strong></div>
+        <div>⑥  <span class="kw">불경</span> → 220(불교) + <span style="color:var(--accent4)">3</span>(경전, 표⑥) = <strong style="color:var(--accent1)">223</strong></div>
+        <div>⑥  <span class="kw">성경</span> → 230(기독교) + <span style="color:var(--accent4)">3</span>(경전, 표⑥) = <strong style="color:var(--accent1)">233</strong></div>
       </div>
     </div>
 
-    <!-- 표4: 문학형식구분표 -->
-    <div class="accordion">
-      <div class="acc-header" onclick="toggleAcc(this)">★ 표4 — 문학형식구분표 (Literary Forms) <span class="acc-arrow">▶</span></div>
-      <div class="acc-body">
-        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 800번대 문학류에서 장르를 세분할 때 적용 (예: 810한국문학, 840영미문학)</div>
-        <div class="table-wrap"><table>
-          <tr><th>기호</th><th>문학 형식</th><th>예시 (한국문학 810 기준)</th></tr>
-          <tr><td><strong>-1</strong></td><td>시 (Poetry) ★</td><td>811 한국시</td></tr>
-          <tr><td><strong>-2</strong></td><td>희곡 (Drama) ★</td><td>812 한국희곡</td></tr>
-          <tr><td><strong>-3</strong></td><td>소설 (Fiction) ★</td><td>813 한국소설</td></tr>
-          <tr><td><strong>-4</strong></td><td>수필 (Essays)</td><td>814 한국수필</td></tr>
-          <tr><td><strong>-5</strong></td><td>연설, 웅변</td><td>815 —</td></tr>
-          <tr><td><strong>-6</strong></td><td>편지, 서간문</td><td>816 —</td></tr>
-          <tr><td><strong>-7</strong></td><td>풍자, 해학</td><td>817 —</td></tr>
-          <tr><td><strong>-8</strong></td><td>기타 형식</td><td>818 —</td></tr>
-          <tr><td><strong>-9</strong></td><td>각국 문학사, 비평</td><td>819 한국문학사</td></tr>
-        </table></div>
-      </div>
-    </div>
-
-    <!-- 표5: 언어구분표 -->
-    <div class="accordion">
-      <div class="acc-header" onclick="toggleAcc(this)">표5 — 언어구분표 (Languages) <span class="acc-arrow">▶</span></div>
-      <div class="acc-body">
-        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 다국어 사전 등 언어별 구분이 필요할 때 사용</div>
-        <div class="table-wrap"><table>
-          <tr><th>기호</th><th>언어</th></tr>
-          <tr><td><strong>-11</strong></td><td>한국어 ★</td></tr>
-          <tr><td><strong>-12</strong></td><td>중국어</td></tr>
-          <tr><td><strong>-13</strong></td><td>일본어</td></tr>
-          <tr><td><strong>-14</strong></td><td>영어 ★</td></tr>
-          <tr><td><strong>-15</strong></td><td>독일어</td></tr>
-          <tr><td><strong>-16</strong></td><td>프랑스어</td></tr>
-          <tr><td><strong>-17</strong></td><td>스페인어</td></tr>
-          <tr><td><strong>-18</strong></td><td>이탈리아어</td></tr>
-          <tr><td><strong>-2</strong></td><td>알타이어족</td></tr>
-          <tr><td><strong>-41</strong></td><td>그리스어</td></tr>
-          <tr><td><strong>-5</strong></td><td>셈어족 (아랍어 등)</td></tr>
-        </table></div>
-      </div>
-    </div>
-
-    <!-- 표6: 민족·국가구분표 -->
-    <div class="accordion">
-      <div class="acc-header" onclick="toggleAcc(this)">표6 — 민족·국가구분표 (Racial, Ethnic, National Groups) <span class="acc-arrow">▶</span></div>
-      <div class="acc-body">
-        <div style="font-size:12px;color:var(--accent4);margin-bottom:8px">📌 민족, 국민, 종족을 기준으로 세분할 때 사용. 지리구분표(표2)와 혼동 주의!</div>
-        <div class="table-wrap"><table>
-          <tr><th>기호</th><th>민족·국가</th></tr>
-          <tr><td><strong>-11</strong></td><td>한민족(Korean) ★</td></tr>
-          <tr><td><strong>-12</strong></td><td>중국인(Chinese)</td></tr>
-          <tr><td><strong>-13</strong></td><td>일본인(Japanese)</td></tr>
-          <tr><td><strong>-14</strong></td><td>앵글로색슨(Anglo-Saxon)</td></tr>
-          <tr><td><strong>-2</strong></td><td>게르만 민족</td></tr>
-          <tr><td><strong>-3</strong></td><td>슬라브 민족</td></tr>
-          <tr><td><strong>-5</strong></td><td>셈족 (유대인, 아랍인)</td></tr>
-          <tr><td><strong>-6</strong></td><td>아프리카 민족</td></tr>
-          <tr><td><strong>-7</strong></td><td>아메리카 원주민</td></tr>
-        </table></div>
-      </div>
-    </div>
-
-    <!-- 조기표 활용 예시 -->
-    <div class="section-title" style="margin-top:32px"><span class="dot" style="background:var(--accent5)"></span>조기표 번호 합성 예시</div>
-    <div class="card purple" style="margin-bottom:16px">
-      <div class="card-label">NUMBER BUILDING</div>
-      <h3>🔢 합성 번호 만들기 실전</h3>
-      <div style="font-size:13px; line-height:2.2; color:var(--text-muted)">
-        <div><span class="kw">한국소설</span> → 810(한국문학) + <span style="color:var(--accent4)">-3</span>(소설, 표4) = <strong style="color:var(--accent1)">813</strong></div>
-        <div><span class="kw">한국어문법</span> → 710(한국어) + <span style="color:var(--accent4)">-5</span>(문법, 표3) = <strong style="color:var(--accent1)">715</strong></div>
-        <div><span class="kw">영미소설</span> → 840(영미문학) + <span style="color:var(--accent4)">-3</span>(소설, 표4) = <strong style="color:var(--accent1)">843</strong></div>
-        <div><span class="kw">문헌정보학사전</span> → 020(문헌정보학) + <span style="color:var(--accent4)">-03</span>(사전, 표1) = <strong style="color:var(--accent1)">020.03</strong></div>
-        <div><span class="kw">한국도서관역사</span> → 020(문헌정보학) + <span style="color:var(--accent4)">-09</span>(역사, 표1) + --11(한국, 표2) = <strong style="color:var(--accent1)">020.0911</strong></div>
-      </div>
-    </div>
-
-    <!-- 시험 암기 핵심 -->
+    <!-- 최종 암기 카드 -->
     <div class="card red">
-      <div class="card-label">★ 시험 암기 포인트</div>
-      <h3>💡 조기표 핵심 요약</h3>
+      <div class="card-label">★ 시험 직전 최종 암기</div>
+      <h3>💡 6개 조기표 핵심 요약</h3>
       <ul>
-        <li><strong>표1(표준구분)</strong>: --01~--09 / 모든 류에 적용 / --03 사전, --05 잡지, --07 교육 ★</li>
-        <li><strong>표2(지리구분)</strong>: 한국 --11, 미국 --42, 영국 --21 ★</li>
-        <li><strong>표3(언어공통)</strong>: 700대 언어류 / -1문자, -3사전, -5문법 ★</li>
-        <li><strong>표4(문학형식)</strong>: 800대 문학류 / -1시, -2희곡, -3소설 ★ 가장 자주 출제!</li>
-        <li><strong>표5(언어)</strong>: 다국어 사전 등 적용 / 한국어 -11, 영어 -14</li>
-        <li><strong>표6(민족·국가)</strong>: 민족지학 등 / 한민족 -11 ★</li>
-        <li><span class="kw r">표2(지리)</span> vs <span class="kw">표6(민족)</span> 혼동 주의! 기호 같아도 의미 다름</li>
+        <li><strong>① 표준구분표</strong>: 모든 주류 적용 · -01~-09 · <span class="kw r">끝자리 0 삭제</span> ★★★</li>
+        <li><strong>② 지역구분표</strong>: 한국 <strong>-11</strong> · 미국 <strong>-42</strong> · 영국 <strong>-24</strong> · 지시 없으면 -09 뒤 부가</li>
+        <li><strong>③ 국어구분표</strong>: 사전 언어 구분 · 표제어(앞 언어) 기준 · 영한=740 기준 → <strong>743.1</strong></li>
+        <li><strong>④ 문학형식구분표</strong>: 800대 · <span class="kw r">-1시 -2희곡 -3소설</span> ★★★ 최빈출</li>
+        <li><strong>⑤ 언어공통구분표</strong>: 700대 · <span class="kw r">-3사전 -5문법</span> -1음운 -8방언 ★★</li>
+        <li><strong>⑥ 종교공통구분표</strong>: 200대 · <span class="kw r">-3경전</span>(불경=223, 성경=233) ★</li>
+        <li>⚠️ <span class="kw r">③국어구분</span> vs <span class="kw">⑤언어공통</span> — ③은 사전 언어 식별 / ⑤는 언어학 내용 세분</li>
       </ul>
     </div>
 
   </div>
 
-  <!-- SECTION 8: 도서기호법 -->
+
+    <!-- SECTION 8: 도서기호법 -->
   <div class="section" id="s8">
     <div class="section-title"><span class="dot" style="background:var(--accent1)"></span>도서기호법 5종 완전 정복</div>
     <div class="card blue" style="margin-bottom:20px;padding:14px 18px">
@@ -1423,6 +1537,682 @@
   </div>
 
 </div>
+
+  <!-- SECTION 10: 청구기호 완성 연습 -->
+  <div class="section" id="s10">
+    <div class="section-title"><span class="dot" style="background:var(--accent1)"></span>청구기호(請求記號) 완성 연습</div>
+
+    <div class="card blue" style="padding:14px 18px;margin-bottom:20px">
+      <div style="font-size:12px;line-height:2.1;color:var(--text-muted)">
+        💡 청구기호 = <strong>분류기호 + 도서기호 (+ 권·호·연도 등)</strong><br>
+        📌 분류기호(주제 위치) + 도서기호(같은 주제 내 배열 순서)로 구성<br>
+        ⚠️ 실제 시험에서 두 기호를 합쳐 완성된 청구기호를 쓰는 문제 출제
+      </div>
+    </div>
+
+    <!-- 청구기호 구조 -->
+    <div class="section-title" style="margin-top:0"><span class="dot" style="background:var(--accent2)"></span>청구기호 구조</div>
+    <div class="card green" style="margin-bottom:18px">
+      <h3>📐 청구기호 구성 공식</h3>
+      <div style="text-align:center;padding:16px;background:var(--surface2);border-radius:10px;font-size:15px;letter-spacing:1px;margin:10px 0">
+        <span style="color:var(--accent1);font-weight:700">813</span>
+        <span style="color:var(--text-dim);font-size:12px;margin:0 4px">분류기호</span>
+        <span style="color:var(--text-dim)"> / </span>
+        <span style="color:var(--accent4);font-weight:700">김51ㅎ</span>
+        <span style="color:var(--text-dim);font-size:12px;margin:0 4px">도서기호</span>
+        <span style="color:var(--text-dim)"> / </span>
+        <span style="color:var(--accent3);font-weight:700">c.2</span>
+        <span style="color:var(--text-dim);font-size:12px;margin:0 4px">복본기호</span>
+      </div>
+      <div style="font-size:13px;line-height:2.0;color:var(--text-muted);margin-top:8px">
+        · <strong>분류기호</strong>: KDC/DDC로 결정된 주제 번호<br>
+        · <strong>도서기호</strong>: 같은 주제 내 자료 배열 (저자기호 등)<br>
+        · <strong>권호기호</strong>: v.1, v.2 (권차) | c.1, c.2 (복본)<br>
+        · <strong>연도기호</strong>: 연대순 기호법 사용 시 발행연도 추가
+      </div>
+    </div>
+
+    <!-- 완성 연습 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent3)"></span>청구기호 완성 연습 (단계별)</div>
+
+    <!-- 예제 1 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">예제 1 — 한국소설 (KDC + 리재철 도서기호) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div style="background:var(--surface2);border-radius:8px;padding:12px 16px;font-size:13px;line-height:2.2">
+          <strong>자료</strong>: 김철수 저 「별이 빛나는 밤」(한국소설)<br>
+          <strong>① 분류기호</strong>: 810(한국문학) + 3(소설, 조기표④) = <span style="color:var(--accent1);font-weight:700">813</span><br>
+          <strong>② 도서기호</strong> (리재철): 김 → 문자기호 <span style="color:var(--accent4);font-weight:700">김</span> + 숫자 <span style="color:var(--accent4);font-weight:700">51</span> + 서명 첫자 <span style="color:var(--accent4);font-weight:700">ㅂ</span><br>
+          <strong>청구기호</strong>: <span style="font-size:16px;color:var(--accent1);font-weight:700">813 / 김51ㅂ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 예제 2 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">예제 2 — 영미소설 (KDC + 커터-샌본) <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div style="background:var(--surface2);border-radius:8px;padding:12px 16px;font-size:13px;line-height:2.2">
+          <strong>자료</strong>: Hemingway 저 「The Old Man and the Sea」<br>
+          <strong>① 분류기호</strong>: 840(영미문학) + 3(소설, 조기표④) = <span style="color:var(--accent1);font-weight:700">843</span><br>
+          <strong>② 도서기호</strong> (커터-샌본): H <span style="color:var(--accent4);font-weight:700">H489</span> + 서명(관사 The 제외, Old→) <span style="color:var(--accent4);font-weight:700">o</span> (소문자)<br>
+          <strong>청구기호</strong>: <span style="font-size:16px;color:var(--accent1);font-weight:700">843 / H489o</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 예제 3 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">예제 3 — 조기표 합성 + 도서기호 통합 <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div style="background:var(--surface2);border-radius:8px;padding:12px 16px;font-size:13px;line-height:2.2">
+          <strong>자료</strong>: 박영희 저 「한국어문법론」<br>
+          <strong>① 분류기호</strong>: 710(한국어) + 5(문법, 조기표⑤) = <span style="color:var(--accent1);font-weight:700">715</span><br>
+          <strong>② 도서기호</strong> (리재철): 박 → <span style="color:var(--accent4);font-weight:700">박</span> + 숫자 <span style="color:var(--accent4);font-weight:700">63</span> + 서명 첫자 <span style="color:var(--accent4);font-weight:700">ㅎ</span><br>
+          <strong>청구기호</strong>: <span style="font-size:16px;color:var(--accent1);font-weight:700">715 / 박63ㅎ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 예제 4 -->
+    <div class="accordion">
+      <div class="acc-header" onclick="toggleAcc(this)">예제 4 — 전기서 (피전자 원칙 적용) ★ <span class="acc-arrow">▶</span></div>
+      <div class="acc-body">
+        <div style="background:var(--surface2);border-radius:8px;padding:12px 16px;font-size:13px;line-height:2.2">
+          <strong>자료</strong>: 홍길동 저 「세종대왕의 일생」(전기서)<br>
+          <strong>⚠️ 핵심</strong>: 전기서는 <strong>저자(홍길동)가 아닌 피전자(세종대왕)</strong> 기준<br>
+          <strong>① 분류기호</strong>: 911.05(조선시대) 또는 990(전기) 계열<br>
+          <strong>② 도서기호</strong>: 피전자 세종 기준으로 부여<br>
+          <strong>핵심 암기</strong>: <span style="color:var(--accent4);font-weight:700">전기서 = 피전자 기준</span> ★★★
+        </div>
+      </div>
+    </div>
+
+    <!-- 직접 연습란 -->
+    <div class="section-title" style="margin-top:24px"><span class="dot" style="background:var(--accent5)"></span>직접 완성해보기</div>
+    <div style="background:var(--surface);border:1.5px dashed var(--border);border-radius:12px;padding:18px;margin-bottom:16px">
+      <div style="font-size:13px;color:var(--text-dim);margin-bottom:10px;line-height:1.9">
+        📝 <strong>문제</strong>: 이순신 저 「영어회화 실전」 — KDC + 커터-샌본으로 청구기호를 완성하시오.<br>
+        <span style="font-size:11px">힌트: 740(영어) + 언어공통구분표⑤ 적용 / 커터-샌본: 서명 첫글자 소문자</span>
+      </div>
+      <textarea style="width:100%;min-height:80px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;font-family:inherit;font-size:13px;color:var(--text);resize:vertical;line-height:1.8" placeholder="① 분류기호: &#10;② 도서기호: &#10;최종 청구기호: "></textarea>
+      <details style="margin-top:10px">
+        <summary style="font-size:12px;color:var(--accent1);cursor:pointer;font-weight:600">▶ 정답 확인</summary>
+        <div style="font-size:13px;padding:10px 14px;background:var(--surface2);border-radius:8px;margin-top:6px;line-height:2.0">
+          ① 분류기호: 740(영어) + 7(독본·회화, 표⑤) = <strong>747</strong><br>
+          ② 도서기호 (커터-샌본): 이→ <strong>L55</strong> + 서명 첫자 <strong>y</strong>(영어회화→영) (소문자)<br>
+          최종 청구기호: <strong style="color:var(--accent1);font-size:15px">747 / L55y</strong>
+        </div>
+      </details>
+    </div>
+
+  </div>
+
+  <!-- SECTION 11: 분류법 연표 -->
+  <div class="section" id="s11">
+    <div class="section-title"><span class="dot" style="background:var(--accent4)"></span>주요 분류법 연표 — 역사·판수 암기</div>
+
+    <div class="card blue" style="padding:14px 18px;margin-bottom:20px">
+      <div style="font-size:12px;line-height:2.0;color:var(--text-muted)">
+        💡 연표 문제는 <strong>"몇 년에 몇 판이 발행되었는가"</strong> 유형이 단골<br>
+        📌 KDC 현행판 = <strong>6판(2013)</strong> &nbsp;|&nbsp; DDC 현행판 = <strong>23판(2011)</strong>
+      </div>
+    </div>
+
+    <!-- KDC 연표 -->
+    <div class="section-title" style="margin-top:0"><span class="dot" style="background:var(--accent1)"></span>KDC 한국십진분류법 연표</div>
+    <div class="table-wrap" style="margin-bottom:20px"><table>
+      <thead><tr><th>판수</th><th>발행연도</th><th>주요 특징</th></tr></thead>
+      <tbody>
+        <tr><td><strong>초판</strong></td><td>1964</td><td>한국도서관협회 제정 · DDC 기반</td></tr>
+        <tr><td><strong>2판</strong></td><td>1966</td><td>—</td></tr>
+        <tr><td><strong>3판</strong></td><td>1980</td><td>대폭 개정</td></tr>
+        <tr><td><strong>4판</strong></td><td>1996</td><td>한자 표기 유지</td></tr>
+        <tr style="background:var(--surface2)"><td><strong>5판</strong></td><td>2009</td><td>100% 한글화 ★ | 한국 우선 배치 강화</td></tr>
+        <tr style="background:rgba(var(--accent1-rgb,200,100,80),0.08)"><td><strong>6판 ★★★</strong></td><td><strong>2013</strong></td><td>현행판 · 3권 구성(본표·상관색인·해설서) · 028 기록관리학 추가</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- DDC 연표 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent2)"></span>DDC 듀이십진분류법 연표</div>
+    <div class="table-wrap" style="margin-bottom:20px"><table>
+      <thead><tr><th>판수</th><th>발행연도</th><th>주요 특징</th></tr></thead>
+      <tbody>
+        <tr><td><strong>초판</strong></td><td>1876</td><td>Melvil Dewey 발행 · 44쪽 소책자 ★</td></tr>
+        <tr><td><strong>2판</strong></td><td>1885</td><td>—</td></tr>
+        <tr><td><strong>14판</strong></td><td>1942</td><td>표준판 논란</td></tr>
+        <tr><td><strong>15판</strong></td><td>1951</td><td>대폭 개정 실패 → 16판에서 환원</td></tr>
+        <tr><td><strong>19판</strong></td><td>1979</td><td>기계가독형 도입</td></tr>
+        <tr><td><strong>20판</strong></td><td>1989</td><td>컴퓨터 과학 분야 대폭 개정</td></tr>
+        <tr style="background:var(--surface2)"><td><strong>21판</strong></td><td>1996</td><td>인터넷·전자자료 반영</td></tr>
+        <tr style="background:var(--surface2)"><td><strong>22판</strong></td><td>2003</td><td>WebDewey 본격화</td></tr>
+        <tr style="background:rgba(var(--accent2-rgb,80,160,100),0.08)"><td><strong>23판 ★★★</strong></td><td><strong>2011</strong></td><td>현행판 · Print판 마지막 · 이후 WebDewey로 전환</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- 기타 분류법 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent3)"></span>기타 주요 분류법 연표</div>
+    <div class="table-wrap" style="margin-bottom:20px"><table>
+      <thead><tr><th>분류법</th><th>제정연도</th><th>제정자·기관</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td><strong>LCC</strong></td><td>1897~</td><td>미국 의회도서관</td><td>알파벳+숫자 혼합기호 · 미국 대학도서관 중심</td></tr>
+        <tr><td><strong>UDC</strong></td><td>1895~(초판 1905)</td><td>Otlet·La Fontaine</td><td>DDC 기반 · 기호 가장 복잡 · 유럽 중심</td></tr>
+        <tr><td><strong>CC</strong></td><td>1933</td><td>Ranganathan</td><td>최초 패싯 분류법 · PMEST 분석</td></tr>
+        <tr><td><strong>NDC</strong></td><td>1928(일본)</td><td>모치즈키 분류위</td><td>KDC의 모태 중 하나</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- 핵심 암기 카드 -->
+    <div class="card red">
+      <div class="card-label">★ 시험 직전 연표 핵심 암기</div>
+      <h3>💡 반드시 외울 연도 7개</h3>
+      <ul>
+        <li><strong>DDC 초판 1876</strong> — Melvil Dewey · 44쪽 소책자</li>
+        <li><strong>DDC 현행 23판 2011</strong> ★★★</li>
+        <li><strong>UDC 초판 1905</strong> — Otlet·La Fontaine</li>
+        <li><strong>CC 1933</strong> — Ranganathan · 최초 패싯</li>
+        <li><strong>KDC 초판 1964</strong> — 한국도서관협회</li>
+        <li><strong>KDC 5판 2009</strong> — 100% 한글화 ★</li>
+        <li><strong>KDC 현행 6판 2013</strong> ★★★ · 해설서(3권) 추가</li>
+      </ul>
+    </div>
+
+    <!-- O/X 퀴즈 -->
+    <div class="section-title" style="margin-top:24px"><span class="dot" style="background:var(--accent5)"></span>연표 O/X 확인 퀴즈</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:8px">Q1. DDC는 1876년 Dewey가 초판을 발행하였다.</div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer">정답 확인</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent2);font-weight:700">⭕ O — DDC 초판 1876년, Melvil Dewey</div></details>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:8px">Q2. KDC 현행판은 5판(2009)이다.</div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer">정답 확인</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent4);font-weight:700">❌ X — 현행판은 <strong>6판(2013)</strong></div></details>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:8px">Q3. UDC는 DDC를 기반으로 Otlet과 La Fontaine이 제정하였다.</div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer">정답 확인</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent2);font-weight:700">⭕ O — UDC, 국제서지협회(IIB), 1895년 착수·1905년 초판</div></details>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:8px">Q4. KDC 6판에서 처음으로 100% 한글화가 이루어졌다.</div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer">정답 확인</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent4);font-weight:700">❌ X — 100% 한글화는 <strong>5판(2009)</strong>. 6판은 한글 표현을 순우리말로 전환</div></details>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:8px">Q5. 패싯 분류법(CC)을 최초로 제안한 인물은 Ranganathan이다.</div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer">정답 확인</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent2);font-weight:700">⭕ O — CC(Colon Classification) 1933년, Ranganathan</div></details>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SECTION 12: 오답노트 -->
+  <div class="section" id="s12">
+    <div class="section-title"><span class="dot" style="background:var(--accent3)"></span>🔄 자주 틀리는 오답노트 — 사서직 출제 빈도 높음</div>
+    <div class="card blue" style="padding:12px 16px;margin-bottom:20px">
+      <div style="font-size:12px;color:var(--text-muted);line-height:2.0">
+        ⚠️ 시험에서 <strong>혼동 유발 포인트</strong>만 모았습니다. 정답을 먼저 가리고 맞혀보세요.
+      </div>
+    </div>
+
+    <!-- 카테고리 1: 조기표 혼동 -->
+    <div class="section-title" style="margin-top:0"><span class="dot" style="background:var(--accent1)"></span>① 조기표 적용 범위 혼동 ★★★</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+
+      <div style="background:var(--surface);border-left:4px solid var(--accent4);border-radius:8px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;color:var(--accent4);margin-bottom:6px">❓ 표③ 국어구분표는 어디에 적용하나?</div>
+        <details><summary style="font-size:12px;color:var(--text-muted);cursor:pointer">정답 보기 ▼</summary>
+        <div style="margin-top:8px;font-size:13px;line-height:1.9">
+          ✅ <strong>언어사전(700번대)에서 사전 표제어의 언어</strong> 기준으로 적용<br>
+          📌 예: 영한사전 → 740(영어)+국어구분-1(한국어) = <strong>743.1</strong> (단, 실제는 740.32 등 복잡)<br>
+          ⚠️ 혼동 주의: 표③은 어학(700번대)에만, 표⑤는 문학(800번대)에만!
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border-left:4px solid var(--accent4);border-radius:8px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;color:var(--accent4);margin-bottom:6px">❓ 표④ 문학형식구분표와 표⑤ 언어공통구분표의 차이는?</div>
+        <details><summary style="font-size:12px;color:var(--text-muted);cursor:pointer">정답 보기 ▼</summary>
+        <div style="margin-top:8px;font-size:13px;line-height:1.9">
+          ✅ <strong>표④ 문학형식구분표</strong> → 800번대(문학) 전용. -1시 -2희곡 -3소설<br>
+          ✅ <strong>표⑤ 언어공통구분표</strong> → 700번대(언어) 전용. -1음성 -3사전 -5문법<br>
+          📌 암기법: 문학=④형식 / 언어=⑤공통
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border-left:4px solid var(--accent4);border-radius:8px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;color:var(--accent4);margin-bottom:6px">❓ 표① 표준구분표 적용 시 0을 삭제하는 경우는?</div>
+        <details><summary style="font-size:12px;color:var(--text-muted);cursor:pointer">정답 보기 ▼</summary>
+        <div style="margin-top:8px;font-size:13px;line-height:1.9">
+          ✅ 기본 분류기호가 <strong>꼭 맞아떨어지는 숫자로 끝날 때</strong> 앞의 0을 생략<br>
+          📌 예: 철학(100) + 사전(-03) → <strong>103</strong> (0 하나 삭제)<br>
+          📌 예: 과학(500) + 사전(-03) → <strong>503</strong><br>
+          ⚠️ 단, 과학기술(600~) 등 세부기호가 있는 경우 삭제 안 할 수도 있어 주의
+        </div></details>
+      </div>
+    </div>
+
+    <!-- 카테고리 2: 도서기호 혼동 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent2)"></span>② 도서기호 혼동 포인트 ★★</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+
+      <div style="background:var(--surface);border-left:4px solid var(--accent2);border-radius:8px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:6px">❓ 전기(傳記) 청구기호에서 기준이 되는 인물은?</div>
+        <details><summary style="font-size:12px;color:var(--text-muted);cursor:pointer">정답 보기 ▼</summary>
+        <div style="margin-top:8px;font-size:13px;line-height:1.9">
+          ✅ <strong>피전자(傳記 대상 인물)</strong> 기준<br>
+          📌 예: 이순신 저 전기 → 도서기호는 이순신(피전자)의 기호로<br>
+          ⚠️ 혼동: 저자(이순신)와 피전자(전기 주인공)가 다를 수 있음. 피전자 우선!
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border-left:4px solid var(--accent2);border-radius:8px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:6px">❓ 리재철식 저자기호에서 한글 첫 글자와 두 번째 기준은?</div>
+        <details><summary style="font-size:12px;color:var(--text-muted);cursor:pointer">정답 보기 ▼</summary>
+        <div style="margin-top:8px;font-size:13px;line-height:1.9">
+          ✅ 성씨 자음 기호(숫자) + 저자명 두 번째 글자 모음<br>
+          📌 예: 김민준 → 김=6, 민의 첫 모음 ㅣ → <strong>61ㅂ</strong> (서명첫자 포함 3자리)<br>
+          📌 일반 공식: 성씨번호 + 모음기호 + 서명 첫 글자
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border-left:4px solid var(--accent2);border-radius:8px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:6px">❓ Cutter-Sanborn 기호표는 어떤 언어 저작에 사용하나?</div>
+        <details><summary style="font-size:12px;color:var(--text-muted);cursor:pointer">정답 보기 ▼</summary>
+        <div style="margin-top:8px;font-size:13px;line-height:1.9">
+          ✅ <strong>서양어(영어 등 로마자) 저작</strong>에 사용<br>
+          📌 예: Hemingway → H489<br>
+          ⚠️ 한국어 저작 → 리재철식 / 서양어 저작 → Cutter-Sanborn
+        </div></details>
+      </div>
+    </div>
+
+    <!-- 카테고리 3: 분류법 개념 혼동 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent5)"></span>③ 분류법 개념 혼동 ★★★</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+
+      <div style="background:var(--surface);border-left:4px solid var(--accent5);border-radius:8px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;color:var(--accent5);margin-bottom:6px">❓ 열거식 vs 패싯식 — 각각의 대표 분류법은?</div>
+        <details><summary style="font-size:12px;color:var(--text-muted);cursor:pointer">정답 보기 ▼</summary>
+        <div style="margin-top:8px;font-size:13px;line-height:1.9">
+          ✅ <strong>열거식</strong>: DDC, KDC, LCC — 개념을 미리 나열·열거<br>
+          ✅ <strong>패싯식</strong>: CC(Colon Classification) — 속성 조합으로 구성<br>
+          ⚠️ DDC는 열거식이지만 패싯 요소(조기표)를 부분 도입 → "준패싯" 이라고도 함
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border-left:4px solid var(--accent5);border-radius:8px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;color:var(--accent5);margin-bottom:6px">❓ 브로드(broad) 분류 vs 클로즈(close) 분류 차이는?</div>
+        <details><summary style="font-size:12px;color:var(--text-muted);cursor:pointer">정답 보기 ▼</summary>
+        <div style="margin-top:8px;font-size:13px;line-height:1.9">
+          ✅ <strong>브로드 분류</strong>: 상위 기호만 부여 (예: 813만 사용) — 소규모 도서관<br>
+          ✅ <strong>클로즈 분류</strong>: 최대한 세분(예: 813.6 등) — 대규모 도서관<br>
+          📌 암기: 브로드=넓게(broad), 클로즈=좁게(close/세분)
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border-left:4px solid var(--accent5);border-radius:8px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;color:var(--accent5);margin-bottom:6px">❓ KDC의 '한국 우선 원칙'이 적용되는 주류 3가지는?</div>
+        <details><summary style="font-size:12px;color:var(--text-muted);cursor:pointer">정답 보기 ▼</summary>
+        <div style="margin-top:8px;font-size:13px;line-height:1.9">
+          ✅ <strong>710 한국어</strong>(DDC에서는 영어가 먼저)<br>
+          ✅ <strong>810 한국문학</strong>(DDC에서는 영문학이 먼저)<br>
+          ✅ <strong>911 한국사</strong>(DDC에서는 미국·유럽 위주)<br>
+          📌 KDC의 핵심 특징: 한국 관련 주제를 각 주류의 앞자리에 배치
+        </div></details>
+      </div>
+    </div>
+
+    <!-- O/X 최종 확인 -->
+    <div class="card red" style="margin-top:4px">
+      <div class="card-label">⚡ 최다 오답 TOP 3</div>
+      <ul style="font-size:13px;line-height:2.2;margin-top:8px">
+        <li>❌ "표③과 표⑤는 같다" → <strong>표③=어학(700), 표⑤=문학(800) 전용</strong></li>
+        <li>❌ "KDC 100% 한글화는 6판" → <strong>5판(2009)이 한글화, 6판(2013)이 현행</strong></li>
+        <li>❌ "전기의 도서기호는 저자 기준" → <strong>피전자(전기 대상) 기준</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 13: 조기표 KDC↔DDC 비교 -->
+  <div class="section" id="s13">
+    <div class="section-title"><span class="dot" style="background:var(--accent2)"></span>📊 KDC ↔ DDC 조기표(보조표) 1:1 비교</div>
+    <div class="card blue" style="padding:12px 16px;margin-bottom:20px">
+      <div style="font-size:12px;color:var(--text-muted);line-height:2.0">
+        💡 KDC 6판(6개 조기표) ↔ DDC 23판(7개 보조표) 매핑<br>
+        📌 출제 포인트: <strong>대응 여부·기능 차이</strong>를 묻는 문제가 자주 출제됨
+      </div>
+    </div>
+
+    <!-- 비교표 -->
+    <div class="table-wrap" style="margin-bottom:24px"><table>
+      <thead>
+        <tr>
+          <th>KDC 조기표</th>
+          <th>KDC 명칭</th>
+          <th>DDC 보조표</th>
+          <th>DDC 명칭</th>
+          <th>대응 여부</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>표①</strong></td>
+          <td>표준구분표</td>
+          <td><strong>Table 1</strong></td>
+          <td>Standard Subdivisions</td>
+          <td>✅ 동일 기능</td>
+        </tr>
+        <tr>
+          <td><strong>표②</strong></td>
+          <td>지역구분표</td>
+          <td><strong>Table 2</strong></td>
+          <td>Geographic Areas</td>
+          <td>✅ 동일 기능</td>
+        </tr>
+        <tr>
+          <td><strong>표③</strong></td>
+          <td>국어구분표</td>
+          <td><strong>Table 6</strong></td>
+          <td>Languages</td>
+          <td>🔶 유사 (번호 다름)</td>
+        </tr>
+        <tr>
+          <td><strong>표④</strong></td>
+          <td>문학형식구분표</td>
+          <td><strong>Table 3</strong></td>
+          <td>Subdivisions for Individual Literatures</td>
+          <td>🔶 유사 (더 세분됨)</td>
+        </tr>
+        <tr>
+          <td><strong>표⑤</strong></td>
+          <td>언어공통구분표</td>
+          <td><strong>Table 4</strong></td>
+          <td>Subdivisions of Individual Languages</td>
+          <td>✅ 동일 기능</td>
+        </tr>
+        <tr>
+          <td><strong>표⑥</strong></td>
+          <td>종교공통구분표</td>
+          <td>—</td>
+          <td>(없음, 본표에서 처리)</td>
+          <td>❌ KDC 단독</td>
+        </tr>
+        <tr>
+          <td>—</td>
+          <td>(없음)</td>
+          <td><strong>Table 5</strong></td>
+          <td>Ethnic &amp; National Groups</td>
+          <td>❌ DDC 단독</td>
+        </tr>
+        <tr>
+          <td>—</td>
+          <td>(없음)</td>
+          <td><strong>Table 7</strong></td>
+          <td>Groups of Persons</td>
+          <td>❌ DDC 단독</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <!-- 핵심 차이점 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent4)"></span>핵심 차이 정리 ★★★</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+
+      <div class="card green" style="padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;margin-bottom:8px">📌 조기표 개수 차이</div>
+        <div style="font-size:13px;line-height:2.0">
+          KDC 6판: <strong>6개</strong> 조기표 (표①~⑥)<br>
+          DDC 23판: <strong>7개</strong> 보조표 (Table 1~7)<br>
+          → DDC가 1개 더 많음 (Table 5 민족·국가집단, Table 7 개인집단 추가)
+        </div>
+      </div>
+
+      <div class="card red" style="padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;margin-bottom:8px">📌 KDC 단독 — 종교공통구분표(표⑥)</div>
+        <div style="font-size:13px;line-height:2.0">
+          DDC에는 종교 전용 보조표 없음 → 종교별 주류(200번대) 안에서 처리<br>
+          KDC는 200번대(종교) 자료에 표⑥을 별도 적용<br>
+          📌 시험: "KDC에만 있고 DDC에는 없는 보조표는?" → <strong>종교공통구분표(표⑥)</strong>
+        </div>
+      </div>
+
+      <div class="card blue" style="padding:14px 16px">
+        <div style="font-size:13px;font-weight:700;margin-bottom:8px">📌 DDC 단독 — Table 5(민족) & Table 7(개인집단)</div>
+        <div style="font-size:13px;line-height:2.0">
+          Table 5: 민족·국가 집단별 세분 (예: 한국인, 유대인 등)<br>
+          Table 7: 직업·연령·성별 등 개인 속성 기준 세분<br>
+          → KDC에는 해당 보조표 없음
+        </div>
+      </div>
+    </div>
+
+    <!-- 확인 퀴즈 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent1)"></span>확인 문제 (4지선다형)</div>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:10px">Q1. KDC 조기표 중 DDC 보조표에 대응하는 것이 없는 것은?</div>
+        <div style="font-size:13px;line-height:2.0;color:var(--text-dim)">
+          ① 표준구분표(표①) &nbsp;&nbsp; ② 지역구분표(표②)<br>③ 종교공통구분표(표⑥) &nbsp;&nbsp; ④ 언어공통구분표(표⑤)
+        </div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer;margin-top:8px">정답 확인 ▼</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent2);font-weight:700">
+          ✅ 정답: ③ 종교공통구분표(표⑥) — DDC에는 대응 보조표 없음
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:10px">Q2. DDC의 보조표 수와 KDC의 조기표 수로 옳은 것은?</div>
+        <div style="font-size:13px;line-height:2.0;color:var(--text-dim)">
+          ① DDC 6개 / KDC 7개 &nbsp;&nbsp; ② DDC 7개 / KDC 6개<br>③ DDC 6개 / KDC 6개 &nbsp;&nbsp; ④ DDC 7개 / KDC 7개
+        </div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer;margin-top:8px">정답 확인 ▼</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent2);font-weight:700">
+          ✅ 정답: ② DDC 7개(Table 1~7) / KDC 6개(표①~⑥)
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:10px">Q3. KDC 표③(국어구분표)에 대응하는 DDC 보조표는?</div>
+        <div style="font-size:13px;line-height:2.0;color:var(--text-dim)">
+          ① Table 3 &nbsp;&nbsp; ② Table 4 &nbsp;&nbsp; ③ Table 5 &nbsp;&nbsp; ④ Table 6
+        </div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer;margin-top:8px">정답 확인 ▼</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent2);font-weight:700">
+          ✅ 정답: ④ Table 6 (Languages — 언어 세분)
+        </div></details>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 14: MARC 핵심 -->
+  <div class="section" id="s14">
+    <div class="section-title"><span class="dot" style="background:var(--accent1)"></span>🗂️ MARC 핵심 필드 — 자료조직개론 단골 출제</div>
+    <div class="card blue" style="padding:12px 16px;margin-bottom:20px">
+      <div style="font-size:12px;color:var(--text-muted);line-height:2.0">
+        📌 MARC(Machine-Readable Cataloging) = 기계가독형 목록 형식<br>
+        💡 <strong>KORMARC</strong>(한국) 기준. 사서직 시험에서 필드번호·지시기호·서브필드 구분 출제
+      </div>
+    </div>
+
+    <!-- 필드 구조 설명 -->
+    <div class="section-title" style="margin-top:0"><span class="dot" style="background:var(--accent2)"></span>MARC 레코드 구조</div>
+    <div class="table-wrap" style="margin-bottom:20px"><table>
+      <thead><tr><th>구성 요소</th><th>설명</th><th>예시</th></tr></thead>
+      <tbody>
+        <tr><td><strong>태그(Tag)</strong></td><td>3자리 숫자, 필드 식별</td><td>245, 100, 650</td></tr>
+        <tr><td><strong>지시기호(Indicator)</strong></td><td>필드당 2자리, 처리 방식 지정</td><td>1 0, 1 4 등</td></tr>
+        <tr><td><strong>서브필드(Subfield)</strong></td><td>$로 시작, 데이터 세분</td><td>$a, $b, $c</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- 핵심 필드 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent3)"></span>핵심 필드 암기표 ★★★</div>
+    <div class="table-wrap" style="margin-bottom:20px"><table>
+      <thead><tr><th>태그</th><th>필드명</th><th>주요 서브필드</th><th>출제 포인트</th></tr></thead>
+      <tbody>
+        <tr style="background:rgba(200,80,80,0.06)">
+          <td><strong>100</strong></td>
+          <td>본표목 — 개인명</td>
+          <td>$a 성명 $e 관계어 $4 관계코드</td>
+          <td>저자 1인일 때 ★★★</td>
+        </tr>
+        <tr style="background:rgba(200,80,80,0.06)">
+          <td><strong>110</strong></td>
+          <td>본표목 — 단체명</td>
+          <td>$a 단체명 $b 하위단체</td>
+          <td>기관 저작물</td>
+        </tr>
+        <tr style="background:rgba(80,160,100,0.06)">
+          <td><strong>245</strong></td>
+          <td>표제 및 책임표시사항</td>
+          <td>$a 본표제 $b 부표제 $c 책임표시</td>
+          <td>가장 자주 출제 ★★★</td>
+        </tr>
+        <tr>
+          <td><strong>250</strong></td>
+          <td>판사항</td>
+          <td>$a 판표시</td>
+          <td>판표시 기재 규칙</td>
+        </tr>
+        <tr>
+          <td><strong>260/264</strong></td>
+          <td>발행사항</td>
+          <td>$a 발행지 $b 발행처 $c 발행연도</td>
+          <td>$a $b $c 순서 암기</td>
+        </tr>
+        <tr>
+          <td><strong>300</strong></td>
+          <td>형태사항</td>
+          <td>$a 쪽수 $b 삽화 $c 크기</td>
+          <td>형태기술 순서</td>
+        </tr>
+        <tr style="background:rgba(80,100,200,0.06)">
+          <td><strong>490/830</strong></td>
+          <td>총서사항</td>
+          <td>$a 총서명 $v 권호</td>
+          <td>490=비추적, 830=추적 차이 ★</td>
+        </tr>
+        <tr style="background:rgba(80,100,200,0.06)">
+          <td><strong>500</strong></td>
+          <td>일반주기</td>
+          <td>$a 주기내용</td>
+          <td>특정 주기 해당 없을 때</td>
+        </tr>
+        <tr style="background:rgba(200,150,80,0.06)">
+          <td><strong>600</strong></td>
+          <td>주제명 부출표목 — 개인명</td>
+          <td>$a 개인명 $x 일반세분</td>
+          <td>인물 주제 접근점</td>
+        </tr>
+        <tr style="background:rgba(200,150,80,0.06)">
+          <td><strong>650</strong></td>
+          <td>주제명 부출표목 — 일반주제</td>
+          <td>$a 주제어 $x 일반세분 $z 지역세분</td>
+          <td>가장 기본 주제 접근 ★★★</td>
+        </tr>
+        <tr style="background:rgba(200,150,80,0.06)">
+          <td><strong>653</strong></td>
+          <td>색인어 — 비통제</td>
+          <td>$a 키워드</td>
+          <td>자유어 색인</td>
+        </tr>
+        <tr>
+          <td><strong>700</strong></td>
+          <td>부출표목 — 개인명</td>
+          <td>$a 성명 $e 관계어</td>
+          <td>공저자 2인 이상 시 ★★</td>
+        </tr>
+        <tr>
+          <td><strong>856</strong></td>
+          <td>전자적 접근위치</td>
+          <td>$u URL $z 주기</td>
+          <td>전자자료·원문링크</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <!-- 지시기호 설명 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent4)"></span>245 필드 지시기호 (자주 출제) ★★★</div>
+    <div class="table-wrap" style="margin-bottom:20px"><table>
+      <thead><tr><th>지시기호 1</th><th>의미</th><th>지시기호 2</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td><strong>0</strong></td><td>100/110/111 필드 없음 → 표제 본표목</td><td><strong>0</strong></td><td>관사 없음 (비정렬 없음)</td></tr>
+        <tr><td><strong>1</strong></td><td>100/110/111 필드 있음 → 표제 부출표목</td><td><strong>1~9</strong></td><td>비정렬 문자 수 (관사 포함 문자 수)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="card green" style="padding:12px 16px;margin-bottom:20px">
+      <div style="font-size:13px;line-height:2.0">
+        📌 예: 저자 있는 자료 → <strong>245 10 $a 표제명 $c 저자명</strong><br>
+        📌 예: 저자 없는 자료 → <strong>245 00 $a 표제명</strong><br>
+        📌 예: 표제 'The'로 시작 → <strong>245 14 $a The 표제명</strong> (2지시기호=4, 관사 'The '=4자)
+      </div>
+    </div>
+
+    <!-- 확인 퀴즈 -->
+    <div class="section-title"><span class="dot" style="background:var(--accent5)"></span>MARC 확인 퀴즈 (4지선다형)</div>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:10px">Q1. 개인 저자가 있는 자료의 본표목 필드로 옳은 것은?</div>
+        <div style="font-size:13px;line-height:2.0;color:var(--text-dim)">① 110 &nbsp;&nbsp; ② 100 &nbsp;&nbsp; ③ 700 &nbsp;&nbsp; ④ 600</div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer;margin-top:8px">정답 확인 ▼</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent2);font-weight:700">
+          ✅ 정답: ② 100 — 개인명 본표목 (110=단체명, 700=부출표목)
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:10px">Q2. 발행지·발행처·발행연도를 기술하는 필드는?</div>
+        <div style="font-size:13px;line-height:2.0;color:var(--text-dim)">① 245 &nbsp;&nbsp; ② 250 &nbsp;&nbsp; ③ 260 &nbsp;&nbsp; ④ 300</div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer;margin-top:8px">정답 확인 ▼</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent2);font-weight:700">
+          ✅ 정답: ③ 260 (또는 264) — $a 발행지 $b 발행처 $c 연도
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:10px">Q3. 245 필드의 제1지시기호가 '1'인 경우는?</div>
+        <div style="font-size:13px;line-height:2.0;color:var(--text-dim)">
+          ① 100/110 필드가 없는 자료<br>
+          ② 100/110 필드가 있는 자료<br>
+          ③ 표제가 관사로 시작하는 자료<br>
+          ④ 전자자료
+        </div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer;margin-top:8px">정답 확인 ▼</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent2);font-weight:700">
+          ✅ 정답: ② 100/110 필드가 있는 자료 → 표제 부출표목 생성
+        </div></details>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:10px">Q4. 공저자(2인 이상)를 추가 기술할 때 사용하는 필드는?</div>
+        <div style="font-size:13px;line-height:2.0;color:var(--text-dim)">① 100 &nbsp;&nbsp; ② 245 &nbsp;&nbsp; ③ 500 &nbsp;&nbsp; ④ 700</div>
+        <details><summary style="font-size:12px;color:var(--accent1);cursor:pointer;margin-top:8px">정답 확인 ▼</summary>
+        <div style="margin-top:6px;font-size:13px;color:var(--accent2);font-weight:700">
+          ✅ 정답: ④ 700 — 부출표목(개인명). 주저자=100, 공저자=700
+        </div></details>
+      </div>
+    </div>
+
+    <div class="card red">
+      <div class="card-label">⚡ MARC 최다 오답 포인트</div>
+      <ul style="font-size:13px;line-height:2.2;margin-top:8px">
+        <li>❌ "공저자도 100 필드" → <strong>주저자만 100, 공저자는 700</strong></li>
+        <li>❌ "245 지시기호1=0이면 표목 있음" → <strong>0이면 없음, 1이면 있음</strong></li>
+        <li>❌ "490=총서 추적" → <strong>490은 비추적, 추적은 830 사용</strong></li>
+      </ul>
+    </div>
+  </div>
 
 <script>
 // Tab navigation

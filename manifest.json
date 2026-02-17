@@ -1,7 +1,7 @@
 {
-  "name": "분류론 핵심 힌트집",
+  "name": "분류론 핵심 이론집",
   "short_name": "분류론",
-  "description": "KDC·DDC 분류론 핵심 힌트집 — 사서직 시험 대비",
+  "description": "KDC·DDC 분류론 핵심 이론집 — 사서직 시험 대비",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
