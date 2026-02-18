@@ -13,6 +13,7 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>정보조직론 핵심 이론집</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>@font-face { font-family: 'MiGotChe'; src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Mikkoktche/Mikkoktche.woff2') format('woff2'), url('https://cdn.jsdelivr.net/gh/fonts-archive/Mikkoktche/Mikkoktche.woff') format('woff'); }</style>
 <style>
   :root {
     --bg: #f5f2ed;
@@ -109,30 +110,48 @@
   }
 
   /* PROGRESS NAV */
-  .nav-tabs {
+  .nav-wrapper {
+    margin-bottom: 32px;
     display: flex;
+    flex-direction: column;
     gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    background: var(--surface);
-    padding: 8px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
   }
+  .nav-group {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .nav-group-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .label-class  { background: rgba(26,109,181,0.12); color: #1a6db5; }
+  .label-cat    { background: rgba(42,138,62,0.12);  color: #2a8a3e; }
+  .label-common { background: rgba(181,134,26,0.12); color: var(--accent1); }
+  .nav-divider  { width: 1px; height: 22px; background: var(--border); flex-shrink: 0; }
+  .nav-tabs { display: contents; }
   .nav-tab {
-    flex: 1;
-    min-width: 120px;
-    padding: 10px 16px;
+    padding: 7px 14px;
     background: transparent;
     border: none;
-    border-radius: 8px;
+    border-radius: 7px;
     color: var(--text-muted);
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
-    text-align: center;
+    white-space: nowrap;
   }
   .nav-tab:hover { background: var(--surface2); color: var(--text); }
   .nav-tab.active {
@@ -147,7 +166,7 @@
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
   .section-title {
-    font-family: 'Noto Serif KR', serif;
+    font-family: 'MiGotChe', 'Noto Serif KR', serif;
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 24px;
@@ -374,17 +393,42 @@
   </header>
 
   <!-- NAV -->
-  <div class="nav-tabs">
-    <button class="nav-tab active" onclick="showSection('s1', this)">🧭 분류 원리 ⭐⭐⭐</button>
-    <button class="nav-tab" onclick="showSection('s2', this)">📘 KDC·강목 ⭐⭐⭐</button>
-    <button class="nav-tab" onclick="showSection('s3', this)">📗 DDC ⭐⭐</button>
-    <button class="nav-tab" onclick="showSection('s7', this)">📋 조기표 ⭐⭐⭐</button>
-    <button class="nav-tab" onclick="showSection('s8', this)">📝 도서기호 ⭐⭐</button>
-    <button class="nav-tab" onclick="showSection('s14', this)">🗂️ MARC ⭐⭐⭐</button>
-    <button class="nav-tab" onclick="showSection('s11', this)">📅 연표 ⭐</button>
-    <button class="nav-tab" onclick="showSection('s5', this)">✅ 종합퀴즈</button>
-    <button class="nav-tab" onclick="showSection('s12', this)">🔄 오답노트</button>
-    <button class="nav-tab" onclick="showSection('s9', this)">✍️ 실전연습</button>
+  <div class="nav-wrapper">
+    <!-- 분류론 -->
+    <div class="nav-group">
+      <span class="nav-group-label label-class">📚 분류론</span>
+      <div class="nav-divider"></div>
+      <button class="nav-tab active" onclick="showSection('s1', this)">분류 원리 ⭐⭐⭐</button>
+      <button class="nav-tab" onclick="showSection('s2', this)">KDC ⭐⭐⭐</button>
+      <button class="nav-tab" onclick="showSection('s3', this)">DDC ⭐⭐</button>
+      <button class="nav-tab" onclick="showSection('s4', this)">분류법 비교 ⭐⭐</button>
+    </div>
+    <!-- 참고표 -->
+    <div class="nav-group">
+      <span class="nav-group-label label-cat">📋 참고표</span>
+      <div class="nav-divider"></div>
+      <button class="nav-tab" onclick="showSection('s6', this)">KDC 강목표 ⭐⭐⭐</button>
+      <button class="nav-tab" onclick="showSection('s7', this)">KDC 조기표 ⭐⭐⭐</button>
+      <button class="nav-tab" onclick="showSection('s13', this)">KDC↔DDC 조기표 비교 ⭐⭐</button>
+      <button class="nav-tab" onclick="showSection('s11', this)">연표 ⭐</button>
+    </div>
+    <!-- 목록론 -->
+    <div class="nav-group">
+      <span class="nav-group-label" style="background:rgba(100,80,160,0.12);color:#6450a0;">🗃️ 목록론</span>
+      <div class="nav-divider"></div>
+      <button class="nav-tab" onclick="showSection('s14', this)">MARC ⭐⭐⭐</button>
+      <button class="nav-tab" onclick="showSection('s8', this)">도서기호 ⭐⭐</button>
+    </div>
+    <!-- 시험대비 -->
+    <div class="nav-group">
+      <span class="nav-group-label label-common">🎯 시험대비</span>
+      <div class="nav-divider"></div>
+      <button class="nav-tab" onclick="showSection('s15', this)">기말대비</button>
+      <button class="nav-tab" onclick="showSection('s5', this)">종합퀴즈</button>
+      <button class="nav-tab" onclick="showSection('s9', this)">서술형</button>
+      <button class="nav-tab" onclick="showSection('s10', this)">청구기호 연습</button>
+      <button class="nav-tab" onclick="showSection('s12', this)">오답노트</button>
+    </div>
   </div>
 
   <!-- SECTION 1: 분류 원리 -->
@@ -807,6 +851,772 @@
   </div>
 
   <!-- SECTION 5: 퀴즈 -->
+  <div class="section" id="s15">
+    <div class="section-title"><span class="dot" style="background:#c94f2a"></span>🎯 기말대비 — 강의노트별 문제확인</div>
+    <div class="card" style="margin-bottom:18px;padding:12px 18px;font-size:13px;line-height:1.8">
+      📌 <strong>출제범위</strong>: 노트 7(표준·지역·국어구분표) · 노트 9(종교·문학형식구분표) · 노트 10(청구기호·별치기호) · 노트 11·12(저자기호법)<br>
+      📋 총 <strong>50문항</strong> — 각 노트별로 펼쳐서 문제 + 정답 확인
+    </div>
+    
+
+  <div style="border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden">
+    <div onclick="toggleNoteAcc('노트8')" style="padding:14px 18px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:14px;font-weight:700;color:#7b5ea7">📓 강의노트 8 — 지역구분표 · 국어구분표 · 언어공통구분표</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px">총 7문항</div>
+      </div>
+      <span style="font-size:18px" id="nacc_노트8">▶</span>
+    </div>
+    <div id="note_노트8" style="display:none;padding:14px 16px">
+      <div style="font-size:12px;font-weight:700;color:#7b5ea7;margin:6px 0;letter-spacing:0.05em">🗺️ 지역구분표 · 국어구분표 · 언어공통구분표 (7문항)</div>
+      <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+        <div onclick="toggleFCard('fcard_노트8_0')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1"><span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q1</span>KDC 본표에 지역구분 부가지시 없을 때 사용하는 표준구분 기호는?</div>
+          <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트8_0">▶ 정답보기</span>
+        </div>
+        <div id="fcard_노트8_0" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">① -024</span>
+          <span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② -09 ✓</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">③ -089</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">④ -07</span>
+          <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">💡 -09(역사 및 지역구분)를 매개로 지역구분기호를 추가할 수 있습니다.</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+        <div onclick="toggleFCard('fcard_노트8_1')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1"><span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q2</span>KDC 국어구분표 1차구분에 포함되어 있지 않은 언어는?</div>
+          <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트8_1">▶ 정답보기</span>
+        </div>
+        <div id="fcard_노트8_1" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 중국어</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">② 프랑스어</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 이탈리아어</span>
+          <span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">④ 라틴어 ✓</span>
+          <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">💡 1차구분: -1=한국어, -2=중국어, -3=일본어, -4=영어, -5=독일어, -6=프랑스어, -7=스페인어, -8=이탈리아어. 라틴어는 미포함.</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+        <div onclick="toggleFCard('fcard_노트8_2')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1"><span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q3</span>KDC 언어공통구분표에서 기호와 내용의 연결이 틀린 것은?</div>
+          <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트8_2">▶ 정답보기</span>
+        </div>
+        <div id="fcard_노트8_2" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">① -1:음운 및 문자</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">② -2:어원</span>
+          <span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ -3:작문 ✓ (오답)</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">④ -5:문법</span>
+          <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">💡 -3은 '작문'이 아니라 '사전(어휘)'입니다. -1=문자·음성, -2=어원, -3=사전, -4=음운론, -5=문법.</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+        <div onclick="toggleFCard('fcard_노트8_3')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1"><span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q4</span>일본사의 분류기호는?</div>
+          <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트8_3">▶ 정답보기</span>
+        </div>
+        <div id="fcard_노트8_3" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 912</span>
+          <span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 913 ✓</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 914</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 915</span>
+          <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">💡 910=아시아역사. 국어구분 조기성: -1=한국→911, -2=중국→912, -3=일본→913.</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+        <div onclick="toggleFCard('fcard_노트8_4')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1"><span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q5</span>KDC 지역구분표에서 북아메리카·남아메리카·아프리카의 기호는?</div>
+          <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트8_4">▶ 정답보기</span>
+        </div>
+        <div id="fcard_노트8_4" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+          <span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">① -3·-4·-5 ✓</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">② -3·-5·-4</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">③ -4·-5·-3</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">④ -4·-3·-5</span>
+          <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">💡 지역구분: -1=아시아, -2=유럽, -3=북아메리카, -4=남아메리카, -5=아프리카, -6=오세아니아, -7=양극지방.</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+        <div onclick="toggleFCard('fcard_노트8_5')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1"><span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q6</span>KDC 지역구분표에 대한 설명으로 거리가 먼 것은?</div>
+          <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트8_5">▶ 정답보기</span>
+        </div>
+        <div id="fcard_노트8_5" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">① DDC T.2에 해당</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">② 역사 강목·지리 요목 등과 조기성 있음</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 초판=지리구분, 2판부터=지역구분표로 변경</span>
+          <span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">④ 역사상의 시대·인물·지역 모두 나타내는 보조표 ✓</span>
+          <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">💡 KDC 지역구분표는 지역 표시가 주목적. 역사상 시대·인물까지 나타낸다는 설명은 DDC T.2의 기능으로 KDC 지역구분표 설명으로는 거리가 멉니다.</div>
+        </div>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+        <div onclick="toggleFCard('fcard_노트8_6')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1"><span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q7</span>KDC 6판에서 2개국어사전의 제1차 분류기준은?</div>
+          <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트8_6">▶ 정답보기</span>
+        </div>
+        <div id="fcard_노트8_6" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+          <span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">① 표제어로 사용된 언어 ✓</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">② 이용자에게 덜 알려진 언어</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 분류국에서 더 많이 쓰이는 언어</span>
+          <span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 분류표상 앞에 나오는 언어</span>
+          <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">💡 KDC 6판: 2개국어사전은 '표제어(entry word)로 사용된 언어'를 제1차 기준으로 합니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden">
+    <div onclick="toggleNoteAcc('노트7')" style="padding:14px 18px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:14px;font-weight:700;color:#2a8a3e">📗 강의노트 7 — 표준구분표 · 지역구분표 · 국어구분표</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px">총 13문항</div>
+      </div>
+      <span style="font-size:18px" id="nacc_노트7">▶</span>
+    </div>
+    <div id="note_노트7" style="display:none;padding:14px 16px">
+      <div style="font-size:12px;font-weight:700;color:#2a8a3e;margin:14px 0 6px;letter-spacing:0.05em">📋 표준구분표 (7문항)</div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_0')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q1</span>KDC 표준구분표 기호에 대한 설명으로 옳은 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_0">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_0" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 한 자리로 구성되며 항상 1로 시작</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 두 자리 이상이며 항상 0으로 시작 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 두 자리 이상이며 항상 9로 시작</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 세 자리 이상이며 0이나 1로 시작</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 KDC 표준구분표 기호는 최소 두 자리로 구성되며, 항상 '0'으로 시작합니다. 예: -01(이론), -03(사전), -05(연속간행물).
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_1')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q2</span>KDC 표준구분 '-05'가 나타내는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_1">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_1" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 사전·색인</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 연속간행물 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 학회·단체</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 역사 및 지역구분</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 -05=연속간행물. 총류 050(일반연속간행물)과 조기성을 가집니다. -01=철학·이론, -03=사전, -06=학회·단체.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_2')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q3</span>KDC 표준구분 '-06'이 나타내는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_2">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_2" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 강연집·수필집</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 연속간행물</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 학회·단체·협회·기관·회의 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 총서·전집·선집</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 -06=학회·단체·협회·기관·회의. 총류 060(일반학회·단체)과 조기성을 갖습니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_3')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q4</span>KDC 표준구분 '-09'가 나타내는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_3">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_3" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 철학 및 이론</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 총서·전집</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 역사 및 지역구분 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 학회·단체</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 -09=역사 및 지역구분. 본표에 지역구분 부가지시 없을 때 -09를 매개로 지역구분기호를 추가할 수 있습니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_4')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q5</span>KDC 표준구분 중 총류 강목과 조기성이 없는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_4">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_4" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① -02</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② -04</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ -05</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">④ -01 ✓</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 -01(철학·이론)은 총류 강목에 대응 항목이 없어 조기성이 없습니다. -02·-04·-05·-06·-08은 총류 강목과 조기성을 가집니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_5')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q6</span>KDC 표준구분표를 사용할 수 없는 경우는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_5">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_5" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 본표에 사용금지 지시가 없을 때</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 분류기호와 기호가 중복될 때 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 백과사전 분류 시</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 연속간행물 분류 시</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 본표에 사용금지 지시가 있거나 기호가 중복되는 경우 표준구분표를 사용할 수 없습니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_6')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q7</span>DDC의 T.1(Standard Subdivision)에 해당하는 KDC 조기표는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_6">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_6" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 지역구분표</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 표준구분표 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 언어공통구분표</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 문학형식구분표</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 DDC T.1(Standard Subdivision) = KDC 표준구분표. 모든 주류에 공통 적용 가능한 형식구분표입니다.
+        </div>
+      </div>
+    </div><div style="font-size:12px;font-weight:700;color:#2a8a3e;margin:14px 0 6px;letter-spacing:0.05em">🗺️ 지역구분표 (3문항)</div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_7')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q8</span>KDC 지역구분 없이도 지역 표시 시 사용하는 표준구분은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_7">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_7" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① -07</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② -08</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ -09 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ -02</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 본표에 지역구분 부가지시가 없을 때 표준구분 -09(역사 및 지역구분)를 사용하여 지역구분기호를 추가합니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_8')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q9</span>KDC에서 '일본사(日本史)'의 분류기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_8">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_8" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 911</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 912</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 913 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 914</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 900=역사, 910=아시아역사. 지역구분 -11~-13의 둘째 자리는 국어구분과 조기성: -1=한국→911, -2=중국→912, -3=일본→913.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_9')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q10</span>KDC 지역구분표에 대한 설명으로 틀린 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_9">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_9" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① DDC의 T.2에 해당</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 역사의 강목 등과 조기성을 지님</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 초판에서는 지리구분이라 불렀음</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">④ 역사상의 시대와 인물만을 나타냄 ✓</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 지역구분표는 특정 국가·지역 표시가 주목적. 역사상 시대·인물 표시만을 위한 것이 아닙니다.
+        </div>
+      </div>
+    </div><div style="font-size:12px;font-weight:700;color:#2a8a3e;margin:14px 0 6px;letter-spacing:0.05em">🇰🇷 국어구분표 (3문항)</div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_10')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q11</span>KDC 국어구분표에서 '중국어'에 해당하는 기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_10">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_10" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① -1</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② -2 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ -3</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ -4</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 국어구분: -1=한국어, -2=중국어, -3=일본어, -4=영어, -5=독일어, -6=프랑스어, -7=스페인어.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_11')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q12</span>KDC 2개국어사전의 제1차 분류기준은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_11">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_11" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 이용자에게 덜 알려진 언어</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 표제어로 사용된 언어 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 분류표상 앞에 나오는 언어</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 분류국에서 더 많이 쓰이는 언어</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 KDC 6판에서 2개국어사전의 제1차 분류기준은 '표제어(entry word)로 사용된 언어'입니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트7_12')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q13</span>KDC 언어공통구분표 '-1'이 나타내는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트7_12">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트7_12" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">① 음운 및 문자 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 어원</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 작문</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 어휘</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 언어공통구분: -1=음운 및 문자(음성·문자), -2=어원, -3=사전(어휘), -4=음운론, -5=문법.
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div style="border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden">
+    <div onclick="toggleNoteAcc('노트9')" style="padding:14px 18px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:14px;font-weight:700;color:#1a6db5">📘 강의노트 9 — 종교공통구분표 · 문학형식구분표</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px">총 12문항</div>
+      </div>
+      <span style="font-size:18px" id="nacc_노트9">▶</span>
+    </div>
+    <div id="note_노트9" style="display:none;padding:14px 16px">
+      <div style="font-size:12px;font-weight:700;color:#1a6db5;margin:14px 0 6px;letter-spacing:0.05em">✝️ 종교공통구분표 (6문항)</div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_0')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q1</span>KDC 종교공통구분표에서 '종파·교파'를 나타내는 기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_0">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_0" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① -4</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② -6</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ -7</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">④ -8 ✓</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 종교공통구분: -1=교리, -2=종조, -3=경전, -4=신앙록, -5=전도, -6=예배형식, -7=포교, -8=종파·교파.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_1')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q2</span>KDC 종교공통구분표에서 '경전'을 나타내는 기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_1">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_1" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① -1</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② -2</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ -3 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ -4</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 종교공통구분: -3=경전(성전). 기독교 성서=233, 불교 경전=223으로 적용.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_2')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q3</span>KDC 종교공통구분표에서 '예배형식·의식'을 나타내는 기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_2">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_2" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① -4</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② -5</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ -6 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ -7</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 종교공통구분: -6=예배형식·의식·전례. 각 종교에 공통적으로 적용 가능한 조기표입니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_3')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q4</span>KDC에서 기독교(230)의 '성서'에 해당하는 분류기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_3">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_3" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 231</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 232</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 233 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 235</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 KDC 230(기독교): 231=신학, 232=예수그리스도, 233=성서, 234=교의학, 235=목회학.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_4')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q5</span>KDC에서 기독교(230)의 '교파'에 해당하는 분류기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_4">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_4" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 235</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 236</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 237</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">④ 238 ✓</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 KDC 238=기독교교파. 종교공통구분 -8(종파·교파)과 조기성: 230+(-8)=238.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_5')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q6</span>KDC 종교공통구분표는 DDC와 비교할 때 어떤 특징인가?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_5">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_5" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① DDC에도 동일한 조기표 존재</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② KDC에만 있는 특징적 조기표 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 두 체계 모두 공통으로 보유</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ DDC는 더 세분화된 조기표 보유</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 종교공통구분표는 KDC에만 있는 특징적 조기표이며 DDC에는 없습니다. 210(비교종교학) 요목과 조기성을 가집니다.
+        </div>
+      </div>
+    </div><div style="font-size:12px;font-weight:700;color:#1a6db5;margin:14px 0 6px;letter-spacing:0.05em">📖 문학형식구분표 (6문항)</div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_6')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q7</span>KDC 문학형식구분표 '-2'가 나타내는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_6">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_6" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 시</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 희곡 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 소설</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 수필</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 문학형식구분: -1=시, -2=희곡, -3=소설, -4=수필, -5=연설, -6=일기·서간·기행, -7=풍자.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_7')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q8</span>KDC에서 '영국수필'의 분류기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_7">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_7" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 820</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 822</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 824 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 825</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 820(영미문학) + 문학형식구분 -4(수필) = 824 영국수필.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_8')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q9</span>KDC 문학류(800)의 열거순서로 옳은 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_8">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_8" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 주류→주제→형식→시대</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 주류→언어→형식→시대 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 주류→형식→언어→시대</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 주류→언어→시대→형식</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 800문학의 패싯 순서: 주류(8)+언어패싯+문학형식패싯+시대패싯. 예: 810(한국문학)-형식-시대.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_9')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q10</span>KDC 문학형식구분표가 DDC에서 대응되는 보조표는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_9">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_9" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① T.1</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② T.2</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ T.3 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ T.4</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 KDC 문학형식구분표 ≈ DDC T.3(특정 언어의 문학 형식구분). DDC T.1=표준구분, T.2=지역구분.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_10')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q11</span>KDC 문학형식구분표에 대한 설명으로 틀린 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_10">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_10" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 전적으로 800류에만 적용</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 800의 세 번째 패싯에 주로 적용</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ DDC T.3에 해당</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">④ 기호 앞에 항상 0을 추가 사용 ✓</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 문학형식구분 기호 앞에는 표준구분처럼 '0'을 추가하지 않습니다. 언어기호 바로 뒤에 형식구분기호를 붙입니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트9_11')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q12</span>KDC 문학형식구분 '-6'이 나타내는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트9_11">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트9_11" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 연설·웅변</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 일기·서간·기행 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 풍자·유머</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 평론·문학사</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 문학형식구분: -5=연설·웅변, -6=일기·서간·기행, -7=풍자·유머. '-6=일기·서간' 자주 출제됩니다.
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div style="border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden">
+    <div onclick="toggleNoteAcc('노트10')" style="padding:14px 18px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:14px;font-weight:700;color:#b5861a">📙 강의노트 10 — 청구기호 · 별치기호</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px">총 5문항</div>
+      </div>
+      <span style="font-size:18px" id="nacc_노트10">▶</span>
+    </div>
+    <div id="note_노트10" style="display:none;padding:14px 16px">
+      <div style="font-size:12px;font-weight:700;color:#b5861a;margin:14px 0 6px;letter-spacing:0.05em">🏷️ 청구기호·별치기호 (5문항)</div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트10_0')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q1</span>청구기호를 구성하는 최소 단위는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트10_0">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트10_0" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 분류기호</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 분류기호+도서기호 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 분류기호+별치기호</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 분류기호+도서기호+별치기호</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 청구기호의 최소 구성 = 분류기호 + 도서기호. 별치기호는 필요 시 추가하는 선택적 요소입니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트10_1')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q2</span>자료를 별도 장소에 배치할 때 분류기호 상단에 표시하는 기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트10_1">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트10_1" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 도서기호</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 분류기호</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 별치기호 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 권호기호</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 별치기호(Location Mark): 자료의 특수성에 따라 별도 배치 시 분류기호 상단에 문자로 표시합니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트10_2')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q3</span>참고도서(사전·색인·초록 등)에 부여하는 별치기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트10_2">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트10_2" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① S</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② P</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ R ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ T</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 R=Reference(참고자료) 별치기호. 참고서고에 별치하여 관외 대출 제한 자료에 사용합니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트10_3')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q4</span>KDC에서 특정주제를 분류표 전체 순서에 따라 세분하도록 지시하는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트10_3">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트10_3" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 표준구분</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 특수주제구분</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 전주제구분 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 공통구분</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 전주제구분(Divide Like): 특정 주제를 분류표 전체주제 순서에 따라 세분. 예: 078(특정주제신문) → 001-999와 같이 구분.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트10_4')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q5</span>청구기호의 '부차적 기호'에 해당하지 않는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트10_4">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트10_4" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 판차기호</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 연도기호</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 도서기호 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 복본기호</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 도서기호(저자기호)는 청구기호의 주요 구성요소. 판차기호·연도기호·복본기호·권호기호는 부차적 기호입니다.
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div style="border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden">
+    <div onclick="toggleNoteAcc('노트1112')" style="padding:14px 18px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:14px;font-weight:700;color:#c94f2a">📕 강의노트 11·12 — 저자기호법 · 도서기호법</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px">총 13문항</div>
+      </div>
+      <span style="font-size:18px" id="nacc_노트1112">▶</span>
+    </div>
+    <div id="note_노트1112" style="display:none;padding:14px 16px">
+      <div style="font-size:12px;font-weight:700;color:#c94f2a;margin:14px 0 6px;letter-spacing:0.05em">✍️ 저자기호법 (13문항)</div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_0')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q1</span>Cutter-Sanborn 저자기호표의 성격은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_0">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_0" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 한국 저자기호법</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 서양(영미) 저자기호법 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 중국 저자기호법</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 분석합성식 기호법</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 Cutter-Sanborn Author Table=서양(영미권) 대표 저자기호법. 한국 기호법(고재창·정필모·리재철)과 구별됩니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_1')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q2</span>리재철 한글순도서기호법에서 숫자기호를 결정하는 기준은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_1">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_1" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 첫째 자 초성</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 첫째 자 초성+중성</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 둘째 자 초성</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">④ 둘째 자 초성+중성 ✓</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 리재철 한글순: 문자기호=첫째 자(음절) 그대로, 숫자기호=둘째 자(음절)의 초성+중성을 분석하여 사용.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_2')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q3</span>우리나라 최초의 저자기호법을 고안한 사람은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_2">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_2" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 리재철</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 정필모</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 박봉석 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 고재창</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 박봉석이 최초로 '성별기호표'를 고안. 이후 정필모(한국문헌기호표), 고재창, 리재철 등이 발전시켰습니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_3')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q4</span>새연대순도서기호법의 연대기호 구성은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_3">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_3" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 한글+숫자 혼합</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 알파벳+숫자 혼합</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 아라비아숫자만 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 로마숫자만</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 새연대순도서기호법(리재철, 1986): 아라비아숫자만으로 기본기호(연대기호) 구성. 발행연도를 기호로 사용합니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_4')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q5</span>연대순도서기호법의 단점으로 옳은 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_4">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_4" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 기호 결정이 복잡</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 동일저자 저작이 한곳에 집중 안 됨 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 최신자료 검색이 어려움</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 체계화된 표 필요</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 연대순도서기호법 단점: 동일분류기호 내에서 한 저자의 저작이 한곳에 집중되지 않는다는 단점이 있습니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_5')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q6</span>KDC 조기표(보조표)의 총 개수는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_5">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_5" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 4개</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 5개</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 6개 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 7개</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 KDC 보조표는 표1(표준구분)~표6(종교공통구분) 총 6개. DDC는 7개 보조표. 개수 비교 자주 출제!
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_6')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q7</span>KDC 6판에서 분석합성식 성격이 강한 주류는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_6">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_6" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 철학류·역사류</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 사회과학류·자연과학류</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 언어류·문학류 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 예술류·종교류</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 언어류(700)와 문학류(800)는 조기표(언어공통구분·문학형식구분)를 조합하여 분류기호를 합성 → 분석합성식 성격이 강함.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_7')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q8</span>열거식 저자기호법에 해당하지 않는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_7">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_7" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 이춘희 동서저자기호표</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 장일세 동서저자기호표</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 정필모 한국문헌기호표</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">④ 리재철 한글순도서기호법 ✓</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 리재철 한글순도서기호법은 분석합성식(자음·모음 분석 후 조합). 이춘희·장일세·정필모는 열거식 저자기호법입니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_8')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q9</span>저자기호법의 장점에 해당하지 않는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_8">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_8" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 기호 전개방법이 무한</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 동일저자 저작을 한곳에 집중</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 기호 구성방법이 간단 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 기호 조직이 논리적</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 저자기호법의 단점: 기호 구성방법이 복잡합니다. 기호가 간단한 것은 수입순기호법의 장점입니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_9')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q10</span>수입순 도서기호법의 장점으로 거리가 먼 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_9">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_9" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 기호 결정이 간단</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">② 이용자 직접 자료검색이 용이 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">③ 체계화된 표 불필요</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 자료 배열이 용이</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 수입순 도서기호법은 입수 순서대로 번호를 부여하므로 이용자가 주제별로 직접 자료를 검색하기 어렵습니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_10')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q11</span>도서기호법 가운데 기호를 부여하기 가장 편리한 방법은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_10">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_10" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 저자기호법</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 연대순기호법</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 수입순기호법 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 저작기호법</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 수입순기호법: 자료가 들어온 순서대로 번호 부여 → 기호 결정이 가장 단순하고 편리합니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_11')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q12</span>Cutter-Sanborn표에서 동일 저자 다른 저작 구별 시 사용하는 것은?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_11">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_11" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① 복본기호</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② 권호기호</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ 저작기호 ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ 판차기호</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 커터-샌본: 저자기호 다음에 서명의 첫 번째 키워드의 첫 글자(소문자)를 저작기호로 추가하여 구별합니다.
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden">
+      <div onclick="toggleFCard('fcard_노트1112_12')" style="padding:12px 16px;cursor:pointer;background:var(--surface);display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="font-size:13px;font-weight:500;line-height:1.5;flex:1">
+          <span style="font-size:11px;color:var(--text-muted);margin-right:6px">Q13</span>리재철 한글순도서기호법에서 복본기호 앞에 사용하는 기호는?
+        </div>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap" id="arr_fcard_노트1112_12">▶ 정답보기</span>
+      </div>
+      <div id="fcard_노트1112_12" style="display:none;padding:12px 16px;background:var(--surface2);border-top:1px solid var(--border)">
+        <span style="display:block;padding:4px 8px;color:var(--text-muted)">① c</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">② -</span><span style="display:block;padding:4px 8px;color:#2a8a3e;font-weight:600">③ = ✓</span><span style="display:block;padding:4px 8px;color:var(--text-muted)">④ +</span>
+        <div style="margin-top:8px;padding:8px 12px;background:rgba(42,138,62,0.08);border-radius:6px;font-size:12px;color:var(--text-muted);line-height:1.6">
+          💡 리재철 한글순: 복본기호 앞에 등호(=)를 사용. 예: 박76=2 (제2복본). 권차기호 앞에는 대쉬(-)를 사용합니다.
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+
+
   <div class="section" id="s5">
     <div class="section-title"><span class="dot" style="background:var(--accent5)"></span>실전 확인 퀴즈</div>
 
@@ -1185,6 +1995,15 @@
             <tr><td><strong>-5</strong></td><td>독일어</td><td></td><td></td></tr>
           </tbody>
         </table></div>
+        <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;line-height:2.0">
+          <strong>⚠️ -9 기타 제어 — 시험 자주 출제 언어</strong><br>
+          <span style="color:var(--text-muted)">-1~-8에 해당하지 않는 언어는 모두 <strong>-9(기타 제어)</strong></span><br>
+          · <strong>러시아어</strong>: -9 → 790(기타제어) 적용<br>
+          · <strong>아랍어</strong>: -9 → 790 적용<br>
+          · <strong>힌디어</strong>(인도어): -9 → 790 적용<br>
+          · <strong>포르투갈어</strong>: -9 → 790 적용<br>
+          📌 예: 러한사전 → 790 + -1(한국어) = <strong>791</strong>
+        </div>
         <div style="background:var(--surface2);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;line-height:2.0">
           <strong>합성 예시 ★</strong><br>
           · 영한사전(표제어=영어): 740(영어) 기준 + -1(한국어) = <strong>743 → 743.1</strong><br>
@@ -2256,27 +3075,9 @@
 function showSection(id, btn) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
-  
-  // 병합된 섹션들: 하나의 탭 클릭으로 여러 섹션 표시
-  const merged = {
-    's1': ['s1', 's4'],      // 분류 원리 + 비교
-    's2': ['s2', 's6'],      // KDC + 강목
-    's7': ['s7', 's13'],     // 조기표 + 비교  
-    's9': ['s9', 's10']      // 서술형 + 청구기호
-  };
-  
-  if (merged[id]) {
-    // 병합된 섹션들 모두 활성화
-    merged[id].forEach(sectionId => {
-      const section = document.getElementById(sectionId);
-      if (section) section.classList.add('active');
-    });
-  } else {
-    // 일반 섹션
-    document.getElementById(id).classList.add('active');
-  }
-  
-  btn.classList.add('active');
+  const section = document.getElementById(id);
+  if (section) section.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
 // Accordion
@@ -2375,54 +3176,76 @@ const QUIZ_POOL = [
     explain:"CC(Colon Classification)=랑가나탄이 창안한 분석합성식(Analytico-Synthetic) 분류법의 대표. PMEST 패싯 조합 사용." },
 
   // ── 표준구분표 (강의노트 7) ──
-  { q:"KDC 표준구분표 기호에 대한 설명으로 옳은 것은?", opts:["한 자리로 구성되며 1로 시작","두 자리 이상이며 0으로 시작","두 자리 이상이며 9로 시작","세 자리 이상이며 0이나 1로 시작"], ans:1,
+  { q:"KDC 표준구분표 기호에 대한 설명으로 옳은 것은?", opts:["한 자리로 구성되며 항상 1로 시작","두 자리 이상이며 항상 0으로 시작","두 자리 이상이며 항상 9로 시작","세 자리 이상이며 0이나 1로 시작"], ans:1,
     explain:"KDC 표준구분표 기호는 최소 두 자리로 구성되며, 항상 '0'으로 시작합니다. 예: -01(이론), -03(사전), -05(연속간행물)." },
-  { q:"KDC 표준구분 '-02'가 나타내는 것은?", opts:["철학·이론","잡저","사전·백과사전","강연집"], ans:1,
-    explain:"-01=철학·이론, -02=잡저(편람·개론 등), -03=사전·백과사전. -02는 총류 020(문헌정보학)과 조기성을 가집니다." },
   { q:"KDC 표준구분 '-05'가 나타내는 것은?", opts:["사전·색인","연속간행물","학회·단체","역사 및 지역구분"], ans:1,
-    explain:"-05=연속간행물. 총류 050(일반연속간행물)과 조기성을 가집니다." },
+    explain:"-05=연속간행물. 총류 050(일반연속간행물)과 조기성을 가집니다. -01=철학·이론, -03=사전, -06=학회·단체." },
   { q:"KDC 표준구분 '-06'이 나타내는 것은?", opts:["강연집·수필집","연속간행물","학회·단체·협회·기관·회의","총서·전집·선집"], ans:2,
     explain:"-06=학회·단체·협회·기관·회의. 총류 060(일반학회·단체)과 조기성을 갖습니다." },
   { q:"KDC 표준구분 '-09'가 나타내는 것은?", opts:["철학 및 이론","총서·전집","역사 및 지역구분","학회·단체"], ans:2,
-    explain:"-09=역사 및 지역구분. 본표에 지역구분 지시가 없을 때 -09를 매개로 지역구분기호를 추가할 수 있습니다." },
-  { q:"KDC 표준구분 중 총류 강목과 조기성이 없는 기호는?", opts:["-02","-04","-05","-01"], ans:3,
-    explain:"-01(철학·이론)은 총류 강목에 대응하는 항목이 없어 조기성이 없습니다. -02·-04·-05·-06·-08은 총류 강목과 조기성을 가집니다." },
-  { q:"KDC 표준구분표를 사용할 수 없는 경우는?", opts:["본표에 사용금지 지시가 없을 때","기호가 본표와 중복될 때","백과사전 분류 시","연속간행물 분류 시"], ans:1,
-    explain:"본표에 사용금지 지시가 있거나 기호가 중복되는 경우에는 표준구분표를 사용할 수 없습니다." },
+    explain:"-09=역사 및 지역구분. 본표에 지역구분 부가지시 없을 때 -09를 매개로 지역구분기호를 추가할 수 있습니다." },
+  { q:"KDC 표준구분 중 총류 강목과 조기성이 없는 것은?", opts:["-02","-04","-05","-01"], ans:3,
+    explain:"-01(철학·이론)은 총류 강목에 대응 항목이 없어 조기성이 없습니다. -02·-04·-05·-06·-08은 총류 강목과 조기성을 가집니다." },
+  { q:"KDC 표준구분표를 사용할 수 없는 경우는?", opts:["본표에 사용금지 지시가 없을 때","분류기호와 기호가 중복될 때","백과사전 분류 시","연속간행물 분류 시"], ans:1,
+    explain:"본표에 사용금지 지시가 있거나 기호가 중복되는 경우 표준구분표를 사용할 수 없습니다." },
+  { q:"DDC의 T.1(Standard Subdivision)에 해당하는 KDC 조기표는?", opts:["지역구분표","표준구분표","언어공통구분표","문학형식구분표"], ans:1,
+    explain:"DDC T.1(Standard Subdivision) = KDC 표준구분표. 모든 주류에 공통 적용 가능한 형식구분표입니다." },
 
-  // ── 지역구분표 ──
-  { q:"KDC 표준구분 -09를 활용하는 상황은?", opts:["도서관 유형 구분","본표에 지역구분 지시가 없을 때 지역 표시","시대 구분","언어 구분"], ans:1,
-    explain:"본표에 지역구분 부가지시가 없을 때 표준구분 -09(역사 및 지역구분)를 사용하여 지역구분기호를 추가할 수 있습니다." },
-  { q:"KDC에서 '중국사(中國史)'의 분류기호는?", opts:["911","912","913","914"], ans:1,
-    explain:"900=역사, 910=아시아역사, 지역구분 -12=중국(국어구분 -2=중국어와 조기성) → 912=중국사." },
+  // ── 지역구분표 (강의노트 7) ──
+  { q:"KDC 지역구분 없이도 지역 표시 시 사용하는 표준구분은?", opts:["-07","-08","-09","-02"], ans:2,
+    explain:"본표에 지역구분 부가지시가 없을 때 표준구분 -09(역사 및 지역구분)를 사용하여 지역구분기호를 추가합니다." },
   { q:"KDC에서 '일본사(日本史)'의 분류기호는?", opts:["911","912","913","914"], ans:2,
-    explain:"900=역사, 910=아시아역사, 지역구분 -13=일본(국어구분 -3=일본어와 조기성) → 913=일본사." },
-  { q:"KDC 지역구분표에 대한 설명으로 틀린 것은?", opts:["DDC의 T.2에 해당","역사의 강목 등과 조기성을 지님","초판에서는 지리구분이라 불렀음","역사상 시대와 인물만을 나타냄"], ans:3,
-    explain:"지역구분표는 특정 국가·지역을 나타내는 기호법이 주목적. '역사상 시대·인물만 나타낸다'는 설명이 틀렸습니다." },
+    explain:"900=역사, 910=아시아역사. 지역구분 -11~-13의 둘째 자리는 국어구분과 조기성: -1=한국→911, -2=중국→912, -3=일본→913." },
+  { q:"KDC 지역구분표에 대한 설명으로 틀린 것은?", opts:["DDC의 T.2에 해당","역사의 강목 등과 조기성을 지님","초판에서는 지리구분이라 불렀음","역사상의 시대와 인물만을 나타냄"], ans:3,
+    explain:"지역구분표는 특정 국가·지역 표시가 주목적. 역사상 시대·인물 표시만을 위한 것이 아닙니다." },
 
-  // ── 국어구분표 ──
+  // ── 국어구분표 (강의노트 7) ──
   { q:"KDC 국어구분표에서 '중국어'에 해당하는 기호는?", opts:["-1","-2","-3","-4"], ans:1,
-    explain:"국어구분: -1=한국어, -2=중국어, -3=일본어, -4=영어, -5=독일어, -6=프랑스어, -7=스페인어. 필수 암기!" },
+    explain:"국어구분: -1=한국어, -2=중국어, -3=일본어, -4=영어, -5=독일어, -6=프랑스어, -7=스페인어." },
   { q:"KDC 2개국어사전의 제1차 분류기준은?", opts:["이용자에게 덜 알려진 언어","표제어로 사용된 언어","분류표상 앞에 나오는 언어","분류국에서 더 많이 쓰이는 언어"], ans:1,
     explain:"KDC 6판에서 2개국어사전의 제1차 분류기준은 '표제어(entry word)로 사용된 언어'입니다." },
-
-  // ── 언어공통구분표 ──
   { q:"KDC 언어공통구분표 '-1'이 나타내는 것은?", opts:["음운 및 문자","어원","작문","어휘"], ans:0,
-    explain:"언어공통구분: -1=음운 및 문자, -2=어원, -3=사전(어휘), -4=음운론, -5=문법. '-1=음성·문자'가 출제 핵심." },
-  { q:"KDC 언어공통구분표 '-5'가 나타내는 것은?", opts:["어원","사전","음운론","문법"], ans:3,
-    explain:"언어공통구분: -1=문자·음성, -2=어원, -3=사전, -4=음운론, -5=문법. '-5=문법' 반드시 암기." },
+    explain:"언어공통구분: -1=음운 및 문자(음성·문자), -2=어원, -3=사전(어휘), -4=음운론, -5=문법." },
+
+  { q:"KDC 국어구분표에서 '독일어'에 해당하는 기호는?", opts:["-4","-5","-6","-7"], ans:1,
+    explain:"국어구분: -4=영어, -5=독일어, -6=프랑스어, -7=스페인어, -8=이탈리아어. 유럽어 순서로 암기." },
+  { q:"KDC에서 '독한사전'의 분류기호로 옳은 것은?", opts:["751","752","753","754"], ans:0,
+    explain:"독한사전: 표제어=독일어 → 750(독일어) + 국어구분 -1(한국어) = 751." },
+  { q:"KDC에서 '불한사전(프랑스어-한국어)'의 분류기호로 옳은 것은?", opts:["761","762","763","764"], ans:0,
+    explain:"불한사전: 표제어=프랑스어 → 760(프랑스어) + 국어구분 -1(한국어) = 761." },
+  { q:"KDC에서 '일영사전'의 분류기호로 옳은 것은?", opts:["731","734","741","744"], ans:1,
+    explain:"일영사전: 표제어=일본어 → 730(일본어) + 국어구분 -4(영어) = 734." },
+  { q:"KDC 국어구분표에서 '스페인어'에 해당하는 기호는?", opts:["-5","-6","-7","-8"], ans:2,
+    explain:"국어구분: -5=독일어, -6=프랑스어, -7=스페인어, -8=이탈리아어. -9=기타 제어." },
+  { q:"KDC에서 '한일사전'과 '일한사전'의 분류기호 차이는?", opts:["같다","표제어 언어에 따라 다르다","해설어 언어에 따라 다르다","이용자 국적에 따라 다르다"], ans:1,
+    explain:"한일사전: 표제어=한국어 → 710 + -3(일본어) = 713. 일한사전: 표제어=일본어 → 730 + -1(한국어) = 731. 표제어 기준으로 완전히 달라집니다." },
+
+  { q:"KDC 국어구분표에서 '독일어'에 해당하는 기호는?", opts:["-4","-5","-6","-7"], ans:1,
+    explain:"국어구분: -4=영어, -5=독일어, -6=프랑스어, -7=스페인어, -8=이탈리아어. 유럽어 순서로 암기." },
+  { q:"KDC에서 '독한사전'의 분류기호로 옳은 것은?", opts:["751","752","753","754"], ans:0,
+    explain:"독한사전: 표제어=독일어 → 750(독일어) + 국어구분 -1(한국어) = 751." },
+  { q:"KDC에서 '불한사전(프랑스어-한국어)'의 분류기호로 옳은 것은?", opts:["761","762","763","764"], ans:0,
+    explain:"불한사전: 표제어=프랑스어 → 760(프랑스어) + 국어구분 -1(한국어) = 761." },
+  { q:"KDC에서 '일영사전'의 분류기호로 옳은 것은?", opts:["731","734","741","744"], ans:1,
+    explain:"일영사전: 표제어=일본어 → 730(일본어) + 국어구분 -4(영어) = 734." },
+  { q:"KDC 국어구분표에서 '스페인어'에 해당하는 기호는?", opts:["-5","-6","-7","-8"], ans:2,
+    explain:"국어구분: -5=독일어, -6=프랑스어, -7=스페인어, -8=이탈리아어. -9=기타 제어." },
+  { q:"KDC에서 '한일사전'과 '일한사전'의 분류기호 차이는?", opts:["같다","표제어 언어에 따라 다르다","해설어 언어에 따라 다르다","이용자 국적에 따라 다르다"], ans:1,
+    explain:"한일사전: 표제어=한국어 → 710 + -3(일본어) = 713. 일한사전: 표제어=일본어 → 730 + -1(한국어) = 731. 표제어 기준으로 완전히 달라집니다." },
 
   // ── 종교공통구분표 (강의노트 9) ──
   { q:"KDC 종교공통구분표에서 '종파·교파'를 나타내는 기호는?", opts:["-4","-6","-7","-8"], ans:3,
     explain:"종교공통구분: -1=교리, -2=종조, -3=경전, -4=신앙록, -5=전도, -6=예배형식, -7=포교, -8=종파·교파." },
   { q:"KDC 종교공통구분표에서 '경전'을 나타내는 기호는?", opts:["-1","-2","-3","-4"], ans:2,
-    explain:"종교공통구분: -3=경전(성전). 기독교 성서는 233, 불교 경전은 223으로 종교공통구분 적용 예시." },
+    explain:"종교공통구분: -3=경전(성전). 기독교 성서=233, 불교 경전=223으로 적용." },
+  { q:"KDC 종교공통구분표에서 '예배형식·의식'을 나타내는 기호는?", opts:["-4","-5","-6","-7"], ans:2,
+    explain:"종교공통구분: -6=예배형식·의식·전례. 각 종교에 공통적으로 적용 가능한 조기표입니다." },
   { q:"KDC에서 기독교(230)의 '성서'에 해당하는 분류기호는?", opts:["231","232","233","235"], ans:2,
-    explain:"KDC 230(기독교): 231=신학, 232=예수그리스도, 233=성서·성경, 234=교의학, 235=목회학." },
+    explain:"KDC 230(기독교): 231=신학, 232=예수그리스도, 233=성서, 234=교의학, 235=목회학." },
   { q:"KDC에서 기독교(230)의 '교파'에 해당하는 분류기호는?", opts:["235","236","237","238"], ans:3,
-    explain:"KDC 238=기독교교파. 종교공통구분 -8(종파·교파)과 조기성: 230+(-8)→238." },
-  { q:"KDC 종교공통구분표에 대한 설명으로 옳은 것은?", opts:["DDC에도 동일한 조기표가 있음","210 비교종교학의 요목과 조기성 가짐","5개 유형으로 구분","각 종교별로 다른 기호 체계 사용"], ans:1,
-    explain:"종교공통구분표는 210(비교종교학) 요목과 조기성을 가지며, KDC에만 있는 특징적 조기표입니다. DDC에는 없습니다." },
+    explain:"KDC 238=기독교교파. 종교공통구분 -8(종파·교파)과 조기성: 230+(-8)=238." },
+  { q:"KDC 종교공통구분표는 DDC와 비교할 때 어떤 특징인가?", opts:["DDC에도 동일한 조기표 존재","KDC에만 있는 특징적 조기표","두 체계 모두 공통으로 보유","DDC는 더 세분화된 조기표 보유"], ans:1,
+    explain:"종교공통구분표는 KDC에만 있는 특징적 조기표이며 DDC에는 없습니다. 210(비교종교학) 요목과 조기성을 가집니다." },
 
   // ── 문학형식구분표 (강의노트 9) ──
   { q:"KDC 문학형식구분표 '-2'가 나타내는 것은?", opts:["시","희곡","소설","수필"], ans:1,
@@ -2430,52 +3253,245 @@ const QUIZ_POOL = [
   { q:"KDC에서 '영국수필'의 분류기호는?", opts:["820","822","824","825"], ans:2,
     explain:"820(영미문학) + 문학형식구분 -4(수필) = 824 영국수필." },
   { q:"KDC 문학류(800)의 열거순서로 옳은 것은?", opts:["주류→주제→형식→시대","주류→언어→형식→시대","주류→형식→언어→시대","주류→언어→시대→형식"], ans:1,
-    explain:"800문학의 패싯 순서: 주류(8)+언어패싯+문학형식패싯+시대패싯. 예: 810(한국문학)-문학형식-시대." },
+    explain:"800문학의 패싯 순서: 주류(8)+언어패싯+문학형식패싯+시대패싯. 예: 810(한국문학)-형식-시대." },
   { q:"KDC 문학형식구분표가 DDC에서 대응되는 보조표는?", opts:["T.1","T.2","T.3","T.4"], ans:2,
     explain:"KDC 문학형식구분표 ≈ DDC T.3(특정 언어의 문학 형식구분). DDC T.1=표준구분, T.2=지역구분." },
-  { q:"KDC 문학형식구분 '-6'이 나타내는 것은?", opts:["연설·웅변","일기·서간·기행","풍자·유머","평론·문학사"], ans:1,
-    explain:"문학형식구분: -5=연설·웅변, -6=일기·서간·기행, -7=풍자·유머. '-6=일기·서간' 자주 출제됩니다." },
   { q:"KDC 문학형식구분표에 대한 설명으로 틀린 것은?", opts:["전적으로 800류에만 적용","800의 세 번째 패싯에 주로 적용","DDC T.3에 해당","기호 앞에 항상 0을 추가 사용"], ans:3,
     explain:"문학형식구분 기호 앞에는 표준구분처럼 '0'을 추가하지 않습니다. 언어기호 바로 뒤에 형식구분기호를 붙입니다." },
-  { q:"KDC에서 분석합성식 성격이 강한 주류로 옳은 것은?", opts:["철학류·역사류","사회과학류·자연과학류","언어류·문학류","예술류·종교류"], ans:2,
-    explain:"언어류(700)와 문학류(800)는 조기표(언어공통구분·문학형식구분)를 조합하여 분류기호를 합성 → 분석합성식 성격이 강함." },
+  { q:"KDC 문학형식구분 '-6'이 나타내는 것은?", opts:["연설·웅변","일기·서간·기행","풍자·유머","평론·문학사"], ans:1,
+    explain:"문학형식구분: -5=연설·웅변, -6=일기·서간·기행, -7=풍자·유머. '-6=일기·서간' 자주 출제됩니다." },
 
   // ── 청구기호·별치기호 (강의노트 10) ──
-  { q:"청구기호(Call Number)를 구성하는 최소 단위는?", opts:["분류기호","분류기호+도서기호","분류기호+별치기호","분류기호+도서기호+별치기호"], ans:1,
+  { q:"청구기호를 구성하는 최소 단위는?", opts:["분류기호","분류기호+도서기호","분류기호+별치기호","분류기호+도서기호+별치기호"], ans:1,
     explain:"청구기호의 최소 구성 = 분류기호 + 도서기호. 별치기호는 필요 시 추가하는 선택적 요소입니다." },
   { q:"자료를 별도 장소에 배치할 때 분류기호 상단에 표시하는 기호는?", opts:["도서기호","분류기호","별치기호","권호기호"], ans:2,
-    explain:"별치기호(Location Mark): 자료의 내용·형태 특수성에 따라 별도 배치 시 분류기호 상단에 문자로 표시." },
+    explain:"별치기호(Location Mark): 자료의 특수성에 따라 별도 배치 시 분류기호 상단에 문자로 표시합니다." },
   { q:"참고도서(사전·색인·초록 등)에 부여하는 별치기호는?", opts:["S","P","R","T"], ans:2,
     explain:"R=Reference(참고자료) 별치기호. 참고서고에 별치하여 관외 대출 제한 자료에 사용합니다." },
-  { q:"연속간행물·정기간행물에 주로 사용하는 별치기호는?", opts:["R 또는 참","S 또는 P","L","T"], ans:1,
-    explain:"연속간행물·정기간행물=S(Serial) 또는 P(Periodical) 또는 '연'이나 '정'. 참고도서는 R." },
+  { q:"KDC에서 특정주제를 분류표 전체 순서에 따라 세분하도록 지시하는 것은?", opts:["표준구분","특수주제구분","전주제구분","공통구분"], ans:2,
+    explain:"전주제구분(Divide Like): 특정 주제를 분류표 전체주제 순서에 따라 세분. 예: 078(특정주제신문) → 001-999와 같이 구분." },
   { q:"청구기호의 '부차적 기호'에 해당하지 않는 것은?", opts:["판차기호","연도기호","도서기호","복본기호"], ans:2,
     explain:"도서기호(저자기호)는 청구기호의 주요 구성요소. 판차기호·연도기호·복본기호·권호기호는 부차적 기호입니다." },
-  { q:"KDC에서 특정주제를 분류표 전체 순서에 따라 세분하도록 지시하는 것은?", opts:["표준구분","특수주제구분","전주제구분","공통구분"], ans:2,
-    explain:"전주제구분(Divide Like): 특정 주제를 분류표 전체주제 순서에 따라 세분. 예: 078 특정주제신문 → 001-999와 같이 구분." },
 
   // ── 저자기호법 (강의노트 11·12) ──
-  { q:"Cutter-Sanborn 저자기호표의 성격은?", opts:["한국 저자기호법","서양(영미) 저자기호법","중국 저자기호법","국제 공통 저자기호법"], ans:1,
+  { q:"Cutter-Sanborn 저자기호표의 성격은?", opts:["한국 저자기호법","서양(영미) 저자기호법","중국 저자기호법","분석합성식 기호법"], ans:1,
     explain:"Cutter-Sanborn Author Table=서양(영미권) 대표 저자기호법. 한국 기호법(고재창·정필모·리재철)과 구별됩니다." },
   { q:"리재철 한글순도서기호법에서 숫자기호를 결정하는 기준은?", opts:["첫째 자 초성","첫째 자 초성+중성","둘째 자 초성","둘째 자 초성+중성"], ans:3,
     explain:"리재철 한글순: 문자기호=첫째 자(음절) 그대로, 숫자기호=둘째 자(음절)의 초성+중성을 분석하여 사용." },
-  { q:"리재철 한글순도서기호법에서 판차기호 표시방법은?", opts:["저자기호 뒤 숫자만","저작기호 '차' 뒤에 판차 숫자","저자기호 뒤 등호(=)","분류기호 앞에 표시"], ans:1,
-    explain:"리재철: 판차기호는 저작기호 '차'를 앞세우고 판차를 붙임. 예: 박76차-3 (박씨저자 76번, 제3판)." },
-  { q:"새연대순도서기호법의 연대기호 구성은?", opts:["한글+숫자 혼합","알파벳+숫자 혼합","아라비아숫자만","로마숫자만"], ans:2,
-    explain:"새연대순도서기호법(리재철, 1986): 아라비아숫자만으로 기본기호(연대기호) 구성. 발행연도를 기호로 사용." },
   { q:"우리나라 최초의 저자기호법을 고안한 사람은?", opts:["리재철","정필모","박봉석","고재창"], ans:2,
-    explain:"박봉석이 우리나라 최초의 저자기호법(성별기호표)을 고안했습니다. 리재철은 한글순도서기호법과 새연대순도서기호법 고안." },
-  { q:"새연대순도서기호법에 대한 설명으로 틀린 것은?", opts:["국내 유일의 연대순기호법","리재철이 1986년 단행본으로 발행","모든 자료에 연대기호만 사용","발행연도 없는 자료는 추정발행년 사용"], ans:2,
-    explain:"새연대순기호법에서 전기·문학 등 일부 자료는 자모순 도서기호를 먼저 부여한 후 연대기호를 부기합니다. '모든 자료에 연대기호만'은 틀렸습니다." },
+    explain:"박봉석이 최초로 '성별기호표'를 고안. 이후 정필모(한국문헌기호표), 고재창, 리재철 등이 발전시켰습니다." },
+  { q:"새연대순도서기호법의 연대기호 구성은?", opts:["한글+숫자 혼합","알파벳+숫자 혼합","아라비아숫자만","로마숫자만"], ans:2,
+    explain:"새연대순도서기호법(리재철, 1986): 아라비아숫자만으로 기본기호(연대기호) 구성. 발행연도를 기호로 사용합니다." },
+  { q:"연대순도서기호법의 단점으로 옳은 것은?", opts:["기호 결정이 복잡","동일저자 저작이 한곳에 집중 안 됨","최신자료 검색이 어려움","체계화된 표 필요"], ans:1,
+    explain:"연대순도서기호법 단점: 동일분류기호 내에서 한 저자의 저작이 한곳에 집중되지 않는다는 단점이 있습니다." },
   { q:"KDC 조기표(보조표)의 총 개수는?", opts:["4개","5개","6개","7개"], ans:2,
     explain:"KDC 보조표는 표1(표준구분)~표6(종교공통구분) 총 6개. DDC는 7개 보조표. 개수 비교 자주 출제!" },
+  { q:"KDC 6판에서 분석합성식 성격이 강한 주류는?", opts:["철학류·역사류","사회과학류·자연과학류","언어류·문학류","예술류·종교류"], ans:2,
+    explain:"언어류(700)와 문학류(800)는 조기표(언어공통구분·문학형식구분)를 조합하여 분류기호를 합성 → 분석합성식 성격이 강함." },
+
+  // ── 저자기호법 추가 (강의노트 11·12) ──
+  { q:"열거식 저자기호법에 해당하지 않는 것은?", opts:["이춘희 동서저자기호표","장일세 동서저자기호표","정필모 한국문헌기호표","리재철 한글순도서기호법"], ans:3,
+    explain:"리재철 한글순도서기호법은 분석합성식(자음·모음 분석 후 조합). 이춘희·장일세·정필모는 열거식 저자기호법입니다." },
+  { q:"저자기호법의 장점에 해당하지 않는 것은?", opts:["기호 전개방법이 무한","동일저자 저작을 한곳에 집중","기호 구성방법이 간단","기호 조직이 논리적"], ans:2,
+    explain:"저자기호법의 단점: 기호 구성방법이 복잡합니다. 기호가 간단한 것은 수입순기호법의 장점입니다." },
+  { q:"수입순 도서기호법의 장점으로 거리가 먼 것은?", opts:["기호 결정이 간단","이용자 직접 자료검색이 용이","체계화된 표 불필요","자료 배열이 용이"], ans:1,
+    explain:"수입순 도서기호법은 입수 순서대로 번호를 부여하므로 이용자가 주제별로 직접 자료를 검색하기 어렵습니다." },
+  { q:"도서기호법 가운데 기호를 부여하기 가장 편리한 방법은?", opts:["저자기호법","연대순기호법","수입순기호법","저작기호법"], ans:2,
+    explain:"수입순기호법: 자료가 들어온 순서대로 번호 부여 → 기호 결정이 가장 단순하고 편리합니다." },
+  { q:"Cutter-Sanborn표에서 동일 저자 다른 저작 구별 시 사용하는 것은?", opts:["복본기호","권호기호","저작기호","판차기호"], ans:2,
+    explain:"커터-샌본: 저자기호 다음에 서명의 첫 번째 키워드의 첫 글자(소문자)를 저작기호로 추가하여 구별합니다." },
+  { q:"리재철 한글순도서기호법에서 복본기호 앞에 사용하는 기호는?", opts:["c","-","=","+"], ans:2,
+    explain:"리재철 한글순: 복본기호 앞에 등호(=)를 사용. 예: 박76=2 (제2복본). 권차기호 앞에는 대쉬(-)를 사용합니다." },
+];
+
+// ===== 기말대비 문제 pool (강의노트 7·9·10·11·12) =====
+const FINAL_POOL = [
+  // ── 표준구분표 (강의노트 7) ──
+  { q:"KDC 표준구분표 기호에 대한 설명으로 옳은 것은?", opts:["한 자리로 구성되며 항상 1로 시작","두 자리 이상이며 항상 0으로 시작","두 자리 이상이며 항상 9로 시작","세 자리 이상이며 0이나 1로 시작"], ans:1,
+    explain:"KDC 표준구분표 기호는 최소 두 자리로 구성되며, 항상 '0'으로 시작합니다. 예: -01(이론), -03(사전), -05(연속간행물)." },
+  { q:"KDC 표준구분 '-05'가 나타내는 것은?", opts:["사전·색인","연속간행물","학회·단체","역사 및 지역구분"], ans:1,
+    explain:"-05=연속간행물. 총류 050(일반연속간행물)과 조기성을 가집니다. -01=철학·이론, -03=사전, -06=학회·단체." },
+  { q:"KDC 표준구분 '-06'이 나타내는 것은?", opts:["강연집·수필집","연속간행물","학회·단체·협회·기관·회의","총서·전집·선집"], ans:2,
+    explain:"-06=학회·단체·협회·기관·회의. 총류 060(일반학회·단체)과 조기성을 갖습니다." },
+  { q:"KDC 표준구분 '-09'가 나타내는 것은?", opts:["철학 및 이론","총서·전집","역사 및 지역구분","학회·단체"], ans:2,
+    explain:"-09=역사 및 지역구분. 본표에 지역구분 부가지시 없을 때 -09를 매개로 지역구분기호를 추가할 수 있습니다." },
+  { q:"KDC 표준구분 중 총류 강목과 조기성이 없는 것은?", opts:["-02","-04","-05","-01"], ans:3,
+    explain:"-01(철학·이론)은 총류 강목에 대응 항목이 없어 조기성이 없습니다. -02·-04·-05·-06·-08은 총류 강목과 조기성을 가집니다." },
+  { q:"KDC 표준구분표를 사용할 수 없는 경우는?", opts:["본표에 사용금지 지시가 없을 때","분류기호와 기호가 중복될 때","백과사전 분류 시","연속간행물 분류 시"], ans:1,
+    explain:"본표에 사용금지 지시가 있거나 기호가 중복되는 경우 표준구분표를 사용할 수 없습니다." },
   { q:"DDC의 T.1(Standard Subdivision)에 해당하는 KDC 조기표는?", opts:["지역구분표","표준구분표","언어공통구분표","문학형식구분표"], ans:1,
     explain:"DDC T.1(Standard Subdivision) = KDC 표준구분표. 모든 주류에 공통 적용 가능한 형식구분표입니다." },
-  { q:"KDC와 DDC의 보조표(조기표) 개수 비교로 옳은 것은?", opts:["KDC 5개 · DDC 6개","KDC 6개 · DDC 7개","KDC 7개 · DDC 6개","KDC 6개 · DDC 6개"], ans:1,
-    explain:"KDC=표1~표6 총 6개 보조표. DDC=T.1~T.7 총 7개 보조표. 개수 차이가 자주 출제됩니다." },
-  { q:"KDC에서 '한국시(韓國詩)' 의 분류기호는?", opts:["810","811","812","813"], ans:1,
-    explain:"810(한국문학) + 문학형식구분 -1(시) = 811 한국시. -2=희곡→812, -3=소설→813, -4=수필→814." },
+
+  // ── 지역구분표 (강의노트 7) ──
+  { q:"KDC 지역구분 없이도 지역 표시 시 사용하는 표준구분은?", opts:["-07","-08","-09","-02"], ans:2,
+    explain:"본표에 지역구분 부가지시가 없을 때 표준구분 -09(역사 및 지역구분)를 사용하여 지역구분기호를 추가합니다." },
+  { q:"KDC에서 '일본사(日本史)'의 분류기호는?", opts:["911","912","913","914"], ans:2,
+    explain:"900=역사, 910=아시아역사. 지역구분 -11~-13의 둘째 자리는 국어구분과 조기성: -1=한국→911, -2=중국→912, -3=일본→913." },
+  { q:"KDC 지역구분표에 대한 설명으로 틀린 것은?", opts:["DDC의 T.2에 해당","역사의 강목 등과 조기성을 지님","초판에서는 지리구분이라 불렀음","역사상의 시대와 인물만을 나타냄"], ans:3,
+    explain:"지역구분표는 특정 국가·지역 표시가 주목적. 역사상 시대·인물 표시만을 위한 것이 아닙니다." },
+
+  // ── 국어구분표 (강의노트 7) ──
+  { q:"KDC 국어구분표에서 '중국어'에 해당하는 기호는?", opts:["-1","-2","-3","-4"], ans:1,
+    explain:"국어구분: -1=한국어, -2=중국어, -3=일본어, -4=영어, -5=독일어, -6=프랑스어, -7=스페인어." },
+  { q:"KDC 2개국어사전의 제1차 분류기준은?", opts:["이용자에게 덜 알려진 언어","표제어로 사용된 언어","분류표상 앞에 나오는 언어","분류국에서 더 많이 쓰이는 언어"], ans:1,
+    explain:"KDC 6판에서 2개국어사전의 제1차 분류기준은 '표제어(entry word)로 사용된 언어'입니다." },
+  { q:"KDC 언어공통구분표 '-1'이 나타내는 것은?", opts:["음운 및 문자","어원","작문","어휘"], ans:0,
+    explain:"언어공통구분: -1=음운 및 문자(음성·문자), -2=어원, -3=사전(어휘), -4=음운론, -5=문법." },
+
+  { q:"KDC 국어구분표에서 '독일어'에 해당하는 기호는?", opts:["-4","-5","-6","-7"], ans:1,
+    explain:"국어구분: -4=영어, -5=독일어, -6=프랑스어, -7=스페인어, -8=이탈리아어. 유럽어 순서로 암기." },
+  { q:"KDC에서 '독한사전'의 분류기호로 옳은 것은?", opts:["751","752","753","754"], ans:0,
+    explain:"독한사전: 표제어=독일어 → 750(독일어) + 국어구분 -1(한국어) = 751." },
+  { q:"KDC에서 '불한사전(프랑스어-한국어)'의 분류기호로 옳은 것은?", opts:["761","762","763","764"], ans:0,
+    explain:"불한사전: 표제어=프랑스어 → 760(프랑스어) + 국어구분 -1(한국어) = 761." },
+  { q:"KDC에서 '일영사전'의 분류기호로 옳은 것은?", opts:["731","734","741","744"], ans:1,
+    explain:"일영사전: 표제어=일본어 → 730(일본어) + 국어구분 -4(영어) = 734." },
+  { q:"KDC 국어구분표에서 '스페인어'에 해당하는 기호는?", opts:["-5","-6","-7","-8"], ans:2,
+    explain:"국어구분: -5=독일어, -6=프랑스어, -7=스페인어, -8=이탈리아어. -9=기타 제어." },
+  { q:"KDC에서 '한일사전'과 '일한사전'의 분류기호 차이는?", opts:["같다","표제어 언어에 따라 다르다","해설어 언어에 따라 다르다","이용자 국적에 따라 다르다"], ans:1,
+    explain:"한일사전: 표제어=한국어 → 710 + -3(일본어) = 713. 일한사전: 표제어=일본어 → 730 + -1(한국어) = 731. 표제어 기준으로 완전히 달라집니다." },
+
+  // ── 종교공통구분표 (강의노트 9) ──
+  { q:"KDC 종교공통구분표에서 '종파·교파'를 나타내는 기호는?", opts:["-4","-6","-7","-8"], ans:3,
+    explain:"종교공통구분: -1=교리, -2=종조, -3=경전, -4=신앙록, -5=전도, -6=예배형식, -7=포교, -8=종파·교파." },
+  { q:"KDC 종교공통구분표에서 '경전'을 나타내는 기호는?", opts:["-1","-2","-3","-4"], ans:2,
+    explain:"종교공통구분: -3=경전(성전). 기독교 성서=233, 불교 경전=223으로 적용." },
+  { q:"KDC 종교공통구분표에서 '예배형식·의식'을 나타내는 기호는?", opts:["-4","-5","-6","-7"], ans:2,
+    explain:"종교공통구분: -6=예배형식·의식·전례. 각 종교에 공통적으로 적용 가능한 조기표입니다." },
+  { q:"KDC에서 기독교(230)의 '성서'에 해당하는 분류기호는?", opts:["231","232","233","235"], ans:2,
+    explain:"KDC 230(기독교): 231=신학, 232=예수그리스도, 233=성서, 234=교의학, 235=목회학." },
+  { q:"KDC에서 기독교(230)의 '교파'에 해당하는 분류기호는?", opts:["235","236","237","238"], ans:3,
+    explain:"KDC 238=기독교교파. 종교공통구분 -8(종파·교파)과 조기성: 230+(-8)=238." },
+  { q:"KDC 종교공통구분표는 DDC와 비교할 때 어떤 특징인가?", opts:["DDC에도 동일한 조기표 존재","KDC에만 있는 특징적 조기표","두 체계 모두 공통으로 보유","DDC는 더 세분화된 조기표 보유"], ans:1,
+    explain:"종교공통구분표는 KDC에만 있는 특징적 조기표이며 DDC에는 없습니다. 210(비교종교학) 요목과 조기성을 가집니다." },
+
+  // ── 문학형식구분표 (강의노트 9) ──
+  { q:"KDC 문학형식구분표 '-2'가 나타내는 것은?", opts:["시","희곡","소설","수필"], ans:1,
+    explain:"문학형식구분: -1=시, -2=희곡, -3=소설, -4=수필, -5=연설, -6=일기·서간·기행, -7=풍자." },
+  { q:"KDC에서 '영국수필'의 분류기호는?", opts:["820","822","824","825"], ans:2,
+    explain:"820(영미문학) + 문학형식구분 -4(수필) = 824 영국수필." },
+  { q:"KDC 문학류(800)의 열거순서로 옳은 것은?", opts:["주류→주제→형식→시대","주류→언어→형식→시대","주류→형식→언어→시대","주류→언어→시대→형식"], ans:1,
+    explain:"800문학의 패싯 순서: 주류(8)+언어패싯+문학형식패싯+시대패싯. 예: 810(한국문학)-형식-시대." },
+  { q:"KDC 문학형식구분표가 DDC에서 대응되는 보조표는?", opts:["T.1","T.2","T.3","T.4"], ans:2,
+    explain:"KDC 문학형식구분표 ≈ DDC T.3(특정 언어의 문학 형식구분). DDC T.1=표준구분, T.2=지역구분." },
+  { q:"KDC 문학형식구분표에 대한 설명으로 틀린 것은?", opts:["전적으로 800류에만 적용","800의 세 번째 패싯에 주로 적용","DDC T.3에 해당","기호 앞에 항상 0을 추가 사용"], ans:3,
+    explain:"문학형식구분 기호 앞에는 표준구분처럼 '0'을 추가하지 않습니다. 언어기호 바로 뒤에 형식구분기호를 붙입니다." },
+  { q:"KDC 문학형식구분 '-6'이 나타내는 것은?", opts:["연설·웅변","일기·서간·기행","풍자·유머","평론·문학사"], ans:1,
+    explain:"문학형식구분: -5=연설·웅변, -6=일기·서간·기행, -7=풍자·유머. '-6=일기·서간' 자주 출제됩니다." },
+
+  // ── 청구기호·별치기호 (강의노트 10) ──
+  { q:"청구기호를 구성하는 최소 단위는?", opts:["분류기호","분류기호+도서기호","분류기호+별치기호","분류기호+도서기호+별치기호"], ans:1,
+    explain:"청구기호의 최소 구성 = 분류기호 + 도서기호. 별치기호는 필요 시 추가하는 선택적 요소입니다." },
+  { q:"자료를 별도 장소에 배치할 때 분류기호 상단에 표시하는 기호는?", opts:["도서기호","분류기호","별치기호","권호기호"], ans:2,
+    explain:"별치기호(Location Mark): 자료의 특수성에 따라 별도 배치 시 분류기호 상단에 문자로 표시합니다." },
+  { q:"참고도서(사전·색인·초록 등)에 부여하는 별치기호는?", opts:["S","P","R","T"], ans:2,
+    explain:"R=Reference(참고자료) 별치기호. 참고서고에 별치하여 관외 대출 제한 자료에 사용합니다." },
+  { q:"KDC에서 특정주제를 분류표 전체 순서에 따라 세분하도록 지시하는 것은?", opts:["표준구분","특수주제구분","전주제구분","공통구분"], ans:2,
+    explain:"전주제구분(Divide Like): 특정 주제를 분류표 전체주제 순서에 따라 세분. 예: 078(특정주제신문) → 001-999와 같이 구분." },
+  { q:"청구기호의 '부차적 기호'에 해당하지 않는 것은?", opts:["판차기호","연도기호","도서기호","복본기호"], ans:2,
+    explain:"도서기호(저자기호)는 청구기호의 주요 구성요소. 판차기호·연도기호·복본기호·권호기호는 부차적 기호입니다." },
+
+  // ── 저자기호법 (강의노트 11·12) ──
+  { q:"Cutter-Sanborn 저자기호표의 성격은?", opts:["한국 저자기호법","서양(영미) 저자기호법","중국 저자기호법","분석합성식 기호법"], ans:1,
+    explain:"Cutter-Sanborn Author Table=서양(영미권) 대표 저자기호법. 한국 기호법(고재창·정필모·리재철)과 구별됩니다." },
+  { q:"리재철 한글순도서기호법에서 숫자기호를 결정하는 기준은?", opts:["첫째 자 초성","첫째 자 초성+중성","둘째 자 초성","둘째 자 초성+중성"], ans:3,
+    explain:"리재철 한글순: 문자기호=첫째 자(음절) 그대로, 숫자기호=둘째 자(음절)의 초성+중성을 분석하여 사용." },
+  { q:"우리나라 최초의 저자기호법을 고안한 사람은?", opts:["리재철","정필모","박봉석","고재창"], ans:2,
+    explain:"박봉석이 최초로 '성별기호표'를 고안. 이후 정필모(한국문헌기호표), 고재창, 리재철 등이 발전시켰습니다." },
+  { q:"새연대순도서기호법의 연대기호 구성은?", opts:["한글+숫자 혼합","알파벳+숫자 혼합","아라비아숫자만","로마숫자만"], ans:2,
+    explain:"새연대순도서기호법(리재철, 1986): 아라비아숫자만으로 기본기호(연대기호) 구성. 발행연도를 기호로 사용합니다." },
+  { q:"연대순도서기호법의 단점으로 옳은 것은?", opts:["기호 결정이 복잡","동일저자 저작이 한곳에 집중 안 됨","최신자료 검색이 어려움","체계화된 표 필요"], ans:1,
+    explain:"연대순도서기호법 단점: 동일분류기호 내에서 한 저자의 저작이 한곳에 집중되지 않는다는 단점이 있습니다." },
+  { q:"KDC 조기표(보조표)의 총 개수는?", opts:["4개","5개","6개","7개"], ans:2,
+    explain:"KDC 보조표는 표1(표준구분)~표6(종교공통구분) 총 6개. DDC는 7개 보조표. 개수 비교 자주 출제!" },
+  { q:"KDC 6판에서 분석합성식 성격이 강한 주류는?", opts:["철학류·역사류","사회과학류·자연과학류","언어류·문학류","예술류·종교류"], ans:2,
+    explain:"언어류(700)와 문학류(800)는 조기표(언어공통구분·문학형식구분)를 조합하여 분류기호를 합성 → 분석합성식 성격이 강함." },
+
+  // ── 저자기호법 추가 (강의노트 11·12) ──
+  { q:"열거식 저자기호법에 해당하지 않는 것은?", opts:["이춘희 동서저자기호표","장일세 동서저자기호표","정필모 한국문헌기호표","리재철 한글순도서기호법"], ans:3,
+    explain:"리재철 한글순도서기호법은 분석합성식(자음·모음 분석 후 조합). 이춘희·장일세·정필모는 열거식 저자기호법입니다." },
+  { q:"저자기호법의 장점에 해당하지 않는 것은?", opts:["기호 전개방법이 무한","동일저자 저작을 한곳에 집중","기호 구성방법이 간단","기호 조직이 논리적"], ans:2,
+    explain:"저자기호법의 단점: 기호 구성방법이 복잡합니다. 기호가 간단한 것은 수입순기호법의 장점입니다." },
+  { q:"수입순 도서기호법의 장점으로 거리가 먼 것은?", opts:["기호 결정이 간단","이용자 직접 자료검색이 용이","체계화된 표 불필요","자료 배열이 용이"], ans:1,
+    explain:"수입순 도서기호법은 입수 순서대로 번호를 부여하므로 이용자가 주제별로 직접 자료를 검색하기 어렵습니다." },
+  { q:"도서기호법 가운데 기호를 부여하기 가장 편리한 방법은?", opts:["저자기호법","연대순기호법","수입순기호법","저작기호법"], ans:2,
+    explain:"수입순기호법: 자료가 들어온 순서대로 번호 부여 → 기호 결정이 가장 단순하고 편리합니다." },
+  { q:"Cutter-Sanborn표에서 동일 저자 다른 저작 구별 시 사용하는 것은?", opts:["복본기호","권호기호","저작기호","판차기호"], ans:2,
+    explain:"커터-샌본: 저자기호 다음에 서명의 첫 번째 키워드의 첫 글자(소문자)를 저작기호로 추가하여 구별합니다." },
+  { q:"리재철 한글순도서기호법에서 복본기호 앞에 사용하는 기호는?", opts:["c","-","=","+"], ans:2,
+    explain:"리재철 한글순: 복본기호 앞에 등호(=)를 사용. 예: 박76=2 (제2복본). 권차기호 앞에는 대쉬(-)를 사용합니다." },
+
+  // ── 지역구분·국어·언어공통구분표 (강의노트 8) ──
+  { q:"KDC 본표에 지역구분 부가지시 없을 때 사용하는 표준구분 기호는?", opts:["-024","-09","-089","-07"], ans:1,
+    explain:"-09(역사 및 지역구분)를 매개로 지역구분기호를 추가할 수 있습니다. 예: 특정주제-09+지역기호." },
+  { q:"KDC 국어구분표 1차구분에 포함되어 있지 않은 언어는?", opts:["중국어","프랑스어","이탈리아어","라틴어"], ans:3,
+    explain:"국어구분표 1차구분: -1=한국어, -2=중국어, -3=일본어, -4=영어, -5=독일어, -6=프랑스어, -7=스페인어, -8=이탈리아어. 라틴어는 포함되지 않습니다." },
+  { q:"KDC 언어공통구분표에서 기호와 내용의 연결이 틀린 것은?", opts:["-1:음운 및 문자","-2:어원","-3:작문","-5:문법"], ans:2,
+    explain:"-3은 '작문'이 아니라 '사전(어휘)'입니다. 언어공통구분: -1=문자·음성, -2=어원, -3=사전, -4=음운론, -5=문법." },
+  { q:"KDC 지역구분표에서 아시아 -11~-13의 둘째 자리는 국어구분과 조기성을 갖는다. 일본사의 분류기호는?", opts:["912","913","914","915"], ans:1,
+    explain:"910=아시아역사, 국어구분 -3=일본어 → 913=일본사. 한국사=911(-1), 중국사=912(-2), 일본사=913(-3)." },
+  { q:"KDC 지역구분표에서 북아메리카·남아메리카·아프리카의 기호로 옳은 것은?", opts:["-3·-4·-5","-3·-5·-4","-4·-5·-3","-4·-3·-5"], ans:0,
+    explain:"지역구분: -1=아시아, -2=유럽, -3=북아메리카, -4=남아메리카, -5=아프리카, -6=오세아니아, -7=양극지방." },
+  { q:"KDC 지역구분표에 대한 설명으로 거리가 먼 것은?", opts:["DDC T.2에 해당","역사 강목·지리 요목 등과 조기성 있음","초판=지리구분, 2판부터=지역구분표로 변경","역사상의 시대·인물·지역 모두 나타내는 보조표"], ans:3,
+    explain:"KDC 지역구분표는 특정 지역 표시가 주목적입니다. 역사상 시대·인물까지 나타낸다는 설명은 DDC T.2의 기능이며 KDC 지역구분표에 대한 설명으로는 거리가 멉니다." },
+  { q:"KDC 6판에서 2개국어사전의 제1차 분류기준은?", opts:["표제어로 사용된 언어","이용자에게 덜 알려진 언어","분류국에서 더 많이 쓰이는 언어","분류표상 앞에 나오는 언어"], ans:0,
+    explain:"KDC 6판: 2개국어사전은 '표제어(entry word)로 사용된 언어'를 제1차 분류기준으로 사용합니다." },
 ];
+
+// ===== 기말퀴즈 변수 =====
+let finalQuizzes = [];
+let finalScore = 0;
+let finalAnswered = 0;
+
+function startFinalQuiz() {
+  finalQuizzes = shuffle(FINAL_POOL).slice(0, 10);
+  finalScore = 0;
+  finalAnswered = 0;
+  document.getElementById('fscore').textContent = '0';
+  document.getElementById('ftotal').textContent = '10';
+  renderFinalQuiz();
+}
+
+function renderFinalQuiz() {
+  const area = document.getElementById('final-quiz-area');
+  area.innerHTML = finalQuizzes.map((q, i) => `
+    <div class="quiz-card" id="fqc-${i}">
+      <div class="quiz-q"><span class="num">Q${i+1}</span>${q.q}</div>
+      <div class="quiz-options">
+        ${q.opts.map((o, j) => `<button class="quiz-opt" onclick="fanswer(${i},${j})" id="fopt-${i}-${j}">${['①','②','③','④'][j]} ${o}</button>`).join('')}
+      </div>
+      <div class="quiz-explain" id="fexp-${i}">${q.explain}</div>
+    </div>
+  `).join('') + `
+    <div style="text-align:center;margin-top:24px">
+      <button onclick="startFinalQuiz()" style="
+        background:var(--accent4);color:#fff;border:none;padding:12px 32px;
+        border-radius:8px;font-size:15px;font-family:inherit;cursor:pointer;
+        font-weight:700;letter-spacing:0.03em;
+      ">🔀 새 문제 10개 뽑기</button>
+      <div style="margin-top:10px;font-size:12px;color:var(--text-dim)">기말대비 총 ${FINAL_POOL.length}문제 pool에서 랜덤 출제</div>
+    </div>
+  `;
+}
+
+function fanswer(qi, selected) {
+  const qc = document.getElementById(`fqc-${qi}`);
+  if (qc.querySelector('.correct') || qc.querySelector('.wrong')) return;
+  const correct = finalQuizzes[qi].ans;
+  for (let j = 0; j < 4; j++) {
+    const btn = document.getElementById(`fopt-${qi}-${j}`);
+    if (btn) btn.disabled = true;
+    if (j === correct) btn && btn.classList.add('correct');
+    else if (j === selected && selected !== correct) btn && btn.classList.add('wrong');
+  }
+  if (selected === correct) {
+    finalScore++;
+    document.getElementById('fscore').textContent = finalScore;
+  }
+  document.getElementById(`fexp-${qi}`).classList.add('show');
+  finalAnswered++;
+}
+
 // ===== 랜덤 10문제 추출 =====
 let activeQuizzes = [];
 let score = 0;
@@ -2542,6 +3558,31 @@ function answer(qi, selected) {
 }
 
 startQuiz();
+startFinalQuiz();
+
+function toggleNoteAcc(id) {
+  const el = document.getElementById('note_' + id);
+  const arr = document.getElementById('nacc_' + id);
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    arr.textContent = '▼';
+  } else {
+    el.style.display = 'none';
+    arr.textContent = '▶';
+  }
+}
+
+function toggleFCard(id) {
+  const el = document.getElementById(id);
+  const arr = document.getElementById('arr_' + id);
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    arr.textContent = '▲ 정답숨기기';
+  } else {
+    el.style.display = 'none';
+    arr.textContent = '▶ 정답보기';
+  }
+}
 
 // Service Worker 등록
 if ('serviceWorker' in navigator) {
