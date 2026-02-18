@@ -824,10 +824,11 @@
 
   <!-- SECTION 6: KDC 강목 -->
   <div class="section" id="s6">
-    <div class="section-title"><span class="dot" style="background:var(--accent2)"></span>KDC 강목(綱目) 전체 암기표</div>
+    <div class="section-title"><span class="dot" style="background:var(--accent2)"></span>KDC 강목(綱目) 100구분표 — PDF 원본 완전 반영</div>
     <div class="card blue" style="margin-bottom:20px;padding:14px 18px">
       <div style="font-size:12px;color:var(--text-muted);line-height:1.8">
-        💡 <strong>강(綱)</strong> = 10단위 구분 &nbsp;|&nbsp; <strong>목(目)</strong> = 1단위 세부 &nbsp;|&nbsp; ★ = 시험 자주 출제
+        💡 <strong>강(綱)</strong> = 10단위 구분 (예: 010, 020) &nbsp;|&nbsp; <strong>목(目)</strong> = 1단위 세부 구분 (예: 021, 022)<br>
+        ⚠️ <strong>공란(—)</strong>: 260, 610, 970은 현재 비어있음 (향후 확장 가능)
       </div>
     </div>
 
@@ -835,8 +836,14 @@
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">000 총류 (Generalities) <span class="acc-arrow">▶</span></div>
       <div class="acc-body">
-        <strong>010</strong> 도서학, 서지학 | <strong>020</strong> 문헌정보학 | <strong>030</strong> 백과사전 | <strong>040</strong> 강연집, 수필집, 연설문집<br>
-        <strong>050</strong> 일반 연속간행물 | <strong>060</strong> 일반 학회, 단체, 협회, 기관 | <strong>070</strong> 신문, 저널리즘 | <strong>080</strong> 일반 전집, 총서<br>
+        <strong>010</strong> 도서학, 서지학<br>
+        <strong>020</strong> 문헌정보학<br>
+        <strong>030</strong> 백과사전<br>
+        <strong>040</strong> 강연집, 수필집, 연설문집<br>
+        <strong>050</strong> 일반 연속간행물<br>
+        <strong>060</strong> 일반 학회, 단체, 협회, 기관, 연구기관<br>
+        <strong>070</strong> 신문, 저널리즘<br>
+        <strong>080</strong> 일반 전집, 총서<br>
         <strong>090</strong> 향토자료
       </div>
     </div>
@@ -845,9 +852,15 @@
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">100 철학 (Philosophy) <span class="acc-arrow">▶</span></div>
       <div class="acc-body">
-        <strong>110</strong> 형이상학 | <strong>120</strong> 인식론, 인과론, 인간학 | <strong>130</strong> 철학의 체계 | <strong>140</strong> 경학<br>
-        <strong>150</strong> 심리학 | <strong>160</strong> 논리학 | <strong>170</strong> 윤리학, 도덕철학 | <strong>180</strong> 고대·중세철학<br>
-        <strong>190</strong> 근대·현대철학
+        <strong>110</strong> 형이상학<br>
+        <strong>120</strong> 인식론, 인과론, 인간학<br>
+        <strong>130</strong> 철학의 체계<br>
+        <strong>140</strong> 경학<br>
+        <strong>150</strong> 동양철학, 동양사상<br>
+        <strong>160</strong> 서양철학<br>
+        <strong>170</strong> 논리학<br>
+        <strong>180</strong> 심리학<br>
+        <strong>190</strong> 윤리학, 도덕철학
       </div>
     </div>
 
@@ -855,8 +868,14 @@
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">200 종교 (Religion) <span class="acc-arrow">▶</span></div>
       <div class="acc-body">
-        <strong>210</strong> 비교종교 | <strong>220</strong> 불교 | <strong>230</strong> 도교 | <strong>240</strong> 인도교<br>
-        <strong>250</strong> 유교 | <strong>260</strong> 신도 | <strong>270</strong> 이슬람교 | <strong>280</strong> 기독교(개신교)<br>
+        <strong>210</strong> 비교종교<br>
+        <strong>220</strong> 불교<br>
+        <strong>230</strong> 기독교<br>
+        <strong>240</strong> 도교<br>
+        <strong>250</strong> 천도교<br>
+        <strong>260</strong> — <span style="color:var(--text-muted);font-size:11px">(공란)</span><br>
+        <strong>270</strong> 힌두교, 브라만교<br>
+        <strong>280</strong> 이슬람교(회교)<br>
         <strong>290</strong> 기타 제종교
       </div>
     </div>
@@ -865,8 +884,14 @@
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">300 사회과학 (Social Sciences) <span class="acc-arrow">▶</span></div>
       <div class="acc-body">
-        <strong>310</strong> 통계학 | <strong>320</strong> 정치학 | <strong>330</strong> 경제학 | <strong>340</strong> 법학<br>
-        <strong>350</strong> 행정학 | <strong>360</strong> 사회학, 사회문제 | <strong>370</strong> 교육학 | <strong>380</strong> 풍속, 민속학<br>
+        <strong>310</strong> 통계자료<br>
+        <strong>320</strong> 경제학<br>
+        <strong>330</strong> 사회학, 사회문제<br>
+        <strong>340</strong> 정치학<br>
+        <strong>350</strong> 행정학<br>
+        <strong>360</strong> 법률, 법학<br>
+        <strong>370</strong> 교육학<br>
+        <strong>380</strong> 풍습, 예절, 민속학<br>
         <strong>390</strong> 국방, 군사학
       </div>
     </div>
@@ -875,8 +900,14 @@
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">400 자연과학 (Natural Sciences) <span class="acc-arrow">▶</span></div>
       <div class="acc-body">
-        <strong>410</strong> 수학 | <strong>420</strong> 물리학 | <strong>430</strong> 화학 | <strong>440</strong> 천문학<br>
-        <strong>450</strong> 지학(지구과학) | <strong>460</strong> 광물학 | <strong>470</strong> 생명과학 | <strong>480</strong> 식물학<br>
+        <strong>410</strong> 수학<br>
+        <strong>420</strong> 물리학<br>
+        <strong>430</strong> 화학<br>
+        <strong>440</strong> 천문학<br>
+        <strong>450</strong> 지학<br>
+        <strong>460</strong> 광물학<br>
+        <strong>470</strong> 생명과학<br>
+        <strong>480</strong> 식물학<br>
         <strong>490</strong> 동물학
       </div>
     </div>
@@ -885,9 +916,15 @@
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">500 기술과학 (Technology) <span class="acc-arrow">▶</span></div>
       <div class="acc-body">
-        <strong>510</strong> 의학 | <strong>520</strong> 농업, 농학 | <strong>530</strong> 공학, 공업일반 | <strong>540</strong> 건축공학<br>
-        <strong>550</strong> 기계공학 | <strong>560</strong> 전기공학, 전자공학 | <strong>570</strong> 화학공학 | <strong>580</strong> 제조업<br>
-        <strong>590</strong> 생활과학 (가정학)
+        <strong>510</strong> 의학<br>
+        <strong>520</strong> 농업, 농학<br>
+        <strong>530</strong> 공학, 공업 일반, 토목공학, 환경공학<br>
+        <strong>540</strong> 건축, 건축학<br>
+        <strong>550</strong> 기계공학<br>
+        <strong>560</strong> 전기공학, 통신공학, 전자공학<br>
+        <strong>570</strong> 화학공학<br>
+        <strong>580</strong> 제조업<br>
+        <strong>590</strong> 생활과학
       </div>
     </div>
 
@@ -895,8 +932,14 @@
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">600 예술 (Arts) <span class="acc-arrow">▶</span></div>
       <div class="acc-body">
-        <strong>610</strong> 건축술 | <strong>620</strong> 조각, 조형미술 | <strong>630</strong> 공예 | <strong>640</strong> 서예<br>
-        <strong>650</strong> 회화, 도화 | <strong>660</strong> 사진술 | <strong>670</strong> 음악 | <strong>680</strong> 연극, 무용, 대중예술<br>
+        <strong>610</strong> — <span style="color:var(--text-muted);font-size:11px">(공란)</span><br>
+        <strong>620</strong> 조각, 조형미술<br>
+        <strong>630</strong> 공예<br>
+        <strong>640</strong> 서예<br>
+        <strong>650</strong> 회화, 도화, 디자인<br>
+        <strong>660</strong> 사진예술<br>
+        <strong>670</strong> 음악<br>
+        <strong>680</strong> 공연예술, 매체예술<br>
         <strong>690</strong> 오락, 스포츠
       </div>
     </div>
@@ -905,9 +948,15 @@
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">700 언어 (Language) <span class="acc-arrow">▶</span></div>
       <div class="acc-body">
-        <strong>710</strong> 한국어 | <strong>720</strong> 중국어 | <strong>730</strong> 일본어 | <strong>740</strong> 영어<br>
-        <strong>750</strong> 독일어 | <strong>760</strong> 프랑스어 | <strong>770</strong> 스페인어, 포르투갈어 | <strong>780</strong> 이탈리아어<br>
-        <strong>790</strong> 기타 제언어
+        <strong>710</strong> 한국어<br>
+        <strong>720</strong> 중국어<br>
+        <strong>730</strong> 일본어 및 기타 아시아 제어<br>
+        <strong>740</strong> 영어<br>
+        <strong>750</strong> 독일어<br>
+        <strong>760</strong> 프랑스어<br>
+        <strong>770</strong> 스페인어 및 포르투갈어<br>
+        <strong>780</strong> 이탈리아어<br>
+        <strong>790</strong> 기타 제어
       </div>
     </div>
 
@@ -915,8 +964,14 @@
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">800 문학 (Literature) <span class="acc-arrow">▶</span></div>
       <div class="acc-body">
-        <strong>810</strong> 한국문학 | <strong>820</strong> 중국문학 | <strong>830</strong> 일본문학 | <strong>840</strong> 영미문학<br>
-        <strong>850</strong> 독일문학 | <strong>860</strong> 프랑스문학 | <strong>870</strong> 스페인·포르투갈문학 | <strong>880</strong> 이탈리아문학<br>
+        <strong>810</strong> 한국문학<br>
+        <strong>820</strong> 중국문학<br>
+        <strong>830</strong> 일본문학 및 기타 아시아 제문학<br>
+        <strong>840</strong> 영미문학<br>
+        <strong>850</strong> 독일문학<br>
+        <strong>860</strong> 프랑스 문학<br>
+        <strong>870</strong> 스페인 및 포르투갈 문학<br>
+        <strong>880</strong> 이탈리아 문학<br>
         <strong>890</strong> 기타 제문학
       </div>
     </div>
@@ -925,18 +980,48 @@
     <div class="accordion">
       <div class="acc-header" onclick="toggleAcc(this)">900 역사 (History) <span class="acc-arrow">▶</span></div>
       <div class="acc-body">
-        <strong>910</strong> 아시아 | <strong>911</strong> 한국 | <strong>912</strong> 중국 | <strong>913</strong> 일본<br>
-        <strong>920</strong> 유럽 | <strong>930</strong> 아프리카 | <strong>940</strong> 북아메리카 | <strong>950</strong> 남아메리카<br>
-        <strong>960</strong> 오세아니아, 양극지방 | <strong>980</strong> 지리 | <strong>990</strong> 전기
+        <strong>910</strong> 아시아<br>
+        <strong>920</strong> 유럽<br>
+        <strong>930</strong> 아프리카<br>
+        <strong>940</strong> 북아메리카<br>
+        <strong>950</strong> 남아메리카<br>
+        <strong>960</strong> 오세아니아, 양극지방<br>
+        <strong>970</strong> — <span style="color:var(--text-muted);font-size:11px">(공란)</span><br>
+        <strong>980</strong> 지리<br>
+        <strong>990</strong> 전기
       </div>
     </div>
 
-    <div class="section-title" style="margin-top:32px"><span class="dot" style="background:var(--accent3)"></span>주요 목(Section) — 시험 출제 빈도 높은 강 전체 전개</div>
+    <div class="section-title" style="margin-top:32px"><span class="dot" style="background:var(--accent3)"></span>시험 필수 암기 항목</div>
+
+    <!-- 중요 혼동 주의 -->
+    <div class="card red" style="margin-bottom:16px">
+      <div class="card-label">⚠️ 시험 혼동 주의</div>
+      <h3>🚨 절대 헷갈리지 말 것</h3>
+      <div style="font-size:13px;line-height:2.1">
+        <strong>1) 300류 사회과학 순서</strong><br>
+        &nbsp;&nbsp;310 = <span class="kw r">통계자료</span> (×통계학)<br>
+        &nbsp;&nbsp;320 = <span class="kw r">경제학</span> (×정치학)<br>
+        &nbsp;&nbsp;340 = <span class="kw r">정치학</span> (×법학)<br>
+        &nbsp;&nbsp;360 = 법률, 법학<br><br>
+        
+        <strong>2) 100류 철학 순서</strong><br>
+        &nbsp;&nbsp;150 = <span class="kw r">동양철학</span> (×심리학)<br>
+        &nbsp;&nbsp;180 = <span class="kw r">심리학</span> (×고대중세철학)<br><br>
+        
+        <strong>3) 200류 종교</strong><br>
+        &nbsp;&nbsp;230 = <span class="kw r">기독교</span> (DDC는 230이 기독교이므로 동일)<br>
+        &nbsp;&nbsp;260 = <span class="kw r">공란</span> (할당된 종교 없음)<br><br>
+        
+        <strong>4) 공란 3개</strong><br>
+        &nbsp;&nbsp;260 (종교), 610 (예술), 970 (역사)
+      </div>
+    </div>
 
     <!-- 020 문헌정보학 -->
     <div class="card blue" style="margin-bottom:12px">
       <div class="card-label">★★★ 최빈출</div>
-      <h3>📚 020 문헌정보학</h3>
+      <h3>📚 020 문헌정보학 — 목 전개</h3>
       <div style="font-size:13px; line-height:1.8; color:var(--text-muted)">
         <strong>021</strong> 도서관 행정 | <strong>022</strong> 도서관 시설·설비 | <strong>023</strong> 도서관 직원·인사<br>
         <strong>024</strong> 도서관 봉사·서비스 | <strong>025</strong> 정보서비스 | <strong>026</strong> 특수도서관<br>
@@ -944,60 +1029,16 @@
       </div>
     </div>
 
-    <!-- 목 전개 - 370 교육학 -->
-    <div class="card blue" style="margin-bottom:16px">
-      <div class="card-label">370 교육학</div>
-      <h3>📚 370 교육학 세부 전개</h3>
-      <div style="font-size:13px; line-height:1.8; color:var(--text-muted)">
-        <strong>371</strong> 교육철학, 교육사상 | <strong>372</strong> 초등교육 | <strong>373</strong> 중등교육 | <strong>374</strong> 고등교육<br>
-        <strong>375</strong> 교육과정 | <strong>376</strong> 유아교육, 초등교육 | <strong>377</strong> 성인교육, 평생교육 | <strong>378</strong> 장애아교육<br>
-        <strong>379</strong> 교육정책, 교육행정, 교육재정
-      </div>
-    </div>
-
-    <!-- 목 전개 - 510 의학 -->
-    <div class="card green" style="margin-bottom:16px">
-      <div class="card-label">510 의학</div>
-      <h3>🏥 510 의학 세부 전개</h3>
-      <div style="font-size:13px; line-height:1.8; color:var(--text-muted)">
-        <strong>511</strong> 기초의학 | <strong>512</strong> 임상의학 | <strong>513</strong> 내과학 | <strong>514</strong> 외과학<br>
-        <strong>515</strong> 산부인과학 | <strong>516</strong> 소아과학 | <strong>517</strong> 안과학, 이비인후과학 | <strong>518</strong> 치과학<br>
-        <strong>519</strong> 한방의학
-      </div>
-    </div>
-
-    <!-- 목 전개 - 320 정치학 -->
-    <div class="card purple" style="margin-bottom:16px">
-      <div class="card-label">320 정치학</div>
-      <h3>⚖️ 320 정치학 세부 전개</h3>
-      <div style="font-size:13px; line-height:1.8; color:var(--text-muted)">
-        <strong>321</strong> 정치이론, 정치사상 | <strong>322</strong> 정치사 | <strong>323</strong> 정치제도 | <strong>324</strong> 정당론<br>
-        <strong>325</strong> 의회정치 | <strong>326</strong> 행정부 | <strong>327</strong> 국제정치, 외교 | <strong>328</strong> 식민정치<br>
-        <strong>329</strong> 지방자치
-      </div>
-    </div>
-
-    <!-- 목 전개 - 710 한국어 -->
-    <div class="card yellow" style="margin-bottom:16px">
-      <div class="card-label">710 한국어</div>
-      <h3>🇰🇷 710 한국어 세부 전개</h3>
-      <div style="font-size:13px; line-height:1.8; color:var(--text-muted)">
-        <strong>711</strong> 문자론(한글) | <strong>712</strong> 어원, 어휘 | <strong>713</strong> 사전 | <strong>714</strong> 음운론, 음성학<br>
-        <strong>715</strong> 문법론 | <strong>716</strong> 문자론 | <strong>717</strong> 언어정책, 국어정책 | <strong>718</strong> 표준어, 방언<br>
-        <strong>719</strong> 한국어 교육
-      </div>
-    </div>
-
-    <!-- 암기 팁 -->
-    <div class="card red">
+    <!-- 암기 핵심 -->
+    <div class="card green">
       <div class="card-label">MEMORY TIP</div>
-      <h3>💡 암기 핵심 포인트</h3>
-      <ul>
-        <li><span class="kw r">주류(0~9)</span>는 무조건 암기 필수</li>
-        <li><span class="kw r">강(10단위)</span>는 자주 출제되는 분야 위주로 암기</li>
-        <li><strong>한국 우대 항목</strong>: 711(한국어), 811(한국문학), 911(한국사), 220(불교)</li>
-        <li><strong>KDC vs DDC 차이</strong>: 400(자연)↔400(언어), 700(언어)↔700(예술) 위치 교환</li>
-        <li>시험에 자주 나오는 강: <strong>020(문헌정보학), 070(신문), 150(심리학), 320(정치학), 330(경제학), 370(교육학), 510(의학)</strong></li>
+      <h3>💡 암기 핵심 전략</h3>
+      <ul style="font-size:13px;line-height:2">
+        <li><span class="kw r">주류 10개</span> (0~9류) → 100% 완전 암기 필수</li>
+        <li><span class="kw r">강(綱) 90개</span> → 빈출 분야 집중: 020, 070, 180, 310, 320, 340, 360, 370, 510</li>
+        <li><strong>한국 우대</strong>: 710 한국어, 810 한국문학, 910 아시아(911 한국사 포함), 220 불교</li>
+        <li><strong>KDC ↔ DDC 차이</strong>: 400번대와 700번대 위치 교환 (KDC 400=자연과학, DDC 400=언어)</li>
+        <li><strong>공란 3개 암기</strong>: 260, 610, 970</li>
       </ul>
     </div>
 
